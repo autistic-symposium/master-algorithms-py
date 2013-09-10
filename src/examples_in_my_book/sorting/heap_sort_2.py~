@@ -1,0 +1,8 @@
+def heapsort(seq):
+    heap = Heap(seq)
+    
+    res = []
+    for i in range(len(seq)):
+        res.insert(0, heap.extract_max())
+
+    return res

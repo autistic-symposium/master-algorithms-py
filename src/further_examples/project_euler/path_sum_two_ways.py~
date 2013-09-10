@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+# mari von steinkirch @2013
+# steinkirch at gmail
+
+def path_sum_two_ways(m1):
+    paths = []
+    
+    row, col = 0, 0
+    p = len(m1)
+     
+    while row < len(m1):
+        print(m1[0:p])
+        while p:
+            aux = sum([x for x in m1[0:p]])
+            paths.append(aux)
+            p -= 1
+        row += 1
+        
+    return max(paths)
+        
+
+def main():
+    m1 = [[131, 673, 234, 103, 18], [201, 96, 342, 965, 150], [630, 803, 746, 422, 111], [537, 699, 497, 121, 956], [805, 732, 524, 37, 331]]
+    print(path_sum_two_ways(m1))
+                   
+if __name__ == '__main__':
+    main()
+

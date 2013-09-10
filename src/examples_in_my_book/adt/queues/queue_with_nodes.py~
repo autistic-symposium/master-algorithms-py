@@ -1,0 +1,47 @@
+#!/usr/bin/python3
+# mari von steinkirch @2013
+# steinkirch at gmail
+
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+class Queue:
+    ''' Queue acts as a container for nodes (objects) that are inserted and removed according FIFO'''
+    def __init__(self):
+        self.first = None
+        self.last = None
+
+    def dequeue(self):
+        if self.front:
+            value = self.first.value
+            self.first = self.first.next
+            return value
+        raise Exception('Queue is empty, cannot dequeue.')
+
+    def enqueue(self, value):
+        node = Node(value)
+        if self.first:
+            self.last.next = node
+            self.last = node
+        else:
+            self.first = node
+            self.last = node
+        return True
+
+    def isEmpty(self):
+        return bool(self.first)
+
+    def size(self):
+        node = self.first
+        num_nodes = 0
+        while node.next:
+            num_nodes += 1
+            node = node.next
+        return num_nodes
+        
+      

@@ -1,0 +1,54 @@
+#!/usr/bin/python3
+# mari von steinkirch @2013
+# steinkirch at gmail
+
+from linked_stack import StackwithNodes
+from node import Node
+
+
+class StackWithMins(Stack):
+    mins = StackwithNodes()
+
+    def push(self, item):
+        node = Node(item)
+        node.next = self.top
+        self.top = node
+        if self.mins.top is not None:
+            if self.mins.top.data > item:
+                self.mins.push(item)
+        else:
+            self.mins.push(item)
+
+    def pop(self):
+        if self.top is not None:
+            if self.peek() == self.mins.peek():
+                self.mins.pop()
+            node = self.top
+            self.top = self.top.next
+            return node
+        return None
+
+    def min(self):
+        return self.mins.peek()
+
+
+
+def test_():
+    stack = StackWithMins()
+    stack.push(9)
+    stack.push(5)
+    stack.push(7)
+    stack.push(4)
+    stack.push(3)
+    stack.push(6)
+    stack.push(5)
+    stack.push(2)
+    stack.push(1)
+    stack.print_stack()
+    stack.mins.print_stack()
+
+
+if __name__ == '__main__':
+    test_()   
+
+

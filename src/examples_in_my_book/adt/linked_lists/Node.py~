@@ -1,0 +1,44 @@
+#!/usr/bin/python3
+# mari von steinkirch @2013
+# steinkirch at gmail
+
+'''The structure of an unordered list is a collection of items where each item holds a relative position with respect to the others '''
+
+
+
+class Node:
+    ''' The basic building block for the linked list implementation is the node. 
+        Each node object must hold at least two pieces of information:
+        First, the node must contain the list item itself (data field),
+        second each node must hold a reference to the next node '''
+        
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+
+    def setData(self,newdata):
+        self.data = newdata
+
+    def setNext(self,newnext):
+        self.next = newnext
+
+
+
+def test_Node(module_name='this module'):
+    temp = Node(40)
+    assert(temp.getData() == 40)
+        
+    s = 'Tests in {name} have {con}!'
+    print(s.format(name=module_name, con='passed'))
+
+
+if __name__ == '__main__':
+    test_Node()
+
+
