@@ -9,10 +9,10 @@ http://bit.ly/python_book
 
 /src/examples_in_my_book/
 -------------------------
-In the folder , I made available all the examples and cases I used in my ebook: http://bit.ly/python_book
+All the examples and lessons I showed in my ebook.
 
 
-/futher_examples/
+/src/futher_examples/
 -----------------
 
 In the folder you find futher examples in algorithms in Python, such as:
