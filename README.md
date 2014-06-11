@@ -9,17 +9,25 @@ http://bit.ly/python_book
 
 /src/examples_in_my_book/
 -------------------------
+
 All the examples and lessons I showed in my ebook.
 
 
 /src/futher_examples/
------------------
+---------------------
 
 In the folder you find futher examples in algorithms in Python, not mentioned in the the book:
 
 * Solutions for the book Cracking the Code, 
-* Solution for Project Euler and Topcoder,
-* Examples for IPython, pandas,...
+* Solution for Project Euler and Topcoder,...
+
+
+/src/ipython/
+-------------
+
+Here I explain all the problems above in ipython notebooks.
+
+
 
 Advanced Learners
 -----------------
