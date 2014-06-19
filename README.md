@@ -36,3 +36,6 @@ Advanced Learners
 [Check out my lessons in numerical methods.](https://github.com/mariwahl/Numerical-Methods-for-Physics)
 
 
+Be Social!
+----------
+Please drop me a line or submit a patch if you have any suggestions!
