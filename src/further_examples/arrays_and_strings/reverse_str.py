@@ -1,32 +1,3 @@
-#!/usr/bin/python3
-<<<<<<< HEAD
-=======
-# mari von steinkirch @2013
-# steinkirch at gmail
-
-   
-def reverse_str(s):
-    ''' in place '''
-    sr_ls = []
-    for i in range(len(s)-1, -1, -1):
-        sr_ls.append(s[i])
-    return ''.join(sr_ls)
-        
-
-
-
-def main():
-    s1 = 'abcdefg'
-    s2 = 'buffy'
-    s3 = ''
-    print(reverse_str(s1))
-    print(reverse_str(s2))
-    print(reverse_str(s3))
-                   
-if __name__ == '__main__':
-    main()
->>>>>>> parent of 7b79f58... Faster, better, stronger
-
 # Mari von Steinkirch @ 2013
 # mari.wahl9@gmail.com
 
@@ -74,12 +45,10 @@ def reverse_3(string):
 # Simply returns the string backwards. As fast as concise.
 reverse_lambda = lambda s: s[::-1]
 
-# Import a lowercase ASCII alphabet from the string module.
-from string import ascii_lowercase
 # We define some short strings to test our functions.
-strings = (ascii_lowercase, 'buffy', 'foo', 'bar', 'SPAM')
+strings = ('buffy', 'foo', 'bar')
 # We announce what we are doing.
-print(', '.join(strings), ' should appear reversed four times if all the functions are working.\n')
+print(', '.join(strings), ' should appear reversed four times if the function is working.\n')
 print('{:<30}:'.format('Function name'), 'benchmarking result (lower is better):')
 # Iterate over a tuple of functions.
 for function in (reverse_1, reverse_2, reverse_3, reverse_lambda):
@@ -88,3 +57,6 @@ for function in (reverse_1, reverse_2, reverse_3, reverse_lambda):
     print("{:<30}:".format(name), timeit(name + "('string')", setup='from __main__ import ' + name))
     # We print the output so that we can check if the function is working as expected.
     print(', '.join(map(function, strings)), '\n')
+# So that the console stays open and waits the user to kill it.
+from os import system
+system('pause')
