@@ -15,6 +15,6 @@ except ImportError as e:
 
 try:
     import pandas
-    print("\nPandas version:", pd.__version__)
+    print("\nPandas version:", pandas.__version__)
 except ImportError as e:
     print(e)
