@@ -48,7 +48,7 @@ reverse_lambda = lambda s: s[::-1]
 # We define some short strings to test our functions.
 strings = ('buffy', 'foo', 'bar')
 # We announce what we are doing.
-print(', '.join(strings), ' should appear reversed four times if the function is working.\n')
+print(', '.join(strings), ' should appear reversed if the function is working.\n')
 print('{:<30}:'.format('Function name'), 'benchmarking result (lower is better):')
 # Iterate over a tuple of functions.
 for function in (reverse_1, reverse_2, reverse_3, reverse_lambda):
@@ -57,6 +57,5 @@ for function in (reverse_1, reverse_2, reverse_3, reverse_lambda):
     print("{:<30}:".format(name), timeit(name + "('string')", setup='from __main__ import ' + name))
     # We print the output so that we can check if the function is working as expected.
     print(', '.join(map(function, strings)), '\n')
-# So that the console stays open and waits the user to kill it.
-from os import system
-system('pause')
+# We wait until the user wants to quit.
+input('Press Return to quit.')
