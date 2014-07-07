@@ -1,9 +1,20 @@
-import sys 
-print "System version:",sys.version
-import numpy as np
-print "Numpy version:",np.version.version
-import matplotlib
-print "Matplotlib version:",matplotlib.__version__
-import pandas as pd
-print "Pandas version:",pd.__version__
+import sys
+print("System version:", sys.version, '\n')
 
+try:
+    import numpy
+    print("\nNumpy version:", numpy.version.version)
+except ImportError as e:
+    print(e)
+
+try:
+    import matplotlib
+    print("\nMatplotlib version:", matplotlib.__version__)
+except ImportError as e:
+    print(e)
+
+try:
+    import pandas
+    print("\nPandas version:", pd.__version__)
+except ImportError as e:
+    print(e)
