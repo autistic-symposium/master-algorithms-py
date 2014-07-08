@@ -3,7 +3,7 @@ print("System version:", sys.version, '\n')
 
 try:
     import numpy
-    print("\nNumpy version:", numpy.version.version)
+    print("\nNumpy version:", numpy.__version__)
 except ImportError as e:
     print(e)
 

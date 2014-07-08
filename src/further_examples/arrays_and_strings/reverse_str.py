@@ -1,4 +1,6 @@
-# Mari von Steinkirch @ 2013
+#!/usr/bin/python3
+
+#  Mari von Steinkirch @ 2013
 # mari.wahl9@gmail.com
 
 # Bernardo Sulzbach (mafagafo) @ 2014
