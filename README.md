@@ -1,7 +1,7 @@
 Python and Algorithms
 ======================
 
-This repository contains a comprehensive study of Algorithms and Python, including an ["e-book" that I wrote](https://github.com/mariwahl/Python-and-Algorithms--Over-100-Exercises-and-Lessons).
+This repository contains a comprehensive study of Algorithms and Python, including an ["e-book" that I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
 
 
 
