@@ -1,10 +1,19 @@
 #!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+
+#  Mari von Steinkirch @ 2013
+# mari.wahl9@gmail.com
+
+# Bernardo Sulzbach (mafagafo) @ 2014
+# 1449441@gmail.com
 
 
 def bubble_sort(seq):
-    ''' implement bubble sort, a O(n^2) not efficient algorithm'''
+    """
+    Implementation of bubble sort.
+    O(n²) and thus highly ineffective.
+    :param seq: the sequence to be sorted.
+    :return: the sorted sequence.
+    """
     size = len(seq) -1
     for num in range(size, 0, -1):
         for i in range(num):
@@ -13,7 +22,6 @@ def bubble_sort(seq):
                 seq[i] = seq[i+1]
                 seq[i+1] = temp
     return seq
-    
 
 
 def test_bubble_sort(module_name='this module'):
