@@ -1,5 +1,5 @@
-Python and Algorithms
-======================
+Python and Algorithms & Data Structures
+=======================================
 
 This repository contains a comprehensive study of Algorithms and Python, including an ["e-book" that I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
 
