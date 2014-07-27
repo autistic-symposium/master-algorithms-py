@@ -3,6 +3,7 @@ Python and Algorithms
 
 This repository contains a comprehensive study of Algorithms and Python, including an ["e-book" that I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
 
+![](http://i.imgur.com/745Xwzx.png)
 
 
 /src/examples_in_my_book/
