@@ -18,7 +18,7 @@ All the examples and lessons I showed in my ebook.
 In the folder you find further examples in algorithms in Python, not mentioned in the the book:
 
 * Solutions for the book Cracking the Code,
-* Solution for Project Euler and Topcoder,...
+* Solution for Project Euler and Topcoder.
 
 
 /src/ipython/
