@@ -9,53 +9,46 @@ This repository contains a comprehensive study of Algorithms & Data Structures i
 Source Code Structure
 ---------------------
 
+
 src/
 
 ├── abstract_structures
 
-│   ├── adt
+    ├── heap
 
-│   │   ├── heap
+    ├── linked_lists
 
-│   │   ├── linked_lists
+    ├── queues
 
-│   │   ├── queues
-
-│   │   └── stacks
+    └── stacks
 
 ├── builtin_structures
 
-│   ├── arrays_and_strings
+    ├── arrays_and_strings
 
-│   ├── dicts
+    ├── dicts
 
-│   ├── lists
+    ├── lists
 
-│   ├── numbers
+    ├── numbers
 
-│   ├── sets
+    ├── sets
 
-│   ├── strings
+    ├── strings
 
-│   └── tuples
+    └── tuples
 
 ├── graphs_and_trees
 
-│   ├── trees
-
-│   │   ├── binary_trees
-
-│   │   ├── simple_trees
-
-│   │   └── traversals
+    ├── trees
 
 ├── programming_paradigms
 
-│   ├── dynamic_programming
+    ├── dynamic_programming
 
-│   ├── modules
+    ├── modules
 
-│   └── oop
+    └── oop
 
 └── searching_and_sorting
 
