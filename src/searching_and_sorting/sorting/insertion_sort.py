@@ -1,6 +1,8 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
 
 
 
@@ -38,7 +40,7 @@ if __name__ == '__main__':
 
 
 
-    
-    
-    
-    
+
+
+
+

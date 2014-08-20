@@ -1,6 +1,8 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
 
 
 from collections import defaultdict
@@ -13,7 +15,7 @@ def count_sort_dict(a):
     for k in range(min(c), max(c) + 1):
         b.extend(c[k])
     return b
-	
+
 
 def test_count_sort():
     seq = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2, 5, 4, 1, 5, 3]

@@ -1,6 +1,8 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
 
 
 def find_max_unimodal_array(A):
@@ -19,7 +21,7 @@ def find_max_unimodal_array(A):
 
 
 def test_find_max_unimodal_array():
-    seq = [1, 2, 5, 6, 7, 10, 12, 9, 8, 7, 6] 
+    seq = [1, 2, 5, 6, 7, 10, 12, 9, 8, 7, 6]
     assert(find_max_unimodal_array(seq) == 12)
     print('Tests passed!')
 
@@ -28,5 +30,5 @@ if __name__ == '__main__':
     test_find_max_unimodal_array()
 
 
-     
-  
+
+

@@ -1,16 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
-#  Mari von Steinkirch @ 2013
-# mari.wahl9@gmail.com
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
-# Bernardo Sulzbach (mafagafo) @ 2014
-# 1449441@gmail.com
 
 
 def bubble_sort(seq):
     """
     Implementation of bubble sort.
-    O(n²) and thus highly ineffective.
+    O(n2) and thus highly ineffective.
     :param seq: the sequence to be sorted.
     :return: the sorted sequence.
     """
@@ -27,7 +25,7 @@ def bubble_sort(seq):
 def test_bubble_sort(module_name='this module'):
     seq = [4, 5, 2, 1, 6, 2, 7, 10, 13, 8]
     assert(bubble_sort(seq) == sorted(seq))
-        
+
     s = 'Tests in {name} have {con}!'
     print(s.format(name=module_name, con='passed'))
 

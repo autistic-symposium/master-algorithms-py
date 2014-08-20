@@ -1,6 +1,7 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
 import random
 
@@ -24,7 +25,7 @@ def qselect(A, k, left=None, right=None):
             swap(A, i, swapIndex)
             swapIndex += 1
         i += 1
-        
+
     # Move pivot to final position
     swap(A, right, swapIndex)
 
@@ -36,7 +37,7 @@ def qselect(A, k, left=None, right=None):
         return qselect(A, k, left=swapIndex+1, right=right)
     else:
         return qselect(A, k, left=left, right=swapIndex-1)
-        
+
 
 
 def find_k_largest_seq_quickselect(seq, k):
@@ -54,7 +55,8 @@ def test_find_k_largest_seq_quickselect():
     seq = [3, 10, 4, 5, 1, 8, 9, 11, 5]
     k = 2
     assert(find_k_largest_seq_quickselect(seq,k) == [10, 11])
-    
+    print("Tests passed!")
+
 
 if __name__ == '__main__':
     test_find_k_largest_seq_quickselect()

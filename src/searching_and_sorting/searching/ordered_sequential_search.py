@@ -1,6 +1,9 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+
 
 
 def ordered_sequential_search(seq, n):
@@ -19,7 +22,7 @@ def test_ordered_sequential_search(module_name='this module'):
     n2 = 7
     assert(ordered_sequential_search(seq, n1) == True)
     assert(ordered_sequential_search(seq, n2) == False)
-        
+
     s = 'Tests in {name} have {con}!'
     print(s.format(name=module_name, con='passed'))
 

@@ -1,11 +1,10 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
 
-from do_benchmark import benchmark
 
-@benchmark
 def gnome_sort(seq):
     ''' sort a sequence using the gnome sort alg '''
     i = 0
@@ -29,7 +28,7 @@ if __name__ == '__main__':
 
 
 
-    
-    
-    
-    
+
+
+
+

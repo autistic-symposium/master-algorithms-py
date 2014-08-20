@@ -1,16 +1,19 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+
 
 import numpy
 
 def searching_in_a_matrix(m1, value):
-    """ searches an element in a matrix where in every row, the values are increasing from left to  
+    """ searches an element in a matrix where in every row, the values are increasing from left to
     right, but the last number in a row is smaller than the first number in the next row.
     The naive brute force solution scan all numbers and cost O(nm).  However, since the numbers are
     already sorted, the matrix can be viewed as a 1D sorted array.  The binary search algorithm is
     suitable. The efficience is O(logmn)."""
-    
+
     rows = len(m1)
     cols = len(m1[0])
     lo = 0
@@ -24,7 +27,7 @@ def searching_in_a_matrix(m1, value):
         elif v > value: hi = mid
         else: lo = mid+1
     return False
-       
+
 
 
 def test_searching_in_a_matrix():

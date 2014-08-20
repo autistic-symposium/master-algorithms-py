@@ -1,6 +1,8 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
 
 
 def sequential_search(seq, n):
@@ -16,7 +18,7 @@ def test_sequential_search(module_name='this module'):
     n2 = 7
     assert(sequential_search(seq, n1) == True)
     assert(sequential_search(seq, n2) == False)
-        
+
     s = 'Tests in {name} have {con}!'
     print(s.format(name=module_name, con='passed'))
 
@@ -29,4 +31,4 @@ if __name__ == '__main__':
 Case	            Best Case	    Worst Case	    Average Case
 item is present	        1           	n	            n2
 item is not present	    n	            n           	n
-""""
+"""
