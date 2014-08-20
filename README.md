@@ -10,31 +10,57 @@ Source Code Structure
 ---------------------
 
 src/
+
 ├── abstract_structures
+
 │   ├── adt
+
 │   │   ├── heap
+
 │   │   ├── linked_lists
+
 │   │   ├── queues
+
 │   │   └── stacks
+
 ├── builtin_structures
+
 │   ├── arrays_and_strings
+
 │   ├── dicts
+
 │   ├── lists
+
 │   ├── numbers
+
 │   ├── sets
+
 │   ├── strings
+
 │   └── tuples
+
 ├── graphs_and_trees
+
 │   ├── trees
+
 │   │   ├── binary_trees
+
 │   │   ├── simple_trees
+
 │   │   └── traversals
+
 ├── programming_paradigms
+
 │   ├── dynamic_programming
+
 │   ├── modules
+
 │   └── oop
+
 └── searching_and_sorting
+
     ├── searching
+
     ├── sorting
 
 
