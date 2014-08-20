@@ -4,24 +4,38 @@ Python and Algorithms & Data Structures
 This repository contains a comprehensive study of Algorithms & Data Structures in Python, including an ["e-book" I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
 
 ![](http://i.imgur.com/fYPlwpQ.png)
-![](http://i.imgur.com/eQHu0Og.png)
-![](http://i.imgur.com/sZfhApe.png)
-![](http://i.imgur.com/3Jmzd6w.png)
 
 
-/src/examples_in_my_book
--------------------------
-
-All the examples and lessons I show in my ebook.
-
-
-/src/futher_examples/
+Source Code Structure
 ---------------------
 
-More advanced examples that are not mentioned in my book:
-
-* Solutions for the book Cracking the Code,
-* Solution for Project Euler and Topcoder.
+src/
+├── abstract_structures
+│   ├── adt
+│   │   ├── heap
+│   │   ├── linked_lists
+│   │   ├── queues
+│   │   └── stacks
+├── builtin_structures
+│   ├── arrays_and_strings
+│   ├── dicts
+│   ├── lists
+│   ├── numbers
+│   ├── sets
+│   ├── strings
+│   └── tuples
+├── graphs_and_trees
+│   ├── trees
+│   │   ├── binary_trees
+│   │   ├── simple_trees
+│   │   └── traversals
+├── programming_paradigms
+│   ├── dynamic_programming
+│   ├── modules
+│   └── oop
+└── searching_and_sorting
+    ├── searching
+    ├── sorting
 
 
 
