@@ -25,16 +25,7 @@ __email__ = "marina.w4hl@gmail.com"
 
 
 
-def quick_sort(seq):
-    if len(seq) < 2: return seq
-    pivot = sorted(seq[0], seq[len(seq)//2], seq[-1])[1]
-    print(pivot)
-    left = quick_sort([x for x in seq[1:] if x < pivot])
-    right = quick_sort([x for x in seq[1:] if x >= pivot])
-    return left + [pivot] + right
 
-
-''' slightly different in the way we get the pivot'''
 def quick_sort(seq):
     if len(seq) < 2 : return seq
     mid = len(seq)//2

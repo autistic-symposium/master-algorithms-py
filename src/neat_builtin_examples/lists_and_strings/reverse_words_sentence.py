@@ -43,7 +43,6 @@ def reversing_words_setence_logic(string1):
     reverser(string1)
     p = 0
     start = 0
-    final = []
     while p < len(string1):
         if string1[p] == u"\u0020":
             reverser(string1,start,p-1)
