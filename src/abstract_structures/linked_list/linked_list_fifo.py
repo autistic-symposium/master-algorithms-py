@@ -50,12 +50,6 @@ class LinkedListFIFO(object):
             self.tail.pointer = node
         self.tail = node
 
-    # delete a node in some position
-    def _delete(self, prev, node):
-        self.length -= 1
-        prev.pointer = node.pointer
-        if not node.pointer:
-            self.tail = prev
 
     # add nodes in general
     def addNode(self, value):
@@ -81,8 +75,14 @@ class LinkedListFIFO(object):
             self._deleteFirst()
         else:
             node, prev, i = self._find(index)
-            if i == index:
-                self._delete(prev, node)
+            if i == index and node:
+                self.length -= 1
+                if i == 0 or not prev :
+                    self.head = node.pointer
+                else:
+                    prev.pointer = node.pointer
+                if not self.tail == node:
+                    self.tail = prev
             else:
                 print('Node with index {} not found'.format(index))
 
