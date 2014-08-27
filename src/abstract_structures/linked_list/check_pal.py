@@ -1,40 +1,49 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
 ''' Given a linked list, check if the nodes form a palindrome '''
 
-from linked_list_fifo import LinkList, Node
+from linked_list_fifo import LinkedListFIFO, Node
+from node import Node
 
-def isPal(l1):
-    if len(l1) < 2: return True
-    if l1[0] != l1[-1]: return False
+def isPal(l):
+
+    if len(l1) < 2:
+        return True
+    if l1[0] != l1[-1]:
+        return False
+
     return isPal(l1[1:-1])
 
-    
-    
+
+
 def checkllPal(ll):
     node = ll.head
-    l1 = []
+    l = []
+
     while node:
-        l1.append(node.value)   
-        node = node.next
-    return isPal(l1)  
+        l.append(node.value)
+        node = node.pointer
 
-        
+    return isPal(l)
 
-def main():
-    ll = LinkList()
+
+
+
+
+if __name__ == '__main__':
+
+    ll = LinkedListFIFO()
     l1 = [1, 2, 3, 2, 1]
+
     for i in l1:
         ll.addNode(i)
-    print(checkllPal(ll))
- 
+
+    assert(checkllPal(ll) == True)
+
     ll.addNode(2)
     ll.addNode(3)
-    print(checkllPal(ll))
-    
-                       
-if __name__ == '__main__':
-    main()
 
+    assert(checkllPal(ll) == False)
