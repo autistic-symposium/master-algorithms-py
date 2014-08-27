@@ -1,48 +1,75 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+
+''' an example of a queue implemented from 2 stacks '''
 
 
 class Queue(object):
-    ''' an example of a queue implemented from 2 stacks '''
+
     def __init__(self):
         self.in_stack = []
         self.out_stack = []
 
+
+    # basic methods
+    def _transfer(self):
+        while self.in_stack:
+            self.out_stack.append(self.in_stack.pop())
+
+
     def enqueue(self, item):
         return self.in_stack.append(item)
 
+
     def dequeue(self):
+        if not self.out_stack:
+            self._transfer()
         if self.out_stack:
             return self.out_stack.pop()
-        while self.in_stack:
-            self.out_stack.append(self.in_stack.pop())
-        if not self.out_stack: 
+        else:
             return "Queue empty!"
-        return self.out_stack.pop()
-        
+
+
     def size(self):
         return len(self.in_stack) + len(self.out_stack)
 
+
     def peek(self):
+        if not self.out_stack:
+            self._transfer()
         if self.out_stack:
             return self.out_stack[-1]
-        while self.in_stack:
-            self.out_stack.append(self.in_stack.pop())
-        return self.out_stack[-1]      
-   
-        
+        else:
+            return "Queue empty!"
 
-def main():
-    queue = Queue()
-    queue.enqueue(1)
-    queue.enqueue(2)
-    queue.enqueue(3)
-    print(queue.size())    
-    print(queue.peek())   
-    print(queue.dequeue())  
-    print(queue.peek())    
+    def __repr__(self):
+        if not self.out_stack:
+            self._transfer()
+        if self.out_stack:
+            return '{}'.format(self.out_stack)
+        else:
+            return "Queue empty!"
+
+    def isEmpty(self):
+        return not (bool(self.in_stack) or bool(self.out_stack))
+
+
 
 
 if __name__ == '__main__':
-    main()
+    queue = Queue()
+    print("Is the queue empty? ", queue.isEmpty())
+    print("Adding 0 to 10 in the queue...")
+    for i in range(10):
+        queue.enqueue(i)
+    print("Queue size: ", queue.size())
+    print("Queue peek : ", queue.peek())
+    print("Dequeue...", queue.dequeue())
+    print("Queue peek: ", queue.peek())
+    print("Is the queue empty? ", queue.isEmpty())
+
+    print("Printing the queue...")
+    print(queue)

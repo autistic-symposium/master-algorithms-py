@@ -1,61 +1,81 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+''' Queue acts as a container for nodes (objects) that are inserted and removed according FIFO'''
+
 
 class Node(object):
-    def __init__(self, value):
+    def __init__(self, value=None, pointer=None):
         self.value = value
-        self.next = None
-        
+        self.pointer = None
+
 
 class LinkedQueue(object):
-    ''' Queue acts as a container for nodes (objects) that are inserted and removed according FIFO'''
     def __init__(self):
-        self.front = None
-        self.back = None
+        self.head = None
+        self.tail = None
+
 
     def isEmpty(self):
-        return bool(self.front)
+        return bool(self.head)
+
 
     def dequeue(self):
-        if self.front:
-            value = self.front.value
-            self.front = self.front.next
+        if self.head:
+            value = self.head.value
+            self.head = self.head.pointer
             return value
-        raise Exception('Queue is empty, cannot dequeue.')
+        else:
+            print('Queue is empty, cannot dequeue.')
+
 
     def enqueue(self, value):
         node = Node(value)
-        if self.front:
-            self.back.next = node
-            self.back = node
+        if not self.head:
+            self.head = node
+            self.tail = node
         else:
-            self.front = node
-            self.back = node
-        return True
+            if self.tail:
+                self.tail.pointer = node
+            self.tail = node
+
 
     def size(self):
-        node = self.front
-        num_nodes = 1
-        while node.next:
-            num_nodes += 1
-            node = node.next
+        node = self.head
+        num_nodes = 0
+        while node:
+                num_nodes += 1
+                node = node.pointer
         return num_nodes
 
+
     def peek(self):
-        return self.front.value
+        return self.head.value
 
 
-def main():
-    queue = LinkedQueue()
-    queue.enqueue(1)
-    queue.enqueue(2)
-    queue.enqueue(3)
-    print(queue.size())    
-    print(queue.peek())   
-    print(queue.dequeue())  
-    print(queue.peek())    
+    def _print(self):
+        node = self.head
+        while node:
+            print(node.value)
+            node = node.pointer
+
+
 
 
 if __name__ == '__main__':
-    main()      
+    queue = LinkedQueue()
+    print("Is the queue empty? ", queue.isEmpty())
+    print("Adding 0 to 10 in the queue...")
+    for i in range(10):
+        queue.enqueue(i)
+    print("Is the queue empty? ", queue.isEmpty())
+    queue._print()
+
+    print("Queue size: ", queue.size())
+    print("Queue peek : ", queue.peek())
+    print("Dequeue...", queue.dequeue())
+    print("Queue peek: ", queue.peek())
+    queue._print()
+

@@ -1,46 +1,40 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
 
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
+''' a class for a double ended queue (also inefficient) '''
 
-class Deque(object):
-    ''' a class for a double ended queue '''
-    def __init__(self):
-        self.items = []
+from queue import Queue
 
-    def is_empty(self):
-        return self.items == []
+class Deque(Queue):
 
-    def add_front(self, item):
+    def enqueue_back(self, item):
         self.items.append(item)
 
-    def add_rear(self, item):
-        self.items.insert(0, item)
-
-    def remove_front(self):
-        return self.items.pop()
-
-    def remove_rear(self):
+    def dequeue_front(self):
         return self.items.pop(0)
 
-    def size(self):
-        return len(self.items)
-        
-    def __repr__(self):
-        return '{}'.format(self.items)
-
-
-def main():
-    dq = Deque()
-    dq.add_front(1)
-    dq.add_front(2)
-    dq.add_front(3)
-    dq.add_rear(40)
-    dq.add_rear(50)
-    print(dq.size())  
-    print(dq)  
 
 
 if __name__ == '__main__':
-    main()    
+    queue = Deque()
+    print("Is the queue empty? ", queue.isEmpty())
+    print("Adding 0 to 10 in the queue...")
+    for i in range(10):
+        queue.enqueue(i)
+    print("Queue size: ", queue.size())
+    print("Queue peek : ", queue.peek())
+    print("Dequeue...", queue.dequeue())
+    print("Queue peek: ", queue.peek())
+    print("Is the queue empty? ", queue.isEmpty())
+    print(queue)
+
+    print("\nNow using the dequeue methods...")
+    print("Dequeue from front...", queue.dequeue_front())
+    print("Queue peek: ", queue.peek())
+    print(queue)
+    print("Queue from back...")
+    queue.enqueue_back(50)
+    print("Queue peek: ", queue.peek())
+    print(queue)

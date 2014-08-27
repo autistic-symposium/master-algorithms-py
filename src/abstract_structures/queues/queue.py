@@ -1,15 +1,16 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
 
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+''' an (inefficient) class for a queue '''
 
 class Queue(object):
-    ''' a class for a queue '''
     def __init__(self):
         self.items = []
 
     def isEmpty(self):
-        return self.items == []
+        return bool(self.items)
 
     def enqueue(self, item):
         self.items.insert(0, item)
@@ -19,21 +20,24 @@ class Queue(object):
 
     def size(self):
         return len(self.items)
-        
+
     def peek(self):
         return self.items[-1]
 
+    def __repr__(self):
+        return '{}'.format(self.items)
 
-def main():
-    queue = Queue()
-    queue.enqueue(1)
-    queue.enqueue(2)
-    queue.enqueue(3)
-    print(queue.size())    
-    print(queue.peek())   
-    print(queue.dequeue())  
-    print(queue.peek())    
 
 
 if __name__ == '__main__':
-    main()
+    queue = Queue()
+    print("Is the queue empty? ", queue.isEmpty())
+    print("Adding 0 to 10 in the queue...")
+    for i in range(10):
+        queue.enqueue(i)
+    print("Queue size: ", queue.size())
+    print("Queue peek : ", queue.peek())
+    print("Dequeue...", queue.dequeue())
+    print("Queue peek: ", queue.peek())
+    print("Is the queue empty? ", queue.isEmpty())
+    print(queue)
