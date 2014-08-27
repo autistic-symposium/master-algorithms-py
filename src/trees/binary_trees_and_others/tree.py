@@ -1,19 +1,23 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
 
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+""" A class for a simple tree """
 
 class SimpleTree(object):
-    def __init__(self, value, children = None):
-        if children == None: children = []
+    def __init__(self, value=None, children = None):
+        self.value = value
         self.children = children
-        self.value = value       
+        if self.children == None:
+            self.children = []
 
     def __repr__(self, level=0):
         ret = "\t"*level+repr(self.value)+"\n"
         for child in self.children:
             ret += child.__repr__(level+1)
         return ret
+
 
 
 def main():
