@@ -1,82 +1,105 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+
 
 
 ''' Implement a unordered linked list, i.e. a LIFO linked list (like a stack) '''
 
-class Node(object):
-    def __init__(self, value = None, next = None):
-        self.value = value
-        self.next = next
+from node import Node
 
-class LinkList(object):
+class LinkedListLIFO(object):
+
     def __init__(self):
         self.head = None
-        self.lenght = 0
-        
-    def addNode(self, value):
-        node = Node(value)
-        node.next = self.head
-        self.head = node
-        self.lenght += 1
-        
-    def printList(self):
+        self.length = 0
+
+
+    # print each node's value, starting from the head
+    def _printList(self):
         node = self.head
         while node:
             print(node.value)
-            node = node.next
+            node = node.pointer
 
-    def deleteNode(self, index):
+    # delete a node, given the previous node
+    def _delete(self, prev, node):
+        self.length -= 1
+        if not prev:
+            self.head = node.pointer
+        else:
+            prev.pointer = node.pointer
+
+    # add a new node, pointing to the previous node
+    # in the head
+    def _add(self, value):
+        self.length += 1
+        self.head = Node(value, self.head)
+
+
+    # locate node with some index
+    def _find(self, index):
         prev = None
         node = self.head
         i = 0
         while node and i < index:
             prev = node
-            node = node.next
+            node = node.pointer
             i += 1
-        if index == i:
-            self.lenght -= 1    
-            if prev == None:
-                self.head = node.next
-            else:
-                prev.next = node.next
-        else:
-            print('Node with index {} not found'.format(index))
-         
+        return node, prev, i
 
-    def deleteNodeByValue(self, item):
+    # locate node by value
+    def _find_by_value(self, value):
         prev = None
-        node = self.head       
-        found = False
+        node = self.head
+        found = 0
         while node and not found:
-            if node.value == item:
+            if node.value == value:
                 found = True
             else:
                 prev = node
-                node = node.next
-        if found:
-            self.lenght -= 1 
-            if prev == None:
-                self.head = node.next
-            else:
-                prev.next = node.next
+                node = node.pointer
+        return node, prev, found
+
+
+    # find and delete a node by index
+    def deleteNode(self, index):
+        node, prev, i = self._find(index)
+        if index == i:
+            self._delete(prev, node)
         else:
-            print('Node with value {} not found'.format(item))
+            print('Node with index {} not found'.format(index))
 
 
-def main():
-    ll = LinkList()
-    for i in range(1, 11):
-        ll.addNode(i)
-    print('The list is:')
-    ll.printList()
-    print('The list after deleting node with index 2 (value 8):')
-    ll.deleteNode(2)
-    ll.printList()
-    print('The list after deleting node with value 2 (index 7):')
-    ll.deleteNodeByValue(2)
-    ll.printList()
+    # find and delete a node by value
+    def deleteNodeByValue(self, value):
+        node, prev, found = self._find_by_value(value)
+        if found:
+            self._delete(prev, node)
+        else:
+            print('Node with value {} not found'.format(value))
+
+
+
 
 if __name__ == '__main__':
-    main()
+    ll = LinkedListLIFO()
+    for i in range(1, 5):
+        ll._add(i)
+    print('The list is:')
+    ll._printList()
+    print('The list after deleting node with index 2:')
+    ll.deleteNode(2)
+    ll._printList()
+    print('The list after deleting node with value 3:')
+    ll.deleteNodeByValue(2)
+    ll._printList()
+    print('The list after adding node with value 15')
+    ll._add(15)
+    ll._printList()
+    print("The list after deleting everything...")
+    for i in range(ll.length-1, -1, -1):
+        ll.deleteNode(i)
+    ll._printList()

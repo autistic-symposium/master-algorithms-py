@@ -12,7 +12,7 @@ class UnorderedList(object):
         temp = Node(item)
         temp.setNext(self.head)
         self.head = temp
-    
+
     def length(self):
         current = self.head
         count = 0
@@ -54,7 +54,7 @@ def test_UnorderedList(module_name='this module'):
     llist.add(10)
     assert(llist.search(22) == True)
     llist.remove(22)
-    assert(llist.search(22) == False)   
+    assert(llist.search(22) == False)
     s = 'Tests in {name} have {con}!'
     print(s.format(name=module_name, con='passed'))
 

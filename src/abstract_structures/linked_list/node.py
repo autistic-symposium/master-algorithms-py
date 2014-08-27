@@ -1,23 +1,35 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
 
-class Node(object):        
-    def __init__(self, value):
+class Node(object):
+    def __init__(self, value=None, pointer=None):
         self.value = value
-        self.next = None
+        self.pointer = pointer
 
     def getData(self):
         return self.value
 
     def getNext(self):
-        return self.next
+        return self.pointer
 
     def setData(self, newdata):
         self.value = newdata
 
-    def setNext(self, newnext):
-        self.next = newnext
+    def setNext(self, newpointer):
+        self.pointer = newpointer
 
 
+
+if __name__ == '__main__':
+    L = Node("a", Node("b", Node("c", Node("d"))))
+    assert(L.pointer.pointer.value=='c')
+
+    print(L.getData())
+    print(L.getNext().getData())
+    L.setData('aa')
+    L.setNext(Node('e'))
+    print(L.getData())
+    print(L.getNext().getData())
