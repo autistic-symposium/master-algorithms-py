@@ -1,55 +1,78 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
 
-class Stack(list):
-    def push(self, value):
-        if len(self) > 0:
-            last = self[-1]
-            minimum = self._find_minimum(value, last)
-        else:
-            minimum = value
-        self.minimum = minimum
-        self.append(NodeWithMin(value, minimum))
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
 
-    def _find_minimum(self, value, last_value):
-        if value < last_value.minimum:
-           return value
-        return last_value.minimum
+''' A stack with a minimum lookup '''
 
-    def min(self):
-        return self.minimum
+from stack import Stack
 
 
 class NodeWithMin(object):
-    def __init__(self, value, minimum):
+    def __init__(self, value=None, minimum=None):
         self.value = value
         self.minimum = minimum
 
+
+class StackMin(Stack):
+    def __init__(self):
+        self.items = []
+        self.minimum = None
+
+
+    def push(self, value):
+        if self.isEmpty() or self.minimum > value:
+           self.minimum = value
+        self.items.append(NodeWithMin(value, self.minimum))
+
+
+    def peek(self):
+        return self.items[-1].value
+
+
+    def peekMinimum(self):
+        return self.items[-1].minimum
+
+
+    def pop(self):
+        item = self.items.pop()
+        if item:
+            if item.value == self.minimum:
+                self.minimum = self.peekMinimum()
+            return item.value
+        else:
+            print("Stack is empty.")
+
     def __repr__(self):
-        return str(self.value)
+        aux = []
+        for i in self.items:
+            aux.append(i.value)
+        return '{}'.format(aux)
 
-    def min(self):
-        return self.minimum
-
-
-
-def main():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    node = stack.pop()
-    print(node.minimum)
-    stack.push(0)
-    stack.push(4)
-    node = stack.pop()
-    print(node.min())
-    print(stack.min())
-    print(stack)
 
 
 if __name__ == '__main__':
-    main()   
+    stack = StackMin()
+    print("Is the stack empty? ", stack.isEmpty())
+    print("Adding 0 to 10 in the stack...")
+    for i in range(10,3, -1):
+        stack.push(i)
+    print(stack)
 
+    print("Stack size: ", stack.size())
+    print("Stack peek and peekMinimum : ", stack.peek(), stack.peekMinimum())
+    print("Pop...", stack.pop())
+    print("Stack peek and peekMinimum : ", stack.peek(), stack.peekMinimum())
+    print("Is the stack empty? ", stack.isEmpty())
+    print(stack)
 
+    for i in range(5, 1, -1):
+        stack.push(i)
+    print(stack)
+
+    print("Stack size: ", stack.size())
+    print("Stack peek and peekMinimum : ", stack.peek(), stack.peekMinimum())
+    print("Pop...", stack.pop())
+    print("Stack peek and peekMinimum : ", stack.peek(), stack.peekMinimum())
+    print("Is the stack empty? ", stack.isEmpty())
+    print(stack)

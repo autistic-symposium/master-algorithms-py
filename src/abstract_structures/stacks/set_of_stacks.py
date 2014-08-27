@@ -1,47 +1,57 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
 
-class SetOfStacks(list):
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+""" define a class for a set of stacks """
+
+from stack import Stack
+
+class SetOfStacks(Stack):
     def __init__(self, capacity=4):
-        self.stacks = []
-        self.last_stack = []
+        self.setofstacks = []
+        self.items = []
         self.capacity = capacity
-        self.stacks.append(self.last_stack)
 
-    def __repr__(self):
-        return str(self.stacks)
 
     def push(self, value):
-        last_stack = self.last_stack
-        if len(last_stack) is self.capacity:
-            last_stack = []
-            self.last_stack = last_stack
-            self.stacks.append(last_stack)
-        last_stack.append(value)
+        if self.size() >= self.capacity:
+            self.setofstacks.append(self.items)
+            self.items = []
+        self.items.append(value)
+
 
     def pop(self):
-        last_stack = self.last_stack
-        value = last_stack.pop()
-        if len(last_stack) is 0:
-            self.stacks.pop()
-            self.last_stack = self.stacks[-1]
+        value = self.items.pop()
+        if self.isEmpty() and self.setofstacks:
+            self.items = self.setofstacks.pop()
         return value
 
 
-def main():
-    stack = SetOfStacks()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    stack.push(4)
-    stack.push(5)
-    stack.push(6)
-    print(stack)
-    stack.pop()
-    stack.pop()
-    stack.pop()
-    print(stack)
+    def sizeStack(self):
+        return len(self.setofstacks)*self.capacity + self.size()
+
+
+    def __repr__(self):
+        aux = []
+        for s in self.setofstacks:
+             aux.extend(s)
+        aux.extend(self.items)
+        return '{}'.format(aux)
+
+
 
 if __name__ == '__main__':
-    main()
+    capacity = 5
+    stack = SetOfStacks(capacity)
+    print("Is the stack empty? ", stack.isEmpty())
+    print("Adding 0 to 10 in the stack...")
+    for i in range(10):
+        stack.push(i)
+    print(stack)
+    print("Stack size: ", stack.sizeStack())
+    print("Stack peek : ", stack.peek())
+    print("Pop...", stack.pop())
+    print("Stack peek: ", stack.peek())
+    print("Is the stack empty? ", stack.isEmpty())
+    print(stack)

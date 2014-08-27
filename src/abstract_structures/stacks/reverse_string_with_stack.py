@@ -1,30 +1,31 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
 
-import sys
-import stack
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+''' Uses a stack to reverse a string '''
+
+from stack import Stack
 
 def reverse_string_with_stack(str1):
-  ''' Uses a stack to reverse a string '''
-  s = stack.Stack()
+
+  s = Stack()
   revStr = ''
+
   for c in str1:
     s.push(c)
+
   while not s.isEmpty():
     revStr += s.pop()
-  return revStr
-  
 
-def test_reverse_string_with_stack():
-    str1 = 'Buffy is a Slayer!'
-    assert(reverse_string_with_stack(str1) == '!reyalS a si yffuB')
-    print('Tests passed!')
+  return revStr
+
 
 
 if __name__ == '__main__':
-    test_reverse_string_with_stack()   
-
+  str1 = 'Buffy is a Slayer!'
+  print(str1)
+  print(reverse_string_with_stack(str1))
 
 
 

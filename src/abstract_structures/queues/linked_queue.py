@@ -19,7 +19,7 @@ class LinkedQueue(object):
 
 
     def isEmpty(self):
-        return bool(self.head)
+        return not bool(self.head)
 
 
     def dequeue(self):

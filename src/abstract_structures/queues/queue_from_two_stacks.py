@@ -54,7 +54,7 @@ class Queue(object):
             return "Queue empty!"
 
     def isEmpty(self):
-        return not (bool(self.in_stack) or bool(self.out_stack))
+        return not ((bool(self.in_stack) or bool(self.out_stack)))
 
 
 

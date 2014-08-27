@@ -1,40 +1,53 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+
+''' define the stack class '''
+
 
 class Stack(object):
-    ''' define the stack class '''
     def __init__(self):
         self.items = []
 
     def isEmpty(self):
-        return self.items == []
+        return not bool(self.items)
 
-    def push(self, items):
-        self.items.append(items)
+    def push(self, value):
+        self.items.append(value)
 
     def pop(self):
-        return self.items.pop()
-        
-    def peek(self):
-        return self.items[-1]
+        value = self.items.pop()
+        if value:
+            return value
+        else:
+            print("Stack is empty.")
 
     def size(self):
         return len(self.items)
 
-   
-        
+    def peek(self):
+        if self.items:
+            return self.items[-1]
+        else:
+            print('Stack is empty.')
 
-def main():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    print(stack.size())    
-    print(stack.peek())   
-    print(stack.pop())  
-    print(stack.peek())    
+    def __repr__(self):
+        return '{}'.format(self.items)
+
+
 
 
 if __name__ == '__main__':
-    main()
+    stack = Stack()
+    print("Is the stack empty? ", stack.isEmpty())
+    print("Adding 0 to 10 in the stack...")
+    for i in range(10):
+        stack.push(i)
+    print("Stack size: ", stack.size())
+    print("Stack peek : ", stack.peek())
+    print("Pop...", stack.pop())
+    print("Stack peek: ", stack.peek())
+    print("Is the stack empty? ", stack.isEmpty())
+    print(stack)

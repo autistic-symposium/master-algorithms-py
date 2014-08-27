@@ -1,14 +1,26 @@
-from stack import Stack, Node
+#!/usr/bin/python
+
+__author__ = "Mari Wahl"
+__email__ = "marina.w4hl@gmail.com"
+
+
+""" Implement the 'towers of hanoi'"""
+
+from linked_stack import Stack, Node
 
 
 def moveTop(s1, s3):
+
     s3.append(s1.pop())
 
+
 def moveDisks(n, s1, s3, s2):
-    if n < 1: return    
+
+    if n < 1: return
     moveDisks(n - 1, s1, s2, s3)
     moveTop(s1, s3)
     moveDisks(n -1, s2, s3, s1)
+
 
 
 def towersOfHanoi(n):
@@ -18,9 +30,12 @@ def towersOfHanoi(n):
     print('The first stick is {0} and the third stick has {1}'.format(s1, s3))
 
     moveDisks(n, s1, s3, s2)
-    
+
     print('The first stick is {0} and the third stick has {1}'.format(s1, s3))
+
     return s3
-   
+
+
+
 if __name__ == '__main__':
-    towersOfHanoi(6)          
+    towersOfHanoi(6)

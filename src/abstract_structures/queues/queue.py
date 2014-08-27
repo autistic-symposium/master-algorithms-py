@@ -10,7 +10,7 @@ class Queue(object):
         self.items = []
 
     def isEmpty(self):
-        return bool(self.items)
+        return not bool(self.items)
 
     def enqueue(self, item):
         self.items.insert(0, item)
