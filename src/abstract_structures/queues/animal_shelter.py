@@ -3,92 +3,108 @@
 __author__ = "Mari Wahl"
 __email__ = "marina.w4hl@gmail.com"
 
-""" A class for an animal shelter"""
+
+""" A class for an animal shelter with two queues"""
+
 
 class Node(object):
-    def __init__(self, name, which):
-        self.name = name
-        self.which = which
-        self.next = next
+    def __init__(self, animalName=None, animalKind=None, pointer=None):
+        self.animalName = animalName
+        self.animalKind = animalKind
+        self.pointer = pointer
         self.timestamp = 0
 
 
 
 class AnimalShelter(object):
     def __init__(self):
-        self.first_cat = None
-        self.first_dog = None
-        self.last_cat = None
-        self.last_dog = None
-        self.counter = 0
+        self.headCat = None
+        self.headDog = None
+        self.tailCat = None
+        self.tailDog = None
+        self.animalNumber = 0
 
 
-    def enqueue(self, name, which):
-        self.counter += 1
-        node = Node(name, which)
-        node.timestamp = self.counter
+    # Queue any animal
 
-        if which == 'cat':
-            if not self.first_cat:
-                self.first_cat = node
-            if self.last_cat:
-                self.last_cat.next = node
-            self.last_cat = node
+    def enqueue(self, animalName, animalKind):
+        self.animalNumber += 1
+        newAnimal = Node(animalName, animalKind)
+        newAnimal.timestamp = self.animalNumber
 
-        if which == 'dog':
-            if not self.first_dog:
-                self.first_dog = node
-            if self.last_dog:
-                self.last_dog.next = node
-            self.last_dog = node
+        if animalKind == 'cat':
+            if not self.headCat:
+                self.headCat = newAnimal
+            if self.tailCat:
+                self.tailCat.pointer = newAnimal
+            self.tailCat = newAnimal
+
+        elif animalKind == 'dog':
+            if not self.headDog:
+                self.headDog = newAnimal
+            if self.tailDog:
+                self.tailDog.pointer = newAnimal
+            self.tailDog = newAnimal
 
 
+    # Dequeue methods
 
     def dequeueDog(self):
-        if self.first_dog:
-            node = self.first_dog
-            self.first_dog = node.next
-            return str(node.name)
-        raise Exception('No Dogs!')
-
+        if self.headDog:
+            newAnimal = self.headDog
+            self.headDog = newAnimal.pointer
+            return str(newAnimal.animalName)
+        else:
+            return 'No Dogs!'
 
 
     def dequeueCat(self):
-        if self.first_cat:
-            node = self.first_cat
-            self.first_cat = node.next
-            return str(node.name)
-        raise Exception('No Cats!')
-
+        if self.headCat:
+            newAnimal = self.headCat
+            self.headCat = newAnimal.pointer
+            return str(newAnimal.animalName)
+        else:
+            return 'No Cats!'
 
 
     def dequeueAny(self):
-        nodecat = self.first_cat
-        nodedog = self.first_dog
-        if nodecat and not nodedog:
+        if self.headCat and not self.headDog:
             return self.dequeueCat()
-        elif nodedog and not nodecat:
+        elif self.headDog and not self.headCat:
             return self.dequeueDog()
-        elif nodedog and nodecat:
-            if nodedog.timestamp < nodecat.timestamp:
+        elif self.headDog and self.headCat:
+            if self.headDog.timestamp < self.headCat.timestamp:
                 return self.dequeueDog()
             else:
                 return self.dequeueCat()
-        raise Exception('No Animals!')
+        else:
+            return ('No Animals!')
 
 
 
+    def _print(self):
+        print("Cats:")
+        cats = self.headCat
+        while cats:
+            print(cats.animalName, cats.animalKind)
+            cats = cats.pointer
+        print("Dogs:")
+        dogs = self.headDog
+        while dogs:
+            print(dogs.animalName, dogs.animalKind)
+            dogs = dogs.pointer
 
-def main():
+
+if __name__ == '__main__':
+
     qs = AnimalShelter()
     qs.enqueue('bob', 'cat')
     qs.enqueue('mia', 'cat')
     qs.enqueue('yoda', 'dog')
     qs.enqueue('wolf', 'dog')
+    qs._print()
 
-    assert(qs.dequeueDog() == 'yoda')
-    assert(qs.dequeueCat() == 'bob')
-    print(qs.dequeueAny() == 'mia')
-
-if __name__ == '__main__':
-    main()
+    print("Deque one dog and one cat...")
+    qs.dequeueDog()
+    qs.dequeueCat()
+    qs._print()
