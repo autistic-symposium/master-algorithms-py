@@ -115,7 +115,7 @@ class NodeBT(object):
                 else:
                     return False
         else:
-            raise Exception('Tree is empty')
+            print('Tree is empty')
 
 
 
@@ -136,14 +136,17 @@ class BinaryTree(object):
 
     def isLeaf(self, value):
         node = self.root._searchForNode(value)
-        return node._isLeaf()
+        if node:
+            return node._isLeaf()
+        else:
+            print "Node not found."
 
     def getNodeLevel(self, item):
         node = self.root._searchForNode(item)
         if node:
             return node.level
         else:
-            raise Exception('Node not found')
+            print('Node not found')
 
     def isRoot(self, value):
         return self.root.item == value
