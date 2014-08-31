@@ -46,7 +46,7 @@ class NodeBT(object):
             self.right = new_node
         else:
             self.left = self.left._addNextNode(value, level_here+1)
-        return self
+        return self ## this is important, because the node return to the main
 
 
     def _searchForNode(self, value):
@@ -99,23 +99,33 @@ class NodeBT(object):
             elif not self.right and self.left:
                  return  self.left._isBalanced()
 
-    def _isBST(self):
+    def _isBST(self, mintree=None, maxtree=None):
         ''' Find whether the tree is a BST, inorder '''
         if self.item:
+            if not mintree:
+                mintree = self.item
+            if not maxtree:
+                maxtree = self.item
+
             if self._isLeaf():
                 return True
             elif self.left:
-                if self.left.item < self.item:
-                    return self.left._isBST()
+                if self.left.item < self.item and mintree > self.left.item:
+                    mintree = self.left.item
+                    return self.left._isBST(mintree, maxtree)
                 else:
                     return False
             elif self.right:
-                if self.right.item > self.item:
-                    return self.right._isBST()
+                if self.right.item > self.item and maxtree < self.right.item:
+                    maxtree = self.right.item
+                    return self.right._isBST(mintree, maxtree)
                 else:
                     return False
         else:
             print('Tree is empty')
+
+
+
 
 
 
@@ -141,6 +151,7 @@ class BinaryTree(object):
         else:
             print "Node not found."
 
+
     def getNodeLevel(self, item):
         node = self.root._searchForNode(item)
         if node:
@@ -148,17 +159,35 @@ class BinaryTree(object):
         else:
             print('Node not found')
 
+
     def isRoot(self, value):
         return self.root.item == value
+
 
     def getHeight(self):
         return self.root._getMaxHeight()
 
+
     def isBalanced(self):
         return self.root._isBalanced()
 
+
     def isBST(self):
         return self.root._isBST()
+
+
+    def preorder(self):
+        current = self.root
+        nodes, stack = [], []
+        while stack or current:
+            if current:
+                nodes.append(current.item) # thats what change
+                stack.append(current)
+                current = current.left
+            else:
+                current = stack.pop()
+                current = current.right
+        return nodes
 
 
 
@@ -174,3 +203,4 @@ if __name__ == '__main__':
     print "Whats the tree height? ", bt.getHeight()
     print "Is this tree BST? ", bt.isBST()
     print "Is this tree balanced? ", bt.isBalanced()
+    print (bt.preorder())

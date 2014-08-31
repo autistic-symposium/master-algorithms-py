@@ -24,6 +24,8 @@ def find_ancestor(path, low_value, high_value):
                 return current_value
         elif low_value <= current_value <= high_value:
             return current_value
+        else:
+            return None # this is probably never touched
 
 
 
