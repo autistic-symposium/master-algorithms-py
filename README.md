@@ -68,7 +68,7 @@ Further Learning
 [Check out my lessons in numerical methods.](https://github.com/mariwahl/Numerical-Methods-for-Physics)
 
 
-[Check out the Friday Lessons from Hacker School](https://github.com/mariwahl/HackerSchool-Small-Problems)
+[Neat Problems in Python and Flask](https://github.com/mariwahl/Neat-Problems-in-Python-and-Flask)
 
 
 
