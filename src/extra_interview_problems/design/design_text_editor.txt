@@ -1,0 +1,8 @@
+			DESIGN A TEXT EDITOR
+		-------------------------------------
+
+- Classes to set up the text editor: classes for the GUI, formatting, saving/loading files, handling input.
+
+- Use inheritance where it makes sense.
+
+- Use design patterns (such as MVC, listener, singleton).
