@@ -6,6 +6,8 @@ This repository contains a comprehensive study of Algorithms & Data Structures i
 ![](http://i.imgur.com/fYPlwpQ.png)
 
 
+If you like what you see, please make a reference of my work using my twitter handle [_b_t_3_](https://twitter.com/_b_t_3_) or my [website](http://bt3gl.github.io/index.html). Thank you!
+
 Source Code Structure
 ---------------------
 
@@ -72,14 +74,10 @@ Further Learning
 
 
 
-Be Social!
-----------
-Please drop me a line or submit a patch if you have any suggestions!
-
-
 
 License
 ----------
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
 
