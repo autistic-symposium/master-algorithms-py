@@ -61,7 +61,7 @@ src/
 
 Installation
 ------------
-The snippets are designed to be used individually for learning. If you want  to install all the libraries we mention here in your [virtualenv](https://coderwall.com/p/8-aeka):
+The snippets are designed to be used individually. However, If you want  to install every mentioned libraries in your [virtualenv](https://coderwall.com/p/8-aeka), do this:
 
 ```
 $ pip install -r requirements.txt
