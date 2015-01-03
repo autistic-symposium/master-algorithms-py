@@ -59,6 +59,15 @@ src/
 
 
 
+Installation
+------------
+The snippets are designed to be used individually for learning. If you want  to install all the libraries we mention here in your [virtualenv](https://coderwall.com/p/8-aeka):
+
+```
+$ pip install -r requirements.txt
+```
+
+
 
 Further Learning
 -----------------
@@ -70,7 +79,6 @@ Further Learning
 
 
 [Neat Problems in Python and Flask](https://github.com/mariwahl/Neat-Problems-in-Python-and-Flask)
-
 
 
 
