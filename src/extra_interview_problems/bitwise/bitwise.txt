@@ -1,4 +1,4 @@
-				BITWISE
+				BIT-WISE
 			----------------------
 
 1. To find a number:
@@ -30,4 +30,4 @@
 
 6. Is power of 2?
 	just do x&(x-1).
-	if 0 --> yes! 
+	if 0 --> yes!
