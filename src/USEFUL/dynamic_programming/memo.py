@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+
+__author__ = "bt3"
 
 
 from functools import wraps
@@ -20,7 +20,7 @@ def memo(func):
 def find_fibonacci_seq_rec(n):
     ''' implements the nth fibonacci value in a recursive exponential runtime '''
     if n < 2: return n
-    return find_fibonacci_seq_rec(n - 1) + find_fibonacci_seq_rec(n - 2)   
+    return find_fibonacci_seq_rec(n - 1) + find_fibonacci_seq_rec(n - 2)
 
 def test_memo():
     n = 50
@@ -31,9 +31,9 @@ def test_memo():
 
 if __name__ == '__main__':
     test_memo()
-    
-    
-   
+
+
+
 
 
 

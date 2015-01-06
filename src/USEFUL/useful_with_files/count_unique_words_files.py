@@ -1,4 +1,8 @@
 #!/usr/bin/python
+
+__author__ = "bt3"
+
+
 import collections
 import string
 import sys

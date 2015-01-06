@@ -1,6 +1,7 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+
+__author__ = "bt3"
 
 
 
@@ -46,8 +47,8 @@ def remove_blank_lines():
         lines = read_data(filename)
         if lines:
             write_data(lines, filename)
-            
-            
+
+
 if __name__ == '__main__':
     remove_blank_lines()
 

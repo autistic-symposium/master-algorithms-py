@@ -1,11 +1,12 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/python
+
+__author__ = "bt3"
+
+''' a simple example of how to time a function '''
 
 import time
 
 def sumOfN2(n):
-    ''' a simple example of how to time a function '''
     start = time.time()
     theSum = 0
     for i in range(1,n+1):

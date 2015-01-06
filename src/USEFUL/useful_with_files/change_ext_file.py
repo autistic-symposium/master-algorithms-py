@@ -1,6 +1,8 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+
+__author__ = "bt3"
+
 
 import os
 import sys
@@ -12,12 +14,12 @@ def change_file_ext():
         print("Usage: change_ext.py filename.old_ext 'new_ext'")
         sys.exit()
 
-    name = os.path.splitext(sys.argv[1])[0] + "." + sys.argv[2] 
+    name = os.path.splitext(sys.argv[1])[0] + "." + sys.argv[2]
     print (name)
-	
+
     try:
-        shutil.copyfile(sys.argv[1], name)			
-    except OSError as err:	
+        shutil.copyfile(sys.argv[1], name)
+    except OSError as err:
         print (err)
 
 

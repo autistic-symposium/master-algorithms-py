@@ -11,7 +11,7 @@ This repository contains a comprehensive study on Algorithms & Data Structures i
 
 src/
 
-├── abstract_structures
+└── abstract_structures
 
     ├── heap
 
@@ -21,33 +21,19 @@ src/
 
     └── stacks
 
-├── builtin_structures
-
-    ├── arrays_and_strings
+└── builtin_structures
 
     ├── dicts
 
-    ├── lists
+    ├── lists_and_strings
 
     ├── numbers
 
     ├── sets
 
-    ├── strings
-
     └── tuples
 
-├── graphs_and_trees
-
-    ├── trees
-
-├── programming_paradigms
-
-    ├── dynamic_programming
-
-    ├── modules
-
-    └── oop
+└── trees
 
 └── searching_and_sorting
 
@@ -56,6 +42,8 @@ src/
     ├── sorting
 
 └── Extra Interview Problems
+
+└── USEFUL
 
 
 ----

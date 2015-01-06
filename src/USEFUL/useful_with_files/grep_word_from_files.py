@@ -1,6 +1,7 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+
+__author__ = "bt3"
 
 import sys
 
@@ -13,7 +14,7 @@ def grep_word_from_files():
                 if word in line:
                     print("{0}:{1}:{2:.40}".format(filename, lino, line.rstrip()))
 
-            
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: grep_word_from_files.py word infile1 [infile2...]")

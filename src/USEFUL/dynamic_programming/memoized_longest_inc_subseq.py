@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
 
+__author__ = "bt3"
 
 from itertools import combinations
 from bisect import bisect
@@ -14,7 +13,7 @@ def naive_longest_inc_subseq(seq):
         for sub in combinations(seq, length):
             if list(sub) == sorted(sub):
                 return len(sub)
-                       
+
 
 def longest_inc_subseq1(seq):
     ''' an iterative algorithm for the longest increasing subsequence problem '''
@@ -24,8 +23,8 @@ def longest_inc_subseq1(seq):
         if idx == len(end): end.append(val)
         else: end[idx] = val
     return len(end)
-    
-    
+
+
 def longest_inc_subseq2(seq):
     ''' another iterative algorithm for the longest increasing subsequence problem '''
     L = [1] * len(seq)
@@ -51,17 +50,17 @@ def memoized_longest_inc_subseq(seq):
 @benchmark
 def test_naive_longest_inc_subseq():
     print(naive_longest_inc_subseq(s1))
-    
+
 benchmark
-def test_longest_inc_subseq1():   
+def test_longest_inc_subseq1():
     print(longest_inc_subseq1(s1))
 
 @benchmark
-def test_longest_inc_subseq2():  
+def test_longest_inc_subseq2():
     print(longest_inc_subseq2(s1))
- 
+
 @benchmark
-def test_memoized_longest_inc_subseq(): 
+def test_memoized_longest_inc_subseq():
     print(memoized_longest_inc_subseq(s1))
 
 
@@ -73,9 +72,9 @@ if __name__ == '__main__':
     test_longest_inc_subseq1()
     test_longest_inc_subseq2()
     test_memoized_longest_inc_subseq()
-    
-    
-   
+
+
+
 
 
 
