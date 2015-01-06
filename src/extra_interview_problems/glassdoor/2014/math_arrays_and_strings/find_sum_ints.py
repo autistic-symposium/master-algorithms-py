@@ -1,7 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-'''Design an algorithm to find all pairs of integers within an array
-    which sum to a specified value.'''
+__author__ = "bt3"
+
+
 
 from collections import defaultdict
 

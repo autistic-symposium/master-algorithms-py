@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 
 def binary_search_rec(array, item, lo=0, hi = None):

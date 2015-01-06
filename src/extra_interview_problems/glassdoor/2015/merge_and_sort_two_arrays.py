@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 '''
 You have two arrays with N integers in them. Merge those arrays using a

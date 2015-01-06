@@ -1,4 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 ''' Find how many bits a int has:
     1) Start with a mask of 1

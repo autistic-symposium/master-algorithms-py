@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 '''
 Write a function to find the nth Fibonacci number.

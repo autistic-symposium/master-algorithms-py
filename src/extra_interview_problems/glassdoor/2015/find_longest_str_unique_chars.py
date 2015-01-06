@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 '''
 given a string, find longest string with unique characters

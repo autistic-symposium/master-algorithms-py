@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 '''
 find the sum of two integers represented as strings,

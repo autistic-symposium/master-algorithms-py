@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 from collections import defaultdict
 

@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
+
 from collections import Counter
 
 def check_if_ransom_note(magazines, note):

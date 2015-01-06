@@ -1,4 +1,7 @@
-#!/bin/python3
+#!/usr/bin/env python3
+
+__author__ = "bt3"
+
 
 from functools import lru_cache
 

@@ -1,6 +1,7 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 import math
 import random

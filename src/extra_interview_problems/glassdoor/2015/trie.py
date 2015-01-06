@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 '''
 Implement a trie. (Write the API and code for inserting into a trie).

@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 ''' This method returns the number of bits that are necessary to change to convert two
     numbers A and B:

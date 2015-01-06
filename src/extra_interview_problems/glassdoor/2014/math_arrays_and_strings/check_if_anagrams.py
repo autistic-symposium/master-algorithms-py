@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 """ find whether two words are anagrams. Since sets do not count occurency, and sorting is O(nlogn)
 we will use hash tables. We scan the first string and add all the character occurences. Then we

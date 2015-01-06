@@ -1,4 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 '''
     swapping values in place without extra memory

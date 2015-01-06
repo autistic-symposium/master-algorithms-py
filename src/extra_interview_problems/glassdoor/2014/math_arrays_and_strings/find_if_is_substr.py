@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 def isSubstr(s1, s2):
     if s1 in s2 or s2 in s1: return True

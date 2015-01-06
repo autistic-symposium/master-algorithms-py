@@ -1,4 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 ''' Clear a bit in a binary number.
     Like the reverse of set bit:

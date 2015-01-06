@@ -1,4 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 ''' Get a bit in a binary number:
     1) Shifts 1 over by i bits

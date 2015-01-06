@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 ''' Write code to generate all possible case permutations of a given
 lower-cased string

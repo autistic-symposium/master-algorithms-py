@@ -1,25 +1,27 @@
-class Queue():
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
+class Queue(object):
     def __init__(self):
-        self.in_ = []
-        self.out = []
+        self.enq = []
+        self.deq = []
 
-    def enqueue(self, item):
-        self.in_.append(item)
+    def enqueue(self, value):
+        self.enq.append(value)
 
-    def deque(self):
-        if not self.out:
-            while self.in_:
-                self.out.append(self.in_.pop())
+    def dequeue(self):
+        if not self.deq:
+            while self.enq:
+                self.deq.append(self.enq.pop())
+        return self.deq.pop()
 
-        return self.out.pop()
+if __name__ == '__main__':
+    q = Queue()
 
+    for i in range(1,10):
+        q.enqueue(i)
 
-
-
-
-
-q = Queue()
-for i in range(10):
-    q.enqueue(i)
-for i in range(10):
-    print(q.deque())
+    for i in range(1, 10):
+        print q.dequeue()

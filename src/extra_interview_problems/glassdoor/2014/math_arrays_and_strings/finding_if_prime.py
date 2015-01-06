@@ -1,6 +1,8 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
 
 import math
 import random
@@ -13,7 +15,7 @@ def finding_prime(number):
         if num % x == 0:
             return False
     return True
-       
+
 
 def finding_prime_sqrt(number):
     ''' find whether a number is prime as soon as it rejects all candidates up to sqrt(n) '''

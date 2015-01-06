@@ -1,9 +1,0 @@
-Another way:
-
-Store two stacks, one of which contains all of the items in the stack and one of which is a stack of minima.
-
-To push an element, push it onto the first stack. Check whether it is smaller than the top item on the second stack, if so, push it onto the second stack.
-
-To pop an item, pop it from the first stack. If it is the top element, simply return the element on the top of the second stack.
-
-O(1)...

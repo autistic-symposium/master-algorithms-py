@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+__author__ = "bt3"
+
+
+
 import collections
 
 def find_if_unique_chars(word):
@@ -13,11 +17,13 @@ def find_if_unique_chars(word):
     unique = True
 
     counter = collections.Counter()
+
     for c in word:
         if not counter[c]:
             counter[c] += 1
         else:
             unique = False
+
     return unique
 
 

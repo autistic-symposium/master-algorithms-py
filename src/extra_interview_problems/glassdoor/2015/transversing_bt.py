@@ -1,4 +1,6 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 '''
 Reconstruct a binary tree given two sequences of node traversals,

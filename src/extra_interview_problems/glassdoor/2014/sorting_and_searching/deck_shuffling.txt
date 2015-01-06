@@ -1,3 +1,0 @@
-How to shuffle an array or a deck of cards so each shuffle has the same probability?
-
-go thru the array shuffling each element with any random element after that.

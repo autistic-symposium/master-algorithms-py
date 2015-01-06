@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-__author__ = "bt3gl"
+__author__ = "bt3"
 
 
 from telnetlib import Telnet

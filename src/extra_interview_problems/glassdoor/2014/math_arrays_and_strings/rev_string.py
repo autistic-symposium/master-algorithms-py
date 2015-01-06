@@ -1,4 +1,8 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
 
 ''' Reverting a string '''
 

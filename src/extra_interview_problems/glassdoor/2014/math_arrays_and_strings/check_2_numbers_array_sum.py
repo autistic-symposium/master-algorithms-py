@@ -1,5 +1,6 @@
-#!/bin/python
+#!/usr/bin/env python
 
+__author__ = "bt3"
 
 """
 Given an integer x and an unsorted array of integers, describe an algorithm to

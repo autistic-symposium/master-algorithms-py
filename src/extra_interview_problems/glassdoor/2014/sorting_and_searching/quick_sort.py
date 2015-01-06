@@ -1,17 +1,27 @@
-#!/bin/python
+#!/usr/bin/env python
 
-''' Quick sort an array '''
+__author__ = "bt3"
 
 
-def quick_sort(arr):
-    if len(arr) < 2: return arr
-    piv = len(arr)//2
-    left = [x for i, x in enumerate(arr) if x <= arr[piv] and i != piv]
-    right = [x for i, x in enumerate(arr) if x > arr[piv] and i != piv]
-    return quick_sort(left) + [arr[piv]] + quick_sort(right)
+def qs(array):
+    '''
+    >>> qs([4,1,6,2,7,9,3])
+    [1, 2, 3, 4, 6, 7, 9]
+    '''
+    if len(array) < 2:
+        return array
 
+    piv = len(array)//2
+    piv_element = array[piv]
+    new_array = array[:piv] + array[piv+1:]
+
+    left  = [a for a in new_array if a <= piv_element]
+    right = [a for a in new_array if a > piv_element]
+
+
+    return qs(left) + [array[piv]] + qs(right)
 
 
 if __name__ == '__main__':
-    arr = [8, 5, 2, 6, 1, 2, 9, 4]
-    print(quick_sort(arr))
+    import doctest
+    doctest.testmod()

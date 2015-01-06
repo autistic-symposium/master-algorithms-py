@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 '''
 Given two strings, write a function
@@ -31,6 +34,15 @@ def lcp(s1, s2):
         p1 += 1
 
     return len(lcp)
+
+def lcppy(x):
+    '''
+    >>> lcppy([[3,2,1], [3,2,1,4,5]])
+    [3, 2, 1]
+    '''
+
+    import os
+    return os.path.commonprefix(x)
 
 if __name__ == '__main__':
     import doctest

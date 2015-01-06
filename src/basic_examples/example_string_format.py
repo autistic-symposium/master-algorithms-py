@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
 foo = 'foo'
 bar = 'bar'
 

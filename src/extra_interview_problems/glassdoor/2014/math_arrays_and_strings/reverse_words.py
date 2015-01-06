@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+__author__ = "bt3"
+
+
+
 def invert_word(word):
     """
     >>> invert_word('stripe is awesome')

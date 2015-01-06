@@ -1,4 +1,6 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 ''' Generate all permutations of an alphanumeric string '''
 

@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 ''' Given a real number between 0 and 1 (eg: 0.72), this method print the binary
     representation. If the Number cannot be represented accurately in binary, with at

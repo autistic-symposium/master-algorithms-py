@@ -1,4 +1,7 @@
-#!/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 ''' Determine if an Array of integers contains 3 numbers that sum to 0 '''
 

@@ -1,5 +1,6 @@
-#!/usr/bin python
+#!/usr/bin/env python
 
+__author__ = "bt3"
 
 
 def reversing_words_setence_py(s):

@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
+
 def beating_stock(array):
 
     imin = 0

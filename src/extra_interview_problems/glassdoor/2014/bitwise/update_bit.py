@@ -1,4 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 ''' This method merges set bit and clean bit:
     1) first clear the bit at i using a mask such as 1110111

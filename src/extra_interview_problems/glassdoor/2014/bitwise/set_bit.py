@@ -1,4 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
+
+
 ''' Set a bit in a binary number:
     1) Shifts 1 over by i bits
     2) make an OR with the number, only the value at bit i will change and all the others bit
