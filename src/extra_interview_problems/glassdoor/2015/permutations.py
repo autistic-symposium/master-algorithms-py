@@ -2,15 +2,22 @@
 
 ''' Generate all permutations of an alphanumeric string '''
 
-    def get_permutations(word):
-        if len(word) < 2:
-            yield word
-            return
+def permutations(word):
+    '''
+    >>> permutations('abc')
+    ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+    >>> permutations('')
+    ''
+    '''
+    if len(word) < 2:
+        return word
 
-        for i in range(len(word)):
-            rest = word[:i] + word[i+1:]
-            for tail in get_permutations(rest):
-                yield word[i] + tail
+    res = []
+    for i in range(len(word)):
+        rest = word[:i] + word[i+1:]
+        for p in permutations(rest):
+            res.append(word[i] + p)
+    return res
 
 
 

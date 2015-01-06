@@ -1,6 +1,5 @@
 #!/bin/python
 
-''' Determine if an Array of integers contains 3 numbers that sum to 0 '''
 
 from collections import defaultdict
 
