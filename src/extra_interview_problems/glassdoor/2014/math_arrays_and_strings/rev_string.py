@@ -12,5 +12,5 @@ def revert(string):
 
 
 if __name__ == '__main__':
-    string = "Google is fun!"
+    string = "buffy is fun!"
     print(revert(string))

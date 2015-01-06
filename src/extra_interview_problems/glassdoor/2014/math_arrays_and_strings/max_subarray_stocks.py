@@ -25,13 +25,7 @@ def beating_stock(array):
 
 
 
-
-
-
-
-
-
-
-array = [7, 2, 3, 6, 5, 8, 5, 3, 4]
-print(array)
-print("The best profit is %d, buying at %d, selling at %d." %(beating_stock(array)))
+if __name__ == '__main__':
+    array = [7, 2, 3, 6, 5, 8, 5, 3, 4]
+    print(array)
+    print("Profit: %d, buying at %d, selling at %d." %(beating_stock(array)))

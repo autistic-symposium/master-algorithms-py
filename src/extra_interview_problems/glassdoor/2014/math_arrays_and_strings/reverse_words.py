@@ -6,8 +6,8 @@ __author__ = "bt3"
 
 def invert_word(word):
     """
-    >>> invert_word('stripe is awesome')
-    'awesome is stripe'
+    >>> invert_word('buffy is awesome')
+    'awesome is buffy'
     """
     new_word = []
 
@@ -21,5 +21,3 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    #word = 'stripe is awesome'
-    #print invert_word(word)

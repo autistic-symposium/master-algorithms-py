@@ -3,9 +3,9 @@
 __author__ = "bt3"
 
 
-''' Given a real number between 0 and 1 (eg: 0.72), this method print the binary
-    representation. If the Number cannot be represented accurately in binary, with at
-    most 32 chars, print error:
+''' Given a real number between 0 and 1 (eg: 0.72), this method print the
+    binary representation. If the Number cannot be represented accurately
+    in binary, with at exit most 32 chars, print error:
 '''
 
 def get_float_rep(num):

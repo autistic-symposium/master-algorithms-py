@@ -6,43 +6,28 @@ __author__ = "bt3"
 from collections import defaultdict
 
 
-def find_unique_number(arr):
-    table = defaultdict(int)
-    total = 0
-    for i in arr:
-        if table[i]:
-            total -= i
+def find_unique_number(array):
+    '''
+    >>> find_unique_number([1, 3, 6, 1, 5, 6, 9, 3, 7])
+    [1, 6, 3]
+    >>> find_unique_number([1, 3, 5, 6, 9, 7])
+    []
+    '''
+
+    table = defaultdict()
+    total = []
+
+    for i in array:
+        if i in table:
+            total.append(i)
         else:
-            total += i
-            table[i] +=1
+            table[i] = 1
+
     return total
 
-
-def find_unique_number_xor(arr):
-    xor = 0
-    for item in arr:
-        xor ^= item
-    return xor
-
-
-def find_unique_char(s):
-    if len(s) < 2: return True
-    for i, c in enumerate(s):
-        for j in s[i+1:]:
-            if j == c:
-                return False
-    return True
 
 
 
 if __name__ == '__main__':
-    arr = [1, 3, 5, 6, 1, 5, 6, 3, 7,]
-    print(find_unique_number(arr))
-    print(find_unique_number_xor(arr))
-    s1 = 'abcdefg'
-    s2 = 'buffy'
-    s3 = ''
-    print
-    print(find_unique_char(s1))
-    print(find_unique_char(s2))
-    print(find_unique_char(s3))
+    import doctest
+    doctest.testmod()
