@@ -1,5 +1,4 @@
 __author__ = "bt3"
-__email__ = "bt33gl@gmail.com"
 
 
 """ need to keep track of min and max!!!"""
@@ -38,7 +37,7 @@ def isBST(bt, mintree=None, maxtree=None):
     else:
         right = True
 
-    return  left or right
+    return  left and right
 
 
 

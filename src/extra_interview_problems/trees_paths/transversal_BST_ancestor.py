@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 __author__ = "bt3"
-__email__ = "bt33gl@gmail.com"
 
 
 ''' find the lowest ancestor in a BST '''
