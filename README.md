@@ -1,14 +1,12 @@
-Python and Algorithms & Data Structures
-=======================================
+# Python and Algorithms & Data Structures
 
 This repository contains a comprehensive study on Algorithms & Data Structures in Python, including an ["e-book" I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
 
 ![](http://i.imgur.com/XruamX1.png)
 
 
-
-Source Code Structure
----------------------
+---
+## Source Code Structure
 
 
 src/
@@ -57,10 +55,12 @@ src/
 
     ├── sorting
 
+└── Extra Interview Problems
 
 
-Installation
-------------
+----
+## Installation
+
 The snippets are designed to be used individually. However, If you want  to install all fo the libraries in your [virtualenv](https://coderwall.com/p/8-aeka), do this:
 
 ```
@@ -68,22 +68,28 @@ $ pip install -r requirements.txt
 ```
 
 
+----
+## Further Learning
 
-Further Learning
------------------
-[Check out my lessons in machine learning.] (https://github.com/mariwahl/Machine-Learning-Lessons)
+### My Work:
 
-
-
-[Check out my lessons in numerical methods.](https://github.com/mariwahl/Numerical-Methods-for-Physics)
-
-
-[Neat Problems in Python and Flask](https://github.com/mariwahl/Neat-Problems-in-Python-and-Flask)
+* [Check out my lessons in machine learning.] (https://github.com/mariwahl/Machine-Learning-Lessons)
 
 
 
-License
-----------
+* [Check out my lessons in numerical methods.](https://github.com/mariwahl/Numerical-Methods-for-Physics)
+
+
+* [Neat Problems in Python and Flask](https://github.com/mariwahl/Neat-Problems-in-Python-and-Flask)
+
+### Third Party:
+
+* [Interactive Python](http://interactivepython.org/)
+
+
+----
+## License
+
 When making a reference to my work, please use my twitter handle [_b_t_3_](https://twitter.com/_b_t_3_) or my [website](http://bt3gl.github.io/index.html).
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
