@@ -4,9 +4,9 @@ __author__ = "bt3"
 
 
 
-def invert_word(word):
+def reversing_words(word):
     """
-    >>> invert_word('buffy is awesome')
+    >>> reversing_words('buffy is awesome')
     'awesome is buffy'
     """
     new_word = []
@@ -16,6 +16,28 @@ def invert_word(word):
         new_word.append(word)
 
     return " ".join(new_word)
+
+
+def reversing_words2(s):
+    """
+    >>> reversing_words2('buffy is awesome')
+    'awesome is buffy'
+    """
+    words = s.split()
+    return ' '.join(reversed(words))
+
+
+def reversing_words3(s):
+    """
+    >>> reversing_words('buffy is awesome')
+    'awesome is buffy'
+    """
+    words = s.split(' ')
+    words.reverse()
+    return ' '.join(words)
+
+
+
 
 if __name__ == '__main__':
     import doctest

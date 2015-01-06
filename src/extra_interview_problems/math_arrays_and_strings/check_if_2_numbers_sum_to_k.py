@@ -17,16 +17,16 @@ Check whether any element of the array appears in the BST.
 It takes O(nlog n) times two.
 """
 
-def check_sum_hash_table(array, k):
+from collections import defaultdict, Counter
+
+def check_sum(array, k):
     '''
-    >>> check_sum_hash_table([3, 2, 6, 7, 9, 1], 8)
+    >>> check_sum([3, 2, 6, 7, 9, 1], 8)
     [(6, 2), (1, 7)]
-    >>> check_sum_hash_table([5, 2, 6, 7, 9, 1], 4)
+    >>> check_sum([5, 2, 6, 7, 9, 1], 4)
     []
     >>>
     '''
-
-    from collections import defaultdict
 
     dict = defaultdict()
     res = []
@@ -37,6 +37,32 @@ def check_sum_hash_table(array, k):
             del dict[k-i]
         else:
             dict[i] = 1
+
+    return res
+
+
+def check_sum2(array, k):
+    '''
+    >>> check_sum2([1, 4, 2, 7, 1, 3, 10, 15, 3, 1], 6)
+    set([(3, 3)])
+    >>> check_sum2([1, 4, 2, 7, 1, 3, 10, 15, 3, 1], 0)
+    set([])
+    '''
+
+    dict = Counter()
+    res = set()
+
+    for i in array:
+        dict[i] += 1
+
+    for i in array:
+        if dict[k-i] > 0:
+            if i == k-i and dict[k-i] > 1:
+                    res.add((i, k-i))
+                    dict[k-i] -= 2
+            elif i == k-i:
+                res.add((i, k-i))
+                dict[k-i] -= 1
 
     return res
 
