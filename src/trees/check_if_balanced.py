@@ -1,5 +1,6 @@
-__author__ = "bt3"
+#!/usr/bin/env python
 
+__author__ = "bt3"
 
 from binary_search_tree import BST, Node
 from binary_tree import BT, Node
