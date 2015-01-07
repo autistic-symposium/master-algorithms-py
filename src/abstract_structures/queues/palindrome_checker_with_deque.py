@@ -1,17 +1,19 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
+
+
+""" Using our deque class and Python's deque class """
+
 
 import string
 import collections
 
 from deque import Deque
 
+
 STRIP = string.whitespace + string.punctuation + "\"'"
 
-
-""" Using our deque class and Python's deque class """
 def palindrome_checker_with_deque(str1):
 
     d1 = Deque()

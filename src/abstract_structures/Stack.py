@@ -32,6 +32,21 @@ class Stack(object):
         else:
             return 'No min value for empty list.'
 
+    def size(self):
+        return len(self.content)
+
+    def isEmpty(self):
+        return not bool(self.content)
+
+    def peek(self):
+        if self.content:
+            return self.content[-1]
+        else:
+            print('Stack is empty.')
+
+
+    def __repr__(self):
+        return '{}'.format(self.content)
 
 
 if __name__ == '__main__':

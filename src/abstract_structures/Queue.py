@@ -17,11 +17,24 @@ class Queue(object):
                 self.deq.append(self.enq.pop())
         return self.deq.pop()
 
+    def isEmpty(self):
+        return not (self.enq + self.deq)
+
+    def size(self):
+        return len(self.enq) + len(self.deq)
+
 if __name__ == '__main__':
     q = Queue()
 
     for i in range(1,10):
         q.enqueue(i)
 
+    assert(q.isEmpty() == False)
+
+    assert(q.size() == 9)
+
     for i in range(1, 10):
         print q.dequeue()
+
+    assert(q.isEmpty() == True)
+

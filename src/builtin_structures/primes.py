@@ -8,6 +8,7 @@ find prime factors of a number.
 '''
 
 import math
+import random
 
 def find_prime_factors(n):
     '''
@@ -28,6 +29,15 @@ def is_prime(n):
         if (n % j) == 0:
             return False
     return True
+
+
+''' return a n-bit prime '''
+def generate_prime(number=3):
+    while 1:
+        p = random.randint(pow(2, number-2), pow(2, number-1)-1)
+        p = 2 * p + 1
+        if find_prime_factors(p):
+            return p
 
 
 

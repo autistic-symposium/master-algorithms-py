@@ -1,7 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
 
 ''' a class for a double ended queue (also inefficient) '''
 

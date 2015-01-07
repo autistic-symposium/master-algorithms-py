@@ -1,14 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
 
 ''' A class for a linked list that has the nodes in a FIFO order (such as a queue)'''
 
 
 from node import Node
-
-
 
 class LinkedListFIFO(object):
 
@@ -17,32 +14,24 @@ class LinkedListFIFO(object):
         self.length = 0
         self.tail = None # this is different from ll lifo
 
-
-    # print each node's value, starting from the head
     def _printList(self):
         node = self.head
         while node:
             print(node.value)
             node = node.pointer
 
-    # add a node in the first position
-    # read will never be changed again while not empty
     def _addFirst(self, value):
         self.length = 1
         node = Node(value)
         self.head = node
         self.tail = node
 
-    # delete a node in the first position, ie
-    # when there is no previous node
     def _deleteFirst(self):
         self.length = 0
         self.head = None
         self.tail = None
         print('The list is empty.')
 
-    # add a node in a position different from head,
-    # ie, in the end of the list
     def _add(self, value):
         self.length += 1
         node = Node(value)
@@ -50,15 +39,12 @@ class LinkedListFIFO(object):
             self.tail.pointer = node
         self.tail = node
 
-
-    # add nodes in general
     def addNode(self, value):
         if not self.head:
             self._addFirst(value)
         else:
             self._add(value)
 
-    # locate node with some index
     def _find(self, index):
         prev = None
         node = self.head
@@ -69,7 +55,6 @@ class LinkedListFIFO(object):
             i += 1
         return node, prev, i
 
-    # delete nodes in general
     def deleteNode(self, index):
         if not self.head or not self.head.pointer:
             self._deleteFirst()
@@ -85,9 +70,6 @@ class LinkedListFIFO(object):
                     self.tail = prev
             else:
                 print('Node with index {} not found'.format(index))
-
-
-
 
 
 if __name__ == '__main__':

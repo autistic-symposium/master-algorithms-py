@@ -1,6 +1,6 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 import heapq
 
@@ -19,9 +19,7 @@ def test_merge_sorted_seq(module_name='this module'):
     seq2 = [2, 3, 4, 5, 6, 7, 9]
     seq3 = seq1 + seq2
     assert(merge_sorted_seqseq1, seq2) == sorted(seq3))
-        
-    s = 'Tests in {name} have {con}!'
-    print(s.format(name=module_name, con='passed'))
+
 
 
 if __name__ == '__main__':

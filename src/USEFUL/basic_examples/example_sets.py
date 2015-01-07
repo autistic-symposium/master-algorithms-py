@@ -1,6 +1,6 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+__author__ = "bt3"
 
 def difference(l1):
     """ return the list with duplicate elements removed """

@@ -1,7 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
 
 ''' Implement a double-linked list, which is very simple, we just need inherits
 from a Linked List Class and  add an attribute for previous.'''
@@ -18,7 +17,6 @@ class dNode(object):
 
 class dLinkList(LinkedListFIFO):
 
-    # print each node's value, starting from tail
     def printListInverse(self):
         node = self.tail
         while node:
@@ -28,8 +26,6 @@ class dLinkList(LinkedListFIFO):
             except:
                 break
 
-    # add a node in a position different from head,
-    # ie, in the end of the list
     def _add(self, value):
         self.length += 1
         node = dNode(value)
@@ -38,14 +34,12 @@ class dLinkList(LinkedListFIFO):
             node.previous = self.tail
         self.tail = node
 
-    # delete a node in some position
     def _delete(self, node):
         self.length -= 1
         node.previous.pointer = node.pointer
         if not node.pointer:
             self.tail = node.previous
 
-    # locate node with some index
     def _find(self, index):
         node = self.head
         i = 0
@@ -64,11 +58,6 @@ class dLinkList(LinkedListFIFO):
                 self._delete(node)
             else:
                 print('Node with index {} not found'.format(index))
-
-
-
-
-
 
 
 if __name__ == '__main__':

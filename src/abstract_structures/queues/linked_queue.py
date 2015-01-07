@@ -1,7 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
 
 ''' Queue acts as a container for nodes (objects) that are inserted and removed according FIFO'''
 

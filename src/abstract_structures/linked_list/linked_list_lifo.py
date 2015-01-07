@@ -1,9 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
-
-
+__author__ = "bt3"
 
 
 ''' Implement a unordered linked list, i.e. a LIFO linked list (like a stack) '''
@@ -16,15 +13,12 @@ class LinkedListLIFO(object):
         self.head = None
         self.length = 0
 
-
-    # print each node's value, starting from the head
     def _printList(self):
         node = self.head
         while node:
             print(node.value)
             node = node.pointer
 
-    # delete a node, given the previous node
     def _delete(self, prev, node):
         self.length -= 1
         if not prev:
@@ -32,14 +26,10 @@ class LinkedListLIFO(object):
         else:
             prev.pointer = node.pointer
 
-    # add a new node, pointing to the previous node
-    # in the head
     def _add(self, value):
         self.length += 1
         self.head = Node(value, self.head)
 
-
-    # locate node with some index
     def _find(self, index):
         prev = None
         node = self.head
@@ -50,7 +40,6 @@ class LinkedListLIFO(object):
             i += 1
         return node, prev, i
 
-    # locate node by value
     def _find_by_value(self, value):
         prev = None
         node = self.head
@@ -63,8 +52,6 @@ class LinkedListLIFO(object):
                 node = node.pointer
         return node, prev, found
 
-
-    # find and delete a node by index
     def deleteNode(self, index):
         node, prev, i = self._find(index)
         if index == i:
@@ -72,8 +59,6 @@ class LinkedListLIFO(object):
         else:
             print('Node with index {} not found'.format(index))
 
-
-    # find and delete a node by value
     def deleteNodeByValue(self, value):
         node, prev, found = self._find_by_value(value)
         if found:
