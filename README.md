@@ -35,13 +35,9 @@ src/
 
 └── trees
 
+└── bitwise
+
 └── searching_and_sorting
-
-    ├── searching
-
-    ├── sorting
-
-└── Extra Interview Problems
 
 └── USEFUL
 
