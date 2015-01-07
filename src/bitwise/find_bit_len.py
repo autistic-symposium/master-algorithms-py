@@ -6,7 +6,8 @@ __author__ = "bt3"
     1) Start with a mask of 1
     2) Mask with AND
     3) if result (if true): count += 1
-    (obs: to find the int of a bin do int('1001', 2)) and to show in bin do bin(int))
+    (obs: to find the int of a bin do int('1001', 2)) and to show in bin
+    do bin(int))
 '''
 
 
@@ -22,4 +23,3 @@ if __name__ == '__main__':
     for i in range(17):
         print(find_bit_len(i))
         print i.bit_length()
-        print

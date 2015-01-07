@@ -8,16 +8,12 @@ __author__ = "bt3"
     1) Shifts 1 over by i bits
     2) make an OR with the number, only the value at bit i will change and all the others bit
     of the mask are zero so will not affect the num
-
 '''
-
 
 
 def set_bit(num, i):
     mask = 1 << i
     return bin( num | mask )
-
-
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
+
 
 ''' A method to sort an array so that all the anagrams are together. Since we only
     want the anagrams to be grouped, we can use a dictionary for this task. This

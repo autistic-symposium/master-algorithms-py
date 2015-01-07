@@ -1,6 +1,7 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
+
+__author__ = "bt3"
+
 
 ''' Swap odd and even bits in a smart way in a binary:
     1) first for odds, take n and move the odd:
@@ -8,17 +9,18 @@
         (b) shift by right by 1
     2) do the same to ints with 01010101
     3) merge
-    
-    >>> num = 0b11011101
-    >>> result = '0b1101110'
-    >>> swap_odd_even(num) == result
-    True
-
 '''
 
 
 
 def swap_odd_even(num):
+    '''
+    >>> num = 0b11011101
+    >>> result = '0b1101110'
+    >>> swap_odd_even(num) == result
+    True
+    '''
+
     mask_odd = 0xAA # 0b10101010
     mask_even = 0x55 # 0b1010101
     odd = num & mask_odd
@@ -28,9 +30,6 @@ def swap_odd_even(num):
     return bin(odd | even)
 
 
-    
-    
-    
 
 if __name__ == '__main__':
     import doctest

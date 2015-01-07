@@ -1,17 +1,16 @@
-#!/usr/bin/python3
-# mari von steinkirch @2013
-# steinkirch at gmail
+#!/usr/bin/env python
 
-''' Example of how to use a bit array in python as a "counter" dict:
+__author__ = "bt3"
 
+''' Example of how to use a bit array in python as a "counter" dict'''
+
+def print_dupl_ba(l1):
+    '''
     >>> l1 = [0, 1, 2, 3, 4, 2, 6, 7, 8, 9]
     >>> print_dupl_ba(l1)
     2
-'''
+    '''
 
-
-
-def print_dupl_ba(l1):
     bs = bytearray(10)
     for i in range(len(l1)):
         if i == l1[i]:
@@ -22,9 +21,6 @@ def print_dupl_ba(l1):
     return None
 
 
-    
-    
-    
 
 if __name__ == '__main__':
     import doctest
