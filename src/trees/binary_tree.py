@@ -26,6 +26,7 @@ class Node(object):
             self.right = new_node
         else:
             self.left = self.left._add(value)
+
         return self
 
 
@@ -33,7 +34,7 @@ class Node(object):
         if self.item == value:
             return True # or self
 
-        found = False # or False, thats diff from BST
+        found = False # or None, thats diff from BST
         if self.left:
             found = self.left._search(value)
 
