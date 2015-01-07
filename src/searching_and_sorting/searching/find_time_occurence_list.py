@@ -1,8 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
-
+__author__ = "bt3"
 
 def binary_serch_counting(lst1, k, lo=0, hi=None):
     if hi is None: hi = len(lst1)
@@ -19,10 +17,12 @@ def binary_serch_counting(lst1, k, lo=0, hi=None):
 
 
 def find_time_occurrence_list(seq, k):
-    """ find how many times a k element appears in a sorted list. One way of doing this is using
-    collections.OrderedDict to no mess with the sorting, and add entries for every count. This
-    should be O(n). It has a O(1) space complexity since the size of the dict is fixed.
-    Another way, since the array is sorted, it to use binary search, since this is only O(logn).
+    """ find how many times a k element appears in a sorted list.
+    One way of doing this is using collections.OrderedDict to no
+    mess with the sorting, and add entries for every count. This
+    should be O(n). It has a O(1) space complexity since the size of
+    the dict is fixed. Another way, since the array is sorted, it to
+    use binary search, since this is only O(logn).
     """
     index_some_k = binary_serch_counting(seq, k)
     count = 1

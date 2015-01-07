@@ -17,7 +17,6 @@ def selection_sort(seq):
 def test_selection_sort():
     seq = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2]
     assert(selection_sort(seq) == sorted(seq))
-    print('Tests passed!')
 
 
 if __name__ == '__main__':

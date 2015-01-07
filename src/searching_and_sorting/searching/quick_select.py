@@ -1,11 +1,9 @@
+#!/usr/bin/env python
 
-#!/usr/bin/python
+__author__ = "bt3"
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
 
 import random
-
 
 ''' The simplest way...'''
 def quickSelect(seq, k):

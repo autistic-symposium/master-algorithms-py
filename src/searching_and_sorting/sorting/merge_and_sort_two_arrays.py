@@ -2,7 +2,6 @@
 
 __author__ = "bt3"
 
-
 '''
 You have two arrays with N integers in them. Merge those arrays using a
 recursive algorithm so that the integers in the final array are sorted.

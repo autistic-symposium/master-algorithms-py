@@ -19,7 +19,6 @@ def count_sort_dict(a):
 def test_count_sort():
     seq = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2, 5, 4, 1, 5, 3]
     assert(count_sort_dict(seq) == sorted(seq))
-    print('Tests passed!')
 
 
 if __name__ == '__main__':

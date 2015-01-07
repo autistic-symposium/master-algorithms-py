@@ -1,15 +1,15 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
-
-
+__author__ = "bt3"
 
 def find_max_unimodal_array(A):
-    if len(A) <= 2 : return None
+    if len(A) <= 2 :
+        return None
     left = 0
     right = len(A)-1
+
     while right > left +1:
+
         mid = (left + right)//2
         if A[mid] > A[mid-1] and A[mid] > A[mid+1]:
             return A[mid]
@@ -17,6 +17,7 @@ def find_max_unimodal_array(A):
             left = mid
         else:
             right = mid
+
     return None
 
 

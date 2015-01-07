@@ -1,20 +1,22 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
 
 
-''' Given a sorted an array with empty strings, we use binary search to find some string (since
-    the list is sorted):
-    --> we deal with the empty strings with strip and then run to left and right, or move
-    mid to the closed non-empty str (remember that the index must be conserved):
+''' Given a sorted an array with empty strings,
+    we use binary search to find some string (since the list is sorted):
+    --> we deal with the empty strings with strip and then run to left
+    and right, or move mid to the closed non-empty str (remember that
+    the index must be conserved):
 '''
 
 
 def find_str_array_with_empty_str(seq, s1):
-    if not seq or not s1: return None
+    if not seq or not s1:
+        return None
     hi = len(seq)
     lo = 0
+
     while hi > lo:
         mid = (hi+lo)//2
 
@@ -32,9 +34,12 @@ def find_str_array_with_empty_str(seq, s1):
                 right += 1
                 left -= 1
 
-        if s1 == seq[mid] == s1: return mid
-        elif s1 < seq[mid]: hi = mid
-        else: lo = mid + 1
+        if s1 == seq[mid] == s1:
+            return mid
+        elif s1 < seq[mid]:
+            hi = mid
+        else:
+            lo = mid + 1
 
 
 

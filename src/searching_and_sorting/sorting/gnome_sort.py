@@ -18,7 +18,6 @@ def gnome_sort(seq):
 def test_gnome_sort():
     seq = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2, 5, 4, 1, 5, 3]
     assert(gnome_sort(seq) == sorted(seq))
-    print('Tests passed!')
 
 
 if __name__ == '__main__':

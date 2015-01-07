@@ -1,14 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-__author__ = "Mari Wahl"
-__email__ = "marina.w4hl@gmail.com"
+__author__ = "bt3"
 
-
-
+''' implement square root using binary search '''
 
 
 def find_sqrt_bin_search(n, error=0.001):
-    ''' implement square root using binary search '''
     lower = n < 1 and n or 1
     upper = n < 1 and 1 or n
     mid = lower + (upper - lower) / 2.0
