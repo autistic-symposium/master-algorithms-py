@@ -4,9 +4,9 @@ An introduction to Algorithms & Data Structures in Python, including an ["e-book
 
 ![](http://i.imgur.com/XruamX1.png)
 
----
-## Source Code Structure
 
+---
+## Source Code:
 
 src/
 
@@ -42,7 +42,7 @@ src/
 
 
 ----
-## Installation
+## Installation:
 
 The snippets are designed to be used individually. However, If you want  to install all fo the libraries in your [virtualenv](https://coderwall.com/p/8-aeka), do this:
 
