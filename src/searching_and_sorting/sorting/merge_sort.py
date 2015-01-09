@@ -3,62 +3,34 @@
 __author__ = "bt3"
 
 
-def merge_sort(seq):
+def merge_sort(array):
     '''
-    >>> seq = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2]
-    >>> merge_sort(seq)
-    [0, 1, 2, 2, 3, 3, 5, 5, 6, 6, 8]
+    >>> merge_sort([3 ,5, 1, 2, 10, 6])
+    [1, 2, 3, 5, 6, 10]
     '''
-    if len(seq) < 2:
-        return seq
-    mid = len(seq)//2
-    lft, rgt = seq[:mid], seq[mid:]
-    if len(lft)>1:
-        lft = merge_sort(lft)
-    if len(rgt)>1:
-        rgt = merge_sort(rgt)
+    if len(array) < 2:
+        return array
+
+    mid = len(array)//2
+    left = merge_sort(array[:mid])
+    right = merge_sort(array[mid:])
 
     res = []
-    while lft and rgt:
-        if lft [-1]>= rgt[-1]:
-            res.append(lft.pop())
-        else:
-            res.append(rgt.pop())
-    res.reverse()
-    return(lft or rgt) + res
-
-
-
-# separating the merge part in another function
-def merge_sort_sep(seq):
-    '''
-    >>> seq = [3, 5, 2, 6, 8, 1, 0, 3, 5, 6, 2]
-    >>> merge_sort_sep(seq)
-    [0, 1, 2, 2, 3, 3, 5, 5, 6, 6, 8]
-    '''
-    if len(seq) < 2 :
-        return seq
-    mid = len(seq)//2
-    left = merge_sort(seq[:mid])
-    right = merge_sort(seq[mid:])   # notice that mid is included!
-    return merge(left, right)      # merge iteratively
-
-
-def merge(left, right):
-    if not left or not right:
-        return left or right # nothing to be merged
-    result = []
     i, j = 0, 0
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
-            result.append(left[i])
+            res.append(left[i])
             i += 1
         else:
-            result.append(right[j])
+            res.append(right[j])
             j += 1
-    if left[i:] : result.extend(left[i:])   # REMEMBER TO EXTEND, NOT APPEND
-    if right[j:] : result.extend(right[j:])
-    return result
+
+    if left[i:]:
+       res.extend(left[i:])
+    if right[j:]:
+        res.extend(right[j:])
+    return res
+
 
 
 ''' Merge sort for files '''

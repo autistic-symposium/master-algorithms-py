@@ -18,11 +18,11 @@ def qs(array):
     left  = [a for a in new_array if a <= piv_element]
     right = [a for a in new_array if a > piv_element]
 
-
     return qs(left) + [array[piv]] + qs(right)
 
 
-""" we can also divide them into two functions """
+
+# we can also divide them into two functions
 def partition(seq):
     pi,seq = seq[0],seq[1:]
     lo = [x for x in seq if x <= pi]
@@ -38,9 +38,6 @@ def quick_sort_divided(seq):
         return seq
     lo, pi, hi = partition(seq)
     return quick_sort_divided(lo) + [pi] + quick_sort_divided(hi)
-
-
-
 
 
 
