@@ -3,21 +3,24 @@
 __author__ = "bt3"
 
 
-def comb_str(l1):
-
-    if len(l1) < 2:
-        return l1
-
-    result = []
-    for i, c in enumerate(l1):
-        result.append(c)
-        for comb in comb_str(l1[i+1:]):
-            result.append(c + comb)
-
-    return result
+def combinations(s):
+    '''
+    >>> combinations('abc')
+    ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+    >>> combinations('')
+    ''
+    '''
+    if len(s) < 2:
+        return s
+    res = []
+    for i, c in enumerate(s):
+        res.append(c)
+        for j in combinations(s[:i] + s[i+1:]):
+            res.append(c + j)
+    return res
 
 
 
 if __name__ == '__main__':
-    l1 = ['a', 'b', 'c']
-    print comb_str(l1)
+    import doctest
+    doctest.testmod()
