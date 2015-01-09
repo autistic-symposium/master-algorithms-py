@@ -1,9 +1,8 @@
-# Python and Algorithms & Data Structures
+#  Algorithms & Data Structures in Python
 
-This repository contains a comprehensive study on Algorithms & Data Structures in Python, including an ["e-book" I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
+An introduction to Algorithms & Data Structures in Python, including an ["e-book" I wrote](http://mariwahl.us/docs/algorithms_in_python.pdf).
 
 ![](http://i.imgur.com/XruamX1.png)
-
 
 ---
 ## Source Code Structure
