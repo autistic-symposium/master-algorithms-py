@@ -54,10 +54,22 @@ class Node(object):
         print self.item
 
         if self.left:
-            return self.left._printPreorder()
+            self.left._printPreorder()
 
         if self.right:
-            return self.right._printPreorder()
+            self.right._printPreorder()
+
+    # Another possibility: use an array (a little bit more expensive):
+    def _preorder_array(self):
+        nodes = []
+        if self.item:
+            nodes.append(self.item)
+        if self.left:
+            nodes.extend(self.left._preorder_array())
+        if self.right:
+            nodes.extend(self.right._preorder_array())
+        return nodes
+
 
 
 
@@ -80,6 +92,11 @@ class BST(object):
         if self.root:
             return self.root._search(value)
 
+    def preorder_array(self):
+        if self.root:
+            return self.root._preorder_array()
+        else:
+            return 'Tree is empty.'
 
 
 if __name__ == '__main__':

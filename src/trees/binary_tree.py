@@ -47,6 +47,14 @@ class Node(object):
         return not self.right and not self.left
 
 
+    def _preorder(self):
+        print self.item
+        if self.left:
+            self.left._preorder()
+        if self.right:
+            self.right._preorder()
+
+
 
 class BT(object):
 
@@ -61,40 +69,14 @@ class BT(object):
             self.root._add(value)
 
 
-    def printPreorder(self):
-        current = self.root
-        nodes, stack = [], []
-        while stack or current:
-            if current:
-                nodes.append(current.item) # this is what change
-                stack.append(current)
-                current = current.left
-            else:
-                current = stack.pop()
-                current = current.right
-        print nodes
-
-
-    def printInorder(self):
-        current = self.root
-        nodes, stack = [], []
-        while stack or current:
-
-            if current:
-                stack.append(current)
-                current = current.left
-            else:
-                current = stack.pop()
-                nodes.append(current.item) # this is what change
-                current = current.right
-        print nodes
-
-
     def search(self, value):
         if self.root:
             return self.root._search(value)
 
 
+    def preorder(self):
+        if self.root:
+            return self.root._preorder()
 
 
 if __name__ == '__main__':
@@ -111,7 +93,4 @@ if __name__ == '__main__':
 
     print
     print "Printing preorder..."
-    bt.printPreorder()
-
-    print "Printing Inorder..."
-    bt.printInorder()
+    bt.preorder()
