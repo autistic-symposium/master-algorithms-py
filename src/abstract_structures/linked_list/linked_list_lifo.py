@@ -79,7 +79,7 @@ if __name__ == '__main__':
     ll.deleteNode(2)
     ll._printList()
     print('The list after deleting node with value 3:')
-    ll.deleteNodeByValue(2)
+    ll.deleteNodeByValue(3)
     ll._printList()
     print('The list after adding node with value 15')
     ll._add(15)
