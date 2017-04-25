@@ -56,7 +56,7 @@ $ pip install -r requirements.txt
 
 ### My Work:
 
-* [Check out my lessons in machine learning.] (https://github.com/mariwahl/Machine-Learning-Lessons)
+* [Check out my lessons in machine learning.](https://github.com/mariwahl/Machine-Learning-Lessons)
 
 
 
