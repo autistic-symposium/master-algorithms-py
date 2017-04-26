@@ -56,14 +56,14 @@ $ pip install -r requirements.txt
 
 ### My Work:
 
-* [Check out my lessons in machine learning.] (https://github.com/mariwahl/Machine-Learning-Lessons)
+* [Check out my lessons in machine learning.](https://github.com/bt3gl/Machine-Learning-Lessons)
 
 
 
-* [Check out my lessons in numerical methods.](https://github.com/mariwahl/Numerical-Methods-for-Physics)
+* [Check out my lessons in numerical methods.](https://github.com/bt3gl/Numerical-Methods-for-Physics)
 
 
-* [Neat Problems in Python and Flask](https://github.com/mariwahl/Neat-Problems-in-Python-and-Flask)
+* [Neat Problems in Python and Flask](https://github.com/bt3gl/Neat-Problems-in-Python-and-Flask)
 
 ### Third Party:
 
@@ -72,8 +72,6 @@ $ pip install -r requirements.txt
 
 ----
 ## License
-
-When making a reference to my work, please use my [twitter handle](https://twitter.com/1bt337) or my [website](http://bt3gl.github.io/index.html).
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
 
