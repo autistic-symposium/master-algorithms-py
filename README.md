@@ -50,26 +50,6 @@ The snippets are designed to be used individually. However, If you want  to inst
 $ pip install -r requirements.txt
 ```
 
-
-----
-## Further Learning
-
-### My Work:
-
-* [Check out my lessons in machine learning.](https://github.com/bt3gl/Machine-Learning-Lessons)
-
-
-
-* [Check out my lessons in numerical methods.](https://github.com/bt3gl/Numerical-Methods-for-Physics)
-
-
-* [Neat Problems in Python and Flask](https://github.com/bt3gl/Neat-Problems-in-Python-and-Flask)
-
-### Third Party:
-
-* [Interactive Python](http://interactivepython.org/)
-
-
 ----
 ## License
 
