@@ -1,6 +1,6 @@
-#  Algorithms & Data Structures in Python
+#  Algorithms & Data Structures in Python - Hanbit Media, Inc.
 
-An introduction to Algorithms & Data Structures in Python, including an ["e-book" I wrote](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/book/book_second_edition.pdf).
+* [Download the "e-book" here](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/book/book_second_edition.pdf).
 
 ![](http://i.imgur.com/MJZjABD.png)
 
