@@ -1,45 +1,8 @@
-##  Algorithms & Data Structures in Python (Book, Hanbit Media, Inc.)
+##   ✨ Algorithms & Data Structures in Python (Book, Hanbit Media, Inc.)  ✨ 
 
-* [Download the e-book here.](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/book/book_second_edition.pdf).
+#### 📚[Download the digital book here](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/book/book_second_edition.pdf)
 
 ![](http://i.imgur.com/MJZjABD.png)
-
-
----
-###  ✨ Source Code
-
-src/
-
-└── abstract_structures
-
-    ├── heap
-
-    ├── linked_lists
-
-    ├── queues
-
-    └── stacks
-
-└── builtin_structures
-
-    ├── dicts
-
-    ├── lists_and_strings
-
-    ├── numbers
-
-    ├── sets
-
-    └── tuples
-
-└── trees
-
-└── bitwise
-
-└── searching_and_sorting
-
-└── USEFUL
-
 
 ----
 ##  ✨ Installation:
