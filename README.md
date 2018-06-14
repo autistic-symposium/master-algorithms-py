@@ -1,12 +1,12 @@
-#  Algorithms & Data Structures in Python - Hanbit Media, Inc.
+##  Algorithms & Data Structures in Python (Book, Hanbit Media, Inc.)
 
-* [Download the "e-book" here](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/book/book_second_edition.pdf).
+* [Download the e-book here.](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/book/book_second_edition.pdf).
 
 ![](http://i.imgur.com/MJZjABD.png)
 
 
 ---
-## Source Code:
+###  ✨ Source Code
 
 src/
 
@@ -42,7 +42,7 @@ src/
 
 
 ----
-## Installation:
+##  ✨ Installation:
 
 The snippets are designed to be used individually. However, If you want  to install all fo the libraries in your [virtualenv](https://coderwall.com/p/8-aeka), do this:
 
@@ -51,7 +51,7 @@ $ pip install -r requirements.txt
 ```
 
 ----
-## License
+##  ✨ License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
 
