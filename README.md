@@ -2,6 +2,8 @@
 
 #### 📚[Download the digital book here.](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/ebook/book_second_edition.pdf)
 
+![](HALEIWA.jpg)
+
 
 ##  ✨ Installation:
 
