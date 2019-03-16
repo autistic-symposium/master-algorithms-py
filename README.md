@@ -14,6 +14,8 @@ The snippets are designed to be used individually. However, If you want  to inst
 $ pip install -r requirements.txt
 ```
 
+---
+## Stay rebel ☠️
 
 
 ----
