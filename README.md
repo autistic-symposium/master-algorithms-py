@@ -127,6 +127,9 @@ A Python documentation string is known as docstring, it is a way of documenting 
 
 To copy an object in Python, you can try copy.copy () or copy.deepcopy() for the general case. You cannot copy all objects but most of them.
 
+#### What is the difference between deep and shallow copy?
+
+Shallow copy is used when a new instance type gets created and it keeps the values that are copied in the new instance. Whereas, deep copy is used to store the values that are already copied.
 
 #### What is negative index in Python?
 
