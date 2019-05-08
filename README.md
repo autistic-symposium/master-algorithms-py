@@ -267,6 +267,32 @@ Another way is to bring up an instance of Memcached on a new machine using the l
 
 Memcached common misuse is to use it as a data store, and not as a cache. Never use Memcached as the only source of the information you need to run your application. Data should always be available through another source as well. Memcached is just a key or value store and cannot perform query over the data or iterate over the contents to extract information. Memcached does not offer any form of security either in encryption or authentication.
 
+#### What's a metaclass in Python?
+
+This type of class holds the instructions about the behind-the-scenes code generation that you want to take place when another piece of code is being executed. With a metaclass, we can define properties that should be added to new classes that are defined in our code.
+
+#### Why isn't all memory freed when Python exits?
+Objects referenced from the global namespaces of Python modules are not always deallocated when Python exits. This may happen if there are circular references. There are also certain bits of memory that are allocated by the C library that are impossible to free/ Python is, however, aggressive about cleaning up memory on exit and does try to destroy every single object.
+
+If you want to force Python to delete certain things on deallocation, you can use the atexit module to register one or more exit functions to handle those deletions.
+
+#### Usage of `__slots__`?
+
+The special attribute `__slots__` allows you to explicitly state which instance attributes you expect your object instances to have, with the expected results:
+
+* faster attribute access.
+* space savings in memory.
+
+#### What id() function in Python is for?
+
+`id()` function accepts a single parameter and is used to return the identity of an object. This identity has to be unique and constant for this object during the lifetime. Two objects with non-overlapping lifetimes may have the same `id()` value.
+
+#### Is Python call-by-value or call-by-reference? 
+
+Neither. In Python, (almost) everything is an object. What we commonly refer to as "variables" in Python are more properly called names. Likewise, "assignment" is really the binding of a name to an object. Each binding has a scope that defines its visibility, usually the block in which the name originates.
+
+In Python a variable is not an alias for a location in memory. Rather, it is simply a binding to a Python object.ext post.
+
 ----
 
 
