@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 In order to win the prize for most cookies sold, my friend Alice and 
 # I are going to merge our Girl Scout Cookies orders and enter as one unit.
