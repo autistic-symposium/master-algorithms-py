@@ -15,7 +15,7 @@ $ pip install -r requirements.txt
 ```
 
 ---
-## Top Python Interview Questions & Answers
+## Top Python General Questions & Answers
 
 #### What is Python? What are the benefits of using Python?
 
