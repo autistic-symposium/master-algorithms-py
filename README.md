@@ -1,27 +1,25 @@
-##   ✨ Algorithms & Data Structures in Python (Book, Hanbit Media, Inc.)  ✨ 
+## Ebook: Python & Algorithms  
 
+➡️ 📚[Download PDF (second edition)](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/ebook/book_second_edition.pdf).
 
-➡️ 📚[Download the e-book here.](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/ebook/book_second_edition.pdf)
+➡️ Source code for every exercise from "Cracking the Code Interview".
 
-- An easy to follow introduction to Python language.
+➡️ Project Euler, Top-coder, Eudyptula Challenge, etc.
 
-➡️ Includes solutions in Python for every exercise from "Cracking the Code Interview".
+---
 
-![](HALEIWA.jpg)
+## Installation:
 
-
-##  ✨ Installation:
-
-The snippets are designed to be used individually. However, If you want  to install all fo the libraries in your [virtualenv](https://coderwall.com/p/8-aeka), do this:
+Install dependencies in [virtualenv](https://coderwall.com/p/8-aeka):
 
 ```
-$ pip install -r requirements.txt
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ---
-## Top Python General Questions & Answers
-
-#### What is Python? What are the benefits of using Python?
+## Python General Questions & Answers
 
 Python is a programming language with objects, modules, threads, exceptions and automatic memory management. The benefits of pythons are that it is simple and easy, portable, extensible, build-in data structure and it is an open source.
 
@@ -305,8 +303,5 @@ In Python a variable is not an alias for a location in memory. Rather, it is sim
 
 ## License
 
-When making a reference to my work, please use my [website](http://bt3gl.github.io/index.html).
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
-
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+When making a reference to my work, please use my [website](http://bt3gl.github.io/index.html).
