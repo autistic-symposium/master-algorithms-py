@@ -1,6 +1,6 @@
 ## Python & Algorithms Book (Published by Hanbit Media)
 
-➡️ 📚[Download PDF (second edition)](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/ebook/book_second_edition.pdf).
+➡️ 📚[Download PDF (second edition)](https://github.com/bt3gl/Book-Python_and_Algorithms/blob/master/ebook_pdf/book_second_edition.pdf).
 
 
 
