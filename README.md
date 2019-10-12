@@ -1,18 +1,11 @@
-## Python & Algorithms Book (Published by Hanbit Media)
-
-➡️ 📚[Download PDF (second edition)](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/ebook/book_second_edition.pdf).
+## Python & Algorithms Book 
 
 
+➡️ [PDF (1st edition, 2014, published by Hanbit Media)](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/First_edition_2014/ebook_pdf/book_second_edition.pdf) and [source code](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/First_edition_2014).
 
-## Installation:
 
-Install dependencies in a [virtual environment](https://coderwall.com/p/8-aeka):
+➡️ [Source code (2nd edition, 2019)](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/Second_edition_2019).
 
-```
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
 
 
 ## License
