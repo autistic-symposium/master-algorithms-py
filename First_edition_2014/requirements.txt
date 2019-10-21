@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==1.0
 SQLAlchemy==0.9.7
 bpython==0.13.1
 coverage==3.7.1
