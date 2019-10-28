@@ -1,5 +1,4 @@
-## Python & Algorithms Book 2nd Edition (2019)
-
+## Python, Algorithms, and Data Structures   (2nd Edition, 2019)
 
 
 
