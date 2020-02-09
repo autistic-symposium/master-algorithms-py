@@ -14,13 +14,12 @@ It's loosely based on the exercises & theory from the book [Cracking the Code In
 
 Even after the years, this book can be useful if you are aiming to learning Python and/or practicing for software engineering interviews.
 
---
 
 ## Second Edition - 2020
 
 The second edition is updated for Python 3. This is a current work on progress.
 
----
+
 
 ## [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
 
