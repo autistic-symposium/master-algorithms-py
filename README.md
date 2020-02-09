@@ -1,4 +1,4 @@
-## Book on Python, Algorithms, and Data Structures
+# Python, Algorithms, and Data Structures (Book)
 
 ## First Edition - 2014
 
