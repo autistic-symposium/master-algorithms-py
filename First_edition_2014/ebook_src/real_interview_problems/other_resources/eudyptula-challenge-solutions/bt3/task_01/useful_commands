@@ -1,0 +1,5 @@
+make
+sudo insmod ./eudyptula_1.ko
+cat /proc/modules | grep eudyptula
+lsmod | grep eudyptula
+sudo rmmod eudyptula_1
