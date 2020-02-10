@@ -12,12 +12,12 @@ It's loosely based on the exercises & theory from the book [Cracking the Code In
 
 - [Here are several samplings for coding challenges](https://github.com/bt3gl/Book-on-Python-Algorithms-and-Data-Structures/tree/master/First_edition_2014/other_resources), including [Project Euler](https://projecteuler.net/), [Top Coder](https://www.topcoder.com/challenges), [Interview Cake](https://www.interviewcake.com/), and [the eudyptula challenge](http://eudyptula-challenge.org/).
 
-Even after the years, this book can be useful if you are aiming to learning Python and/or practicing for software engineering interviews.
+Even after the years, this book can be useful if you are aiming to learn Python and/or practice for software engineering interviews.
 
 
 ## Second Edition - 2020
 
-The second edition is updated for Python 3. This is a current work on progress.
+The second edition is updated for Python 3. This is the current work on progress.
 
 
 
