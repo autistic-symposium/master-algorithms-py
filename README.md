@@ -6,7 +6,7 @@ This is a book about algorithms and data structure in Python. I wrote & open-sou
 
 It's loosely based on the exercises & theory from the book [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/).
 
-- [Here is the PDF for the book](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/blob/master/First_edition_2014/ebook_pdf/book_second_edition.pdf).
+- [Here is the PDF for the book](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/blob/master/first_edition/ebook_pdf/book_second_edition.pdf).
 
 - [Here is the source code, including abstract structures, bitwise operations, builtin Python data structures, searching and sorting, trees, and real interview problems](https://github.com/bt3gl/Book-on-Python-Algorithms-and-Data-Structures/tree/master/First_edition_2014/ebook_src).
 
