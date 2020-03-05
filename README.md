@@ -1,7 +1,5 @@
 # Python, Algorithms, and Data Structures (Book)
 
-## First Edition - 2014
-
 This is a book about algorithms and data structure in Python. I wrote & open-sourced & sold it to [Hanbit Media](http://www.hanbit.co.kr/) in 2014. 
 
 It's loosely based on the exercises & theory from the book [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/).
