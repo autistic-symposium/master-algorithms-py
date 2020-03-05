@@ -6,19 +6,12 @@ This is a book about algorithms and data structure in Python. I wrote & open-sou
 
 It's loosely based on the exercises & theory from the book [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/).
 
-- [Here is the PDF for the book](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/blob/master/first_edition/ebook_pdf/book_second_edition.pdf).
+- [Here is the PDF for the book](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/blob/master/book/ebook_pdf/book_second_edition.pdf).
 
-- [Here is the source code, including abstract structures, bitwise operations, builtin Python data structures, searching and sorting, trees, and real interview problems](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/tree/master/first_edition/ebook_src).
+- [Here is the source code, including abstract structures, bitwise operations, builtin Python data structures, searching and sorting, trees, and real interview problems](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/tree/master/book/ebook_src).
 
 
 Even after the years, this book can be useful if you are aiming to learn Python and/or practice for software engineering interviews.
-
-
-## Second Edition - 2020
-
-The second edition is updated for Python 3. This is the current work on progress.
-
-
 
 ## [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
 
