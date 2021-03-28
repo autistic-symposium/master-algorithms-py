@@ -1,7 +1,7 @@
 # Python, Algorithms, and Data Structures (Book)
 
 
-## Hi, I am Mia von Steinkirch, and this repository contains my book on algorithms and data structure in Python.
+## Hi, I am bt3, and this repository contains my book on algorithms and data structure in Python.
 
 ---
 
