@@ -1,28 +1,56 @@
 # Python, Algorithms, and Data Structures (Book)
 
+<br>
 
-## Hi, I am bt3, and this repository contains my book on algorithms and data structure in Python.
+### Hello, anon 👋🏻 
+### I am bt3gl, and this repository contains my book on Algorithms and Data Structure in Python, ublished by [Hanbit Media](http://www.hanbit.co.kr/) in 2014.
+
+
+<br>
 
 ---
 
-* Published by [Hanbit Media](http://www.hanbit.co.kr/) in 2014.
 
-![155714470-ab2bbb74-6655-46bd-a85d-eeea5b5d1c5e](https://user-images.githubusercontent.com/1130416/156927662-1cc6d09f-1124-4a87-8c40-10159b24d307.jpeg)
-<img width="1503" alt="155714475-8217d63b-3fd5-4624-8de3-ebadb4a3ff82" src="https://user-images.githubusercontent.com/1130416/156927664-25102b50-301c-4d18-aa15-b399b9716ff1.png">
-<img width="1184" alt="155714481-0eda9456-69d6-4635-adbc-750a2897ed39" src="https://user-images.githubusercontent.com/1130416/156927665-8f574012-bb9d-4698-bef2-bb4f5173d63c.png">
-![155714691-03c77206-9103-42cd-9d85-f63a308ee45b](https://user-images.githubusercontent.com/1130416/156927666-04e64766-8d8b-4973-a2b1-6e0c48dc6cc1.jpeg)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/1130416/156927662-1cc6d09f-1124-4a87-8c40-10159b24d307.jpeg" width="50%" align="center" style="padding:1px;border:1px solid black;">
+</p>
+    
+    
+    
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1130416/156927665-8f574012-bb9d-4698-bef2-bb4f5173d63c.png" width=90%" align="center" style="padding:1px;border:1px solid black;">
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1130416/156927666-04e64766-8d8b-4973-a2b1-6e0c48dc6cc1.jpeg" width=90%" align="center" style="padding:1px;border:1px solid black;">
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1130416/156927664-25102b50-301c-4d18-aa15-b399b9716ff1.png" width=90%" align="center" style="padding:1px;border:1px solid black;">
+</p>
+
+<br>
+
+----
+
+<br>
+
+### Summary
 
 
+* This book as one of the first publications to solve the classic computer science algorithm and data structure problems in Python.
 
-* It countains many solutions for [Cracking the Code Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/).
-
-* [Here is the PDF for the book](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/blob/master/book/ebook_pdf/book_second_edition.pdf).
+* [Here is the PDF for the free e-book](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/blob/master/book/ebook_pdf/book_second_edition.pdf).
 
 * [Here is the source code, including abstract structures, bitwise operations, builtin Python data structures, searching and sorting, trees, and real interview problems](https://github.com/bt3gl/Book_on_Python_Algorithms_and_Data_Structure/tree/master/book/ebook_src).
 
+<br>
+
+---
+
+<br>
 
 
-## [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
+### [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
 
 ```
 Beautiful is better than ugly.
