@@ -3,7 +3,7 @@
 <br>
 
 ### Hello, anon 👋🏻 
-### I am bt3gl, and this repository contains my book on Algorithms and Data Structure in Python, ublished by [Hanbit Media](http://www.hanbit.co.kr/) in 2014.
+### This repository contains my book on Algorithms and Data Structure in Python, published by [Hanbit Media](http://www.hanbit.co.kr/) in 2014.
 
 
 <br>
