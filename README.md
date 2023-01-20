@@ -4,7 +4,7 @@
 
 ### This repository contains my book on Algorithms and Data Structure in Python, published by [Hanbit Media](http://www.hanbit.co.kr/) in 2014.
 
-### [here is a proof that this repo used to have 600+ stars and 300 forks before shit happened](https://github.com/MEV-WAIFU-LABS/pentesting_toolkit/blob/master/STARS.png)
+### [here is a proof that this repo used to have 600+ stars and 300 forks before 💩 happened](https://github.com/MEV-WAIFU-LABS/pentesting_toolkit/blob/master/STARS.png)
 
 <br>
 
