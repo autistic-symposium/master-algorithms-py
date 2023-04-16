@@ -2,7 +2,9 @@
 
 <br>
 
-#### This repository contains my book on Algorithms and Data Structure in Python, published by [Hanbit Media](http://www.hanbit.co.kr/) in 2014.
+#### This repository contains my book on Algorithms and Data Structure in Python, published by [Hanbit Media](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191) in 2014.
+
+#### 👉 [4.6/5 stars and 33 reviews for a book written in school, not bad :)](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)
 
 #### 👉 [here is a pic when this repo used to have 600+ stars and 300 forks (before 💩 happened 😞)](600_stars.png)
 
