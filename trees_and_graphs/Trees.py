@@ -44,15 +44,14 @@ class Node():
     def _add_node_binary_tree(self, value):
         """Adds a node to a simple binary tree"""
 
-        new_node = Node(value)
         if self.value is None:
-            self.value = new_node
+            self.value = value
         
         else:
             if not self.left:
-                self.left = new_node
+                self.left = Node(value)
             elif not self.right:
-                self.right = new_node
+                self.right = Node(value)
             else:
                 self.left = self.left._add_node_binary_tree(value)
 
@@ -61,12 +60,11 @@ class Node():
     def _add_node_binary_search_tree(self, value) -> bool:
         """Adds a node to a binary search tree"""
 
-        new_node = Node(value)
-
         if not self.value:
-            self.value = new_node.value
+            self.value = value
 
         else:
+            new_node = Node(value)
             if value < self.value:
                 self.left = self.left and self.left._add_node_binary_search_tree(value) or new_node
             elif value > self.value:
@@ -76,20 +74,20 @@ class Node():
         
         return self
 
-    def _search_node_preorder(self, value) -> bool:
+    def _search_node_preorder(self, query) -> bool:
         """Searches through preorder traversal (node, left, right)"""
 
-        if self.value == value:
+        if self.value == query:
             return True
        
         found = False
         if self.left:
             # recursively search left
-            found = self.left._search_node_preorder(value)
+            found = self.left._search_node_preorder(query)
         
         if self.right:
             # recursively search right
-            found = found or self.right._search_node_preorder(value)
+            found = found or self.right._search_node_preorder(query)
         
         return found
 
@@ -112,12 +110,12 @@ class Node():
         
         return False
     
-    def _isLeaf(self) -> bool:
+    def _is_leaf(self) -> bool:
         """If node has no children, it is a leaf"""
 
         return bool(not self.right and not self.left)
     
-    def _isFull(self) -> bool:
+    def _is_full(self) -> bool:
         """If node has two children, it is full"""
         return bool(self.right and self.left)
 
@@ -141,25 +139,55 @@ class BinaryTreeInterface():
     ############################
     #       Public Methods
     ############################
-    def isLeaf(self) -> bool:
+    def is_leaf(self) -> bool:
         """Returns True if the node is a leaf"""
 
         if self.root is not None:
-            return self.root._isLeaf()
+            return self.root._is_leaf()
 
-    def isFull(self) -> bool:
+    def is_full(self) -> bool:
         """Returns True if the node is full"""
 
         if self.root is not None:
-            return self.root._isFull()
+            return self.root._is_full()
 
     def print_preorder(self):
         """Prints the BST in preorder"""
         
         if self.root is not None:
             self.root._repr_preorder()
+    
+    ############################
+    #       Class Methods
+    ############################
+    @classmethod
+    def is_balanced(cls, node, left=0, right=0) -> bool:
+        """Returns True if the tree is balanced"""
 
+        if node is None:
+            return (left - right) < 2
+        
+        else:
+            return cls.is_balanced(node.left, left + 1, right) and \
+                            cls.is_balanced(node.right, left, right + 1)
+    
+    @classmethod
+    def is_binary_search_tree(cls, node, min_node=None, max_node=None) -> bool:   
+        """Returns True if the tree is a BST"""
 
+        min_node = min_node or float('-inf')
+        max_node = max_node or float('inf')
+
+        if not node:
+            return True
+        
+        if node.value < min_node or node.value > max_node:
+            return False
+        
+        return cls.is_binary_search_tree(node.left, min_node, node.value) and \
+                            cls.is_binary_search_tree(node.right, node.value, max_node)         
+
+        
 
 class BinaryTree(BinaryTreeInterface):
     """Implementation of a binary tree"""
@@ -203,6 +231,16 @@ class BinarySearchTree(BinaryTreeInterface):
             return cls.largest_node(node.right)
         else:
             return node
+    
+    @classmethod
+    def smallest_node(cls, node):   
+        """Returns the smallest node in the tree"""
+
+        if node.left:
+            return cls.smallest_node(node.left)
+        else:
+            return node
+    
 
 
 
@@ -230,8 +268,10 @@ if __name__ == '__main__':
     bt.print_preorder()
     print(f'\n🟢 Searching for node 5: {bt.search_node(5)}')
     print(f'❌ Searching for node 15: {bt.search_node(15)}')
-    print(f'❌ Is root a leaf? {bt.isLeaf()}')
-    print(f'🟢 Is root full? {bt.isFull()}')
+    print(f'❌ Is root a leaf? {bt.is_leaf()}')
+    print(f'🟢 Is root full? {bt.is_full()}')
+    print(f'❌ Is the tree balanced? {BinaryTree.is_balanced(bt.root)}')
+    print(f'❌ Is the tree a binary search tree? {BinaryTree.is_binary_search_tree(bt.root)}')
 
 
 
@@ -248,8 +288,11 @@ if __name__ == '__main__':
     bst.print_preorder()
     print(f'\n🟢 Searching for node 5: {bst.search_node(5)}')
     print(f'❌ Searching for node 15: {bst.search_node(15)}')
-    print(f'❌ Is root a leaf? {bst.isLeaf()}')
-    print(f'🟢 Is root full? {bst.isFull()}')
+    print(f'❌ Is root a leaf? {bst.is_leaf()}')
+    print(f'🟢 Is root full? {bst.is_full()}')
     print(f'🟢 Largest node? {bst.largest_node(bst.root)}')
+    print(f'🟢 Smallest node? {bst.smallest_node(bst.root)}')
+    print(f'❌ Is the tree balanced? {bst.is_balanced(bst.root)}')
+    print(f'🟢 Is the tree a binary search tree? {bst.is_binary_search_tree(bst.root)}')
 
 
