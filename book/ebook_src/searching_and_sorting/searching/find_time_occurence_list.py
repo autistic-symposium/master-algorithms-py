@@ -2,7 +2,7 @@
 
 __author__ = "bt3"
 
-def binary_serch_counting(lst1, k, lo=0, hi=None):
+def binary_search_counting(lst1, k, lo=0, hi=None):
     if hi is None: hi = len(lst1)
     while lo < hi:
         mid = (lo+hi)//2
@@ -24,7 +24,7 @@ def find_time_occurrence_list(seq, k):
     the dict is fixed. Another way, since the array is sorted, it to
     use binary search, since this is only O(logn).
     """
-    index_some_k = binary_serch_counting(seq, k)
+    index_some_k = binary_search_counting(seq, k)
     count = 1
     sizet = len(seq)
 

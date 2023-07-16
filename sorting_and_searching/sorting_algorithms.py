@@ -44,6 +44,7 @@ def quick_sort_partition(array):
 
     return lower, pivot, higher
 
+
 def quick_sort_divided(array):
     """Sort an array using quick sort"""
 
