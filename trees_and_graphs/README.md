@@ -69,3 +69,25 @@ a
 ❌ Is the tree balanced? False
 🟢 Is the tree a binary search tree? True
 ```
+
+<br>
+
+### `BinaryTree.py`
+
+<br>
+
+* a clean implementation adapted from the class above.
+
+```python
+> python3 BinaryTree.py
+
+🌳🌳🌳 Testing BinaryTree 🌳🌳🌳
+
+🟡 Adding [4, 1, 4, 6, 7, 9, 10, 5, 11, 5] to the tree...
+🟢 Print the tree preorder: [4, 1, 6, 9, 5, 5, 11, 10, 7, 4]
+🟢 Print the tree inorder: [4, 1, 6, 9, 5, 5, 11, 10, 7, 4]
+🟢 Print the tree postorder: [4, 1, 6, 9, 5, 5, 11, 10, 7, 4]
+
+🟢 Search for node 5: True
+❌ Search for node 15: False
+```
