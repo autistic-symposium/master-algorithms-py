@@ -294,5 +294,3 @@ if __name__ == '__main__':
     print(f'🟢 Smallest node? {bst.smallest_node(bst.root)}')
     print(f'❌ Is the tree balanced? {bst.is_balanced(bst.root)}')
     print(f'🟢 Is the tree a binary search tree? {bst.is_binary_search_tree(bst.root)}')
-
-

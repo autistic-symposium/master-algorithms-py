@@ -46,8 +46,7 @@
     * 𝟙𝟘𝟘𝟘. **[recursion and dynamic programming](recursion_and_dp)**
     * 𝟙𝟘𝟘𝟙. **[sorting and searching](sorting_and_searching)**
     * 𝟙𝟘𝟙𝟘. **[concurrency](concurrency)**
-    * 𝟙𝟘𝟙𝟙. **[trees and graphs](trees_and_graphs/)**
-      - [trees, nodes, binary trees, binary search, trees](trees_and_graphs/Trees.py)
+    * 𝟙𝟘𝟙𝟙. **[trees, transversals, graphs](trees_and_graphs/)**
 
 
   
