@@ -37,7 +37,7 @@ def isBST_other_method(node, max_node=None, min_node=None):
 
     if node.right:
         if node.right.item < node.item or node.right.item < min_node:
-            rihjt =  False
+            right =  False
         else:
             min_node = node.item
             right =  isBST(node.right, max_node, min_node)
