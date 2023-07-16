@@ -30,11 +30,39 @@ def binary_search_iterative(array, item):
             lower=mid+1
     return False
 
+def binary_search_matrix(matrix, item, lower=0, higher=None):
+    """ Binary search in a matrix """
+
+    if not matrix:
+        return None
+    
+    rows = len(matrix)
+    cols = len(matrix[0])
+    higher = higher or rows*cols
+
+    if higher > lower:
+        mid = (higher + lower)//2
+        row = mid//cols
+        col = mid%cols
+        item = matrix[row][col]
+
+        if item == item:
+            return row, col
+        elif item < item:
+            return binary_search_matrix(matrix, item, lower, mid-1)
+        else:
+            return binary_search_matrix(matrix, item, mid+1, higher)
+        
+    return None
+
 
 if __name__ == '__main__':
 
     array = [2, 3, 5, 6, 8, 10, 15, 23]
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     item = 15
     
     print('Recursive: ', binary_search_recursive(array, item))
     print('Iterative: ', binary_search_iterative(array, item))
+    print('Matrix: ', binary_search_matrix(matrix, item))
+

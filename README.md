@@ -42,8 +42,5 @@
     * 𝟘𝟙𝟘𝟘. **[stacks and queues](stacks_and_queues)**
     * 𝟘𝟙𝟘𝟙. **[bit manipulation](bit_manipulation)**
     * 𝟘𝟙𝟙𝟘. **[math and logic](math_and_logic)**
-    * 𝟘𝟙𝟙𝟙. **[object-oriented design](object_oriented_design)**
-    * 𝟙𝟘𝟘𝟘. **[recursion and dynamic programming](recursion_and_dp)**
     * 𝟙𝟘𝟘𝟙. **[sorting and searching](sorting_and_searching)**
-    * 𝟙𝟘𝟙𝟘. **[concurrency](concurrency)**
     * 𝟙𝟘𝟙𝟙. **[trees, transversals, graphs](trees_and_graphs/)**
