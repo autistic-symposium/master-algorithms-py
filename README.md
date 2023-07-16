@@ -14,9 +14,9 @@
 <br>
 
 *  **[📖 my book on algorithms and data structure in python (2014)](book)**: 
-    - **one of the first ever publication to solve classic computer science algorithm and data structure problems in python.**
+    - **one of the first-ever publications to solve classic computer science algorithm and data structure problems in python.**
     - **[it was published by hanbit media in 2014](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
-    - **[as of today, has 4.6/5 stars and 33 reviews](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
+    - **[as of today, it has 4.6/5 stars and 33 reviews](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
     - **[this book as a reference for a CMU computer science class](https://www.andrew.cmu.edu/user/ramesh/teaching/course/48784.pdf)**.
     - **[here is a pic when this repo used to have 600+ stars and 300 forks (before 💩 happened 😞)](book/600_stars.png)**.
 
@@ -47,6 +47,7 @@
     * 𝟙𝟘𝟘𝟙. **[sorting and searching](sorting_and_searching)**
     * 𝟙𝟘𝟙𝟘. **[concurrency](concurrency)**
     * 𝟙𝟘𝟙𝟙. **[trees and graphs](trees_and_graphs/)**
+      - [trees, nodes, binary trees, binary search, trees](trees_and_graphs/Trees.py)
 
 
   
