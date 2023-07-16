@@ -195,6 +195,14 @@ class BinarySearchTree(BinaryTreeInterface):
         if self.root.value is not None:
             return self.root._search_node_binary_search_tree(value)
 
+    @classmethod
+    def largest_node(cls, node):
+        """Returns the largest node in the tree"""
+
+        if node.right:
+            return cls.largest_node(node.right)
+        else:
+            return node
 
 
 
@@ -227,7 +235,6 @@ if __name__ == '__main__':
 
 
 
-
     ##############################
     #   Test binary search tree
     ##############################
@@ -243,5 +250,6 @@ if __name__ == '__main__':
     print(f'❌ Searching for node 15: {bst.search_node(15)}')
     print(f'❌ Is root a leaf? {bst.isLeaf()}')
     print(f'🟢 Is root full? {bst.isFull()}')
+    print(f'🟢 Largest node? {bst.largest_node(bst.root)}')
 
 
