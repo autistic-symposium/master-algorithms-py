@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-class Queue():
+import heapq
+
+
+class Queue:
 
     def __init__(self):
         self._in = []
@@ -20,7 +23,6 @@ class Queue():
             self._transfer_in_to_out()
         
         return f'{self._out}'
-
 
     ######################
     #  Properties
@@ -59,8 +61,34 @@ class Queue():
             print('❌ Queue is empty, cannot dequeue.')
 
 
+class PriorityQueue:
+
+    def __init__(self):
+        self.queue = []
+        self.index = 0
+    
+    def push(self, item, priority):
+        heapq.heappush(self.queue, (-priority, self.index, item))
+        self.index += 1
+    
+    def pop(self):
+        return heapq.heappop(self.queue)[-1]
+
+class Item:
+    
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return f'{self.name}'
+
+
 if __name__ == '__main__':
 
+    ######################
+    #   Simple Queue
+    ######################
+    print('🧪 Testing Queue...')
     queue = Queue()
     print(f"Is the queue empty? {queue.is_empty}")
     print("Adding 1 to 10 in the queue...")
@@ -78,3 +106,14 @@ if __name__ == '__main__':
     print(f"Queue peek: {queue.peek}")
     print(f"Is the queue empty? {queue.is_empty}")
 
+    ######################
+    #   Priority Queue
+    ######################
+    print('\n\n🧪 Testing Priority Queue...')
+    q = PriorityQueue()
+    q.push(Item('Item 1'), 1)
+    q.push(Item('Item 4'), 4)
+    q.push(Item('Item 3'), 3)
+    print(f"Priority Queue: {q.queue}")
+    print(f"Pop: {q.pop()}")
+    print(f"Priority Queue: {q.queue}")
