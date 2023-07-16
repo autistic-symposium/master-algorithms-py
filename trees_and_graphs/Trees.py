@@ -72,7 +72,7 @@ class Node():
             elif value > self.value:
                 self.right = self.right and self.right._add_node_binary_search_tree(value) or new_node
             else:
-                print(f'{value} not added as BSTs do not support repeated items.')
+                print(f'❌ Item {value} not added as BSTs do not support repetition.')
         
         return self
 
@@ -99,7 +99,6 @@ class Node():
         this_node_value = self.value
 
         if this_node_value is not None:
-            print(this_node_value)
             if this_node_value == query:
                 return True 
 
@@ -204,7 +203,7 @@ if __name__ == '__main__':
     ############################
     #   Test SimpleTree
     ############################
-    print("\n\n   🌴 Testing SimpleTree 🌴")
+    print("\n\n🌴🌴🌴 Testing SimpleTree 🌴🌴🌴")
     t = SimpleTree('a', [SimpleTree('b', [SimpleTree('d'), SimpleTree('e')]), \
                             SimpleTree('c', [SimpleTree('h'), SimpleTree('g')])])
     print(t)
@@ -213,42 +212,36 @@ if __name__ == '__main__':
     ############################
     #   Test binary tree
     ############################
-    print("\n\n   🌳 Testing BinaryTree 🌳")
+    print("\n\n🌳🌳🌳 Testing BinaryTree 🌳🌳🌳")
     bt = BinaryTree()
-    print("\n   Adding nodes 1 to 10 in the tree...")
-    for i in range(1, 11):
+    array1 = [4, 1, 4, 6, 7, 9, 10, 5, 11, 5]
+    print(f'\n🟡 Adding {array1} to the tree...')
+    for i in array1:
         bt.add_node(i)
-    
-    print("   Printing the tree in preorder...")   
+    print("🟢 Printing the tree in preorder...")   
     bt.print_preorder()
+    print(f'\n🟢 Searching for node 5: {bt.search_node(5)}')
+    print(f'❌ Searching for node 15: {bt.search_node(15)}')
+    print(f'❌ Is root a leaf? {bt.isLeaf()}')
+    print(f'🟢 Is root full? {bt.isFull()}')
 
-    print("\n   Searching for node 5...")
-    print(bt.search_node(5))
 
-    print("\n   Searching for node 15...")
-    print(bt.search_node(15))
-
-    print("\n   Checking if root is a leaf...")
-    print(bt.isLeaf())
-
-    print("\n   Checking if root is full...")
-    print(bt.isFull())
 
 
     ##############################
     #   Test binary search tree
     ##############################
-    print("\n\n   🎄 Testing BinarySearchTree 🎄")
+    print("\n\n🎄🎄🎄 Testing BinarySearchTree 🎄🎄🎄")
     bst = BinarySearchTree()
-    print("\n   Adding nodes to the tree...")
-    for i in [4, 1, 4, 6, 7, 9, 10, 5, 11, 5]:
+    array1 = [4, 1, 4, 6, 7, 9, 10, 5, 11, 5]
+    print(f'\n🟡 Adding {array1} to the tree...')
+    for i in array1:
         bst.add_node(i)
-    
-    print("   Printing the tree in preorder...")
+    print("🟢 Printing the tree in preorder:")
     bst.print_preorder()
+    print(f'\n🟢 Searching for node 5: {bst.search_node(5)}')
+    print(f'❌ Searching for node 15: {bst.search_node(15)}')
+    print(f'❌ Is root a leaf? {bst.isLeaf()}')
+    print(f'🟢 Is root full? {bst.isFull()}')
 
-    print("\n   Searching for node 5...")
-    print(bst.search_node(5))
 
-    print("\n   Searching for node 15...")
-    print(bst.search_node(15))
