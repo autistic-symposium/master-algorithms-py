@@ -20,8 +20,8 @@ class SimpleTree:
 class Node():
     """Implementation of a Node for a binary tree"""
 
-    def __init__(self, this_root_value=None):
-        self.value = this_root_value
+    def __init__(self, value=None):
+        self.value = value
         self.left = None
         self.right = None
     
@@ -33,7 +33,7 @@ class Node():
         return f'{self.value}'
 
     def _repr_preorder(self):
-        """Prints the tree in preorder"""
+        """Prints the tree in preorder traversal (root, left, right)"""
 
         print(self.value)
         if self.left:
@@ -45,7 +45,7 @@ class Node():
         """Adds a node to a simple binary tree"""
 
         new_node = Node(value)
-        if not self.value:
+        if self.value is None:
             self.value = new_node
         
         else:
@@ -62,20 +62,18 @@ class Node():
         """Adds a node to a binary search tree"""
 
         new_node = Node(value)
-        if not self.value or self.value == None:
+        if self.value is None:
             self.value = new_node
 
         else:
-            node_value = self.value
             if value < self.value:
                 self.left = self.left and self.left._add_node_binary_search_tree(value) or new_node
             elif value > self.value:
                 self.right = self.right and self.right._add_node_binary_search_tree(value) or new_node
             else:
                 print("BSTs do not support repeated items.")
-                return False
         
-        return True
+        return self
 
     def _search_node_preorder(self, value) -> bool:
         """Searches through preorder traversal (node, left, right)"""
@@ -94,20 +92,25 @@ class Node():
         
         return found
 
-    def _search_node_binary_search_tree(self, value) -> bool:
+    def _search_node_binary_search_tree(self, query) -> bool:
         """Searches the tree for a value, considering the BST property"""
 
-        if self.value == value:
-            return True
+        this_node_value = self.value
+
+        if this_node_value is not None:
+            print(this_node_value)
+            if this_node_value == query:
+                return True 
+
+            elif this_node_value > query:
+                if self.left is not None:
+                    return self.left._search_node_binary_search_tree(query)
+
+            elif this_node_value < query:
+                if self.right is not None:
+                    return self.right._search_node_binary_search_tree(query)
         
-        elif self.left and value < self.value:
-            return self.left._search_node_binary_search_tree(value)
-        
-        elif self.right and value > self.value:
-            return self.right._search_node_binary_search_tree(value)
-        
-        else:
-            return False
+        return False
     
     def _isLeaf(self) -> bool:
         """If node has no children, it is a leaf"""
@@ -118,73 +121,80 @@ class Node():
         """If node has two children, it is full"""
         return bool(self.right and self.left)
 
-class BinaryTree():
-    """Implementation of a binary tree"""
+
+class BinaryTreeInterface():
 
     def __init__(self):
-        """Initialize without root, as it'll add Node objects"""
         self.root = Node()
+
+    ############################
+    #       Interface Methods
+    ############################
+    def add_node(self, value):
+        """Adds a new node to the tree"""
+        pass
+
+    def search_node(self, value):
+        """Searches the tree for a value"""
+        pass
 
     ############################
     #       Public Methods
     ############################
-    def add_node(self, value):
-        """Adds a new node to the tree"""
-
-        if not self.root:
-            self.root = Node(value)
-        else:
-            self.root._add_node_binary_tree(value)
-    
-    def search_node_preorder(self, value):
-        """Searches the tree for a value"""
-
-        if self.root:
-            return self.root._search_node_preorder(value)
-
-    def print_preorder(self):
-        """Prints the tree in preorder"""
-        
-        if self.root is not None:
-            self.root._repr_preorder()
-    
-    def isLeaf(self):
+    def isLeaf(self) -> bool:
         """Returns True if the node is a leaf"""
 
         if self.root is not None:
             return self.root._isLeaf()
 
-    def isFull(self):
+    def isFull(self) -> bool:
         """Returns True if the node is full"""
 
         if self.root is not None:
             return self.root._isFull()
 
-
-class BinarySearchTree():
-
-    def __init__(self):
-        self.root = Node()
-    
-    def add_node(self, value):
-        """Adds a new node to the tree"""
-
-        if not self.root:
-            self.root = Node(value)
-        else:
-            self.root._add_node_binary_search_tree(value)
-    
     def print_preorder(self):
         """Prints the BST in preorder"""
         
         if self.root is not None:
             self.root._repr_preorder()
-    
+
+
+class BinaryTree(BinaryTreeInterface):
+    """Implementation of a binary tree"""
+
+    def add_node(self, value):
+        """Adds a new node to the tree"""
+
+        if self.root is None:
+            self.root = Node(value)
+        else:
+            self.root._add_node_binary_tree(value)
+
     def search_node(self, value):
         """Searches the tree for a value"""
 
         if self.root:
+            return self.root._search_node_preorder(value)
+
+
+class BinarySearchTree(BinaryTreeInterface):
+    
+    def add_node(self, value):
+        """Adds a new node to the tree"""
+
+        if self.root is None:
+            self.root = Node(value)
+        else:
+            self.root._add_node_binary_search_tree(value)
+
+    def search_node(self, value):
+        """Searches the tree for a value"""
+
+        if self.root.value is not None:
             return self.root._search_node_binary_search_tree(value)
+
+
 
 
 if __name__ == '__main__':
@@ -197,23 +207,24 @@ if __name__ == '__main__':
                             SimpleTree('c', [SimpleTree('h'), SimpleTree('g')])])
     print(t)
 
+
     ############################
     #   Test binary tree
     ############################
     print("\n\n   🌳 Testing BinaryTree 🌳")
     bt = BinaryTree()
     print("\n   Adding nodes 1 to 10 in the tree...")
-    for i in range(1, 10):
+    for i in range(1, 11):
         bt.add_node(i)
     
     print("   Printing the tree in preorder...")   
     bt.print_preorder()
 
     print("\n   Searching for node 5...")
-    print(bt.search_node_preorder(5))
+    print(bt.search_node(5))
 
     print("\n   Searching for node 15...")
-    print(bt.search_node_preorder(15))
+    print(bt.search_node(15))
 
     print("\n   Checking if root is a leaf...")
     print(bt.isLeaf())
@@ -221,14 +232,14 @@ if __name__ == '__main__':
     print("\n   Checking if root is full...")
     print(bt.isFull())
 
-    '''
+
     ##############################
     #   Test binary search tree
     ##############################
     print("\n\n   🎄 Testing BinarySearchTree 🎄")
     bst = BinarySearchTree()
     print("\n   Adding nodes 1 to 10 in the tree...")
-    for i in range(1, 10):
+    for i in range(1, 11):
         bst.add_node(i)
     
     print("   Printing the tree in preorder...")
@@ -239,4 +250,4 @@ if __name__ == '__main__':
 
     print("\n   Searching for node 15...")
     print(bst.search_node(15))
-    '''
+
