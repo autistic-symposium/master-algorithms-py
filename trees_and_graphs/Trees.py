@@ -62,8 +62,9 @@ class Node():
         """Adds a node to a binary search tree"""
 
         new_node = Node(value)
-        if self.value is None:
-            self.value = new_node
+
+        if not self.value:
+            self.value = new_node.value
 
         else:
             if value < self.value:
@@ -71,7 +72,7 @@ class Node():
             elif value > self.value:
                 self.right = self.right and self.right._add_node_binary_search_tree(value) or new_node
             else:
-                print("BSTs do not support repeated items.")
+                print(f'{value} not added as BSTs do not support repeated items.')
         
         return self
 
@@ -160,6 +161,7 @@ class BinaryTreeInterface():
             self.root._repr_preorder()
 
 
+
 class BinaryTree(BinaryTreeInterface):
     """Implementation of a binary tree"""
 
@@ -238,8 +240,8 @@ if __name__ == '__main__':
     ##############################
     print("\n\n   🎄 Testing BinarySearchTree 🎄")
     bst = BinarySearchTree()
-    print("\n   Adding nodes 1 to 10 in the tree...")
-    for i in range(1, 11):
+    print("\n   Adding nodes to the tree...")
+    for i in [4, 1, 4, 6, 7, 9, 10, 5, 11, 5]:
         bst.add_node(i)
     
     print("   Printing the tree in preorder...")
@@ -250,4 +252,3 @@ if __name__ == '__main__':
 
     print("\n   Searching for node 15...")
     print(bst.search_node(15))
-

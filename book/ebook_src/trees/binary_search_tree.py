@@ -19,7 +19,7 @@ class Node(object):
         new_node = Node(value)
 
         if not self.item:
-            self.item = new_node
+            self.item = new_node.value
 
         else:
             if value > self.item:
