@@ -20,7 +20,7 @@ class Node(object):
             self.right = new_node
         else:
             self.left = self.left.add(value)
-        return self # without this, it doesn't add!
+        return self
 
     def search(self, item):
         if self.value == item:
