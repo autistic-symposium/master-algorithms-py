@@ -27,3 +27,16 @@ Testing reverse_array_in_place
 Array: [1, 2, 3, 4, 5]
 Reversed: [5, 4, 3, 2, 1]
 ```
+
+<br>
+
+### `anagram.py`
+
+<br>
+
+```python
+python3 anagram.py
+
+Testing is_anagram()...
+Is listen an anagram of silent?: True
+```

@@ -31,3 +31,29 @@ Priority Queue: [(-4, 1, Item 4), (-1, 0, Item 1), (-3, 2, Item 3)]
 Pop: Item 4
 Priority Queue: [(-3, 2, Item 3), (-1, 0, Item 1)]
 ```
+
+<br>
+
+### `stack.py`
+
+<br>
+
+```python
+python3 stack.py
+
+Testing Stack...
+
+Stack: [12, 13, 14, 15, 16, 17, 18, 19, 20]
+Stack size: 9
+Stack peek: 20
+Stack is empty: False
+Stack min: 12
+
+Popping...
+20
+19
+18
+17
+16
+Stack: [12, 13, 14, 15]
+```
