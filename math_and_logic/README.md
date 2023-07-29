@@ -1,4 +1,4 @@
-## math and logic
+## math, logic, dynamic programming
 
 <br>
 
