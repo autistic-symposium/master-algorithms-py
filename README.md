@@ -41,6 +41,6 @@
     * 𝟘𝟘𝟙𝟙. **[linked lists](linked_lists)**
     * 𝟘𝟙𝟘𝟘. **[stacks and queues](stacks_and_queues)**
     * 𝟘𝟙𝟘𝟙. **[bit manipulation](bit_manipulation)**
-    * 𝟘𝟙𝟙𝟘. **[math, logic, dynamic programming](math_and_logic)**
+    * 𝟘𝟙𝟙𝟘. **[math, logic, dynamic programming](math_logic_dp)**
     * 𝟙𝟘𝟘𝟙. **[sorting and searching](sorting_and_searching)**
     * 𝟙𝟘𝟙𝟙. **[trees, transversals, graphs](trees_and_graphs/)**
