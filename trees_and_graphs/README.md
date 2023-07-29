@@ -9,14 +9,21 @@
 
 <br>
 
-* if the depth of the tree is too large, stack overflow might happen, therefore iterative solutions might be better.
-* **in-order** are similar to breath-first search (level order problems)
-  	- work with queues
-* **pre-order** is top-down (parameters are passed down to children).
-  	- work with stacks 
-* **post-order** is a bottom-up solution (if you know the answer of the children, can you concatenate the answer of the nodes?):
-	- deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
-	- also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
+* **breath-first search**:
+  	- similar to pre-order, but work with queue (level order problem)
+* **depth-first search**:
+	* if the depth of the tree is too large, stack overflow might happen, therefore iterative solutions might be better.
+ 	* work with stacks
+	* **in-order**:
+ 		* left -> node -> right
+	* **pre-order** 
+ 		* node -> left -> right
+   		* top-down (parameters are passed down to children).
+	* **post-order**
+ 		* left -> right -> node 
+ 		* bottom-up solution (if you know the answer of the children, can you concatenate the answer of the nodes?):
+		- deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
+		- also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
 
 
 <br>
