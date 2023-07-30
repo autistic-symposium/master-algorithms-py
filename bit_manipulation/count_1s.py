@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
 def count_ones(n: int) -> int:
         
         counter = 0
