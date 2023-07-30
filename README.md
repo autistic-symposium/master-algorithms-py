@@ -44,3 +44,15 @@
     * 𝟘𝟙𝟙𝟘. **[math, logic, dynamic programming](math_logic_dp)**
     * 𝟙𝟘𝟘𝟙. **[sorting and searching](sorting_and_searching)**
     * 𝟙𝟘𝟙𝟙. **[trees, transversals, graphs](trees_and_graphs/)**
+
+
+<br>
+
+---
+
+### external resources
+
+<br>
+
+* **[big-o complexity chart](https://www.bigocheatsheet.com/)**
+* **[hacker rank videos on algorithms](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)**
