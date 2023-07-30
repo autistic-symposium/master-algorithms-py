@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 """
 Given an array arr of integers, check if there exist two indices i and j such that :
 
