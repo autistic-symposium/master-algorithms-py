@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 def has_path_sum(root: Optional[TreeNode], target_sum: int) -> bool:
     
         def transverse(node, sum_here=0):
