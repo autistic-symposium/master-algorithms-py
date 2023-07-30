@@ -2,6 +2,19 @@
 
 <br>
 
+### queues
+
+<br>
+
+* queues can be implemented with two arrays or a dynamic array (linked list).
+* if implemented with a dynamic array, a more efficient solution is to use a circular queue (ring buffer), i.e. a fixed-size array and two pointers to indicate the starting and ending positions.
+* an advantage of circular queues is that we can use the spaces in front of the queue. in a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue. but using the circular queue, we can use the space to store new values.
+
+
+<br>
+
+----
+
 ### `Queues.py`
 
 <br>
