@@ -37,7 +37,7 @@
 
 
 * **📖 algorithms and data structures revisited (2023)**:
-    * 𝟘𝟘𝟙𝟘. **[arrays and strings and hash objects](arrays_and_strings)**
+    * 𝟘𝟘𝟙𝟘. **[arrays, strings, hash objects](arrays_and_strings)**
     * 𝟘𝟘𝟙𝟙. **[linked lists](linked_lists)**
     * 𝟘𝟙𝟘𝟘. **[stacks and queues](stacks_and_queues)**
     * 𝟘𝟙𝟘𝟙. **[bit manipulation](bit_manipulation)**
