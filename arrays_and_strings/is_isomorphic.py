@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
 def is_isomorphic(s: str, t: str) -> bool:
         
         map_s_to_t = {}
