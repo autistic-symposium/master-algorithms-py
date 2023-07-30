@@ -41,4 +41,7 @@ class Bucket:
     def remove(self, key):
         for i, k in enumerate(self.bucket):
             if key == k[0]:
+                # del is an O(n) operation, as we would copy all the i: elements
+                # to make it O(1) we could swap the element we want to remove
+                # with the last element in the bucket
                 del self.bucket[i]
