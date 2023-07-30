@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
 def convert_to_any_base(base: int, num: int) -> str:
         
         if num == 0:
