@@ -1,4 +1,8 @@
-## create a doubly linked list
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+# create a doubly linked list
+
 
 class Node():
 
