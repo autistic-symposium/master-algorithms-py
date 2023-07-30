@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
 def convert_to_hex(num: int) -> str:
       
   hex_chars  = "0123456789abcdef"
