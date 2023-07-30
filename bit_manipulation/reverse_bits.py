@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 def reverse_bits(n: int) -> int:
         
         result, base = 0, 31
