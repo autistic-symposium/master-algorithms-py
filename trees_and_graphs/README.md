@@ -24,12 +24,28 @@
 
 <br>
 
-- similar to pre-order, but work with a queue (level order problem)
+- iterative solutions use a queu (level order problem)
 - one common application of breadth-first search (BFS) is to find the shortest path from the root node to the target node.
 - in the first round, we process the root node, in the second round, we process the nodes next to the root node, in the third round, we process the nodes which are two steps from the root node, etc. newly-added nodes will not be traversed immediately but will be processed in the next round.
 - if node X is added to the kth round queue, the shortest path between the root node and X is exactly k.
 - the processing order of the nodes in the exact same order as how they were added to the queue, which is FIFO.
 
+<br>
+
+```python
+def bfs(root):
+
+   queue = queue()
+   root.marked = True
+   queue.enqueue(root)
+
+   while !queue.is_empty():
+	node = queue.deque()
+	visit(node)
+	for n in node_adj:
+		n.marked = True
+		queue.enque(n)
+```
 <br>
 
 ---
@@ -39,15 +55,16 @@
 <br>
 
 - similar to BFS, deep-first search (DFS) can also be used to find the path from the root node to the target node.
+- prefered if you want to visit every node.
 - overall, we only trace back and try another path after we reach the deepest node. as a result, the first path you find in DFS is not always the shortest path.
 - we first push the root node to the stack, then we try the first neighbor and push its node to the stack, etc.
 - when we reach the deepest node, we need to trace back. when we track back, we pop the deepest node from the stack, which is actually the last node pushed to the stack.
 - the processing order of the nodes is exactly the opposite order of how they are added to the stack.
 - recursion solutions are easier to implement; however, if the recursion depth is too high, stack overflow might occur. in that case, you might use BFS instead or implement DFS using an explicit stack (i.e., use a while loop and a stack structure to simulate the system call stack).
 - if the depth of the tree is too large, stack overflow might happen, therefore iterative solutions might be better.
-- work with stacks
+- work with stacks.
 
-<br>
+
 
 #### in-order
 
