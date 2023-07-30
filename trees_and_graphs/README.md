@@ -45,7 +45,7 @@ def preorder(self, root):
 	return [root.val] + preorder(root.left) + preorder(root.right)
 ````
 
-- top-down (parameters are passed down to children).
+- top-down (parameters are passed down to children), so deserialize with a queue.
 
 
 <br>
