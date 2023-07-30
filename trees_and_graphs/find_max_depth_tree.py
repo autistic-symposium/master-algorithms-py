@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 def max_depth(root: Optional[TreeNode]) -> int:
         
         if root is None:
