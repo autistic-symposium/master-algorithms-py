@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 # given a string, write a function to check if it's a permutation of palindromes
 
 
