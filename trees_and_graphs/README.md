@@ -2,6 +2,20 @@
 
 <br>
 
+### trees
+
+<br>
+
+* a node is called **leaf** if has no children.
+* **binary trees**: each node has up to 2 children.
+* **binary search tree**: all nodes on the left are smaller than the root, which is smaller than all nodes on the right.
+	* if the bst is **balanced**, it guarantees O(log(n)) for insert and search.
+* common types of balanced trees: **red-black** and **avl**.
+* a **complete tree** is a tree on which every level is fully filled (except perhaps for the last).
+* a **full binary tree** has each node with either zero or two children (and no node has only one child).
+* a **perfect tree** is both full and complete (it must have exactly 2**k - 1 nodes, where k is the number of levels).
+
+<br>
 
 ---
 
