@@ -1,4 +1,4 @@
-## trees and graphs
+## trees, heaps, tries, graphs
 
 <br>
 
@@ -6,7 +6,7 @@
 
 <br>
 
-* a node is called **leaf** if has no children.
+* a node is called **leaf** if it has no children.
 * **binary trees**: each node has up to 2 children.
 * **binary search tree**: all nodes on the left are smaller than the root, which is smaller than all nodes on the right.
 	* if the bst is **balanced**, it guarantees O(log(n)) for insert and search.
@@ -17,13 +17,14 @@
 
 <br>
 
+
 ---
 
 ### breath-first search
 
 <br>
 
-- similar to pre-order, but work with queue (level order problem)
+- similar to pre-order, but work with a queue (level order problem)
 - one common application of breadth-first search (BFS) is to find the shortest path from the root node to the target node.
 - in the first round, we process the root node, in the second round, we process the nodes next to the root node, in the third round, we process the nodes which are two steps from the root node, etc. newly-added nodes will not be traversed immediately but will be processed in the next round.
 - if node X is added to the kth round queue, the shortest path between the root node and X is exactly k.
@@ -92,6 +93,34 @@ def postorder(self, root):
 - deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
 - also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
 
+
+<br>
+
+---
+
+### binary heaps
+
+<br>
+
+* a **min heap** is a complete binary tree where each node is smaller than its children (the root is the min element). two key operations are:
+ 	- insert: always by the element at the bottom, at the most rightmost post
+  	- extract_min: the minimum element is always on top, and removing it is the trickest part:
+  	  	1. remove and swap it with the last element (the bottom most rightmost)
+  	 	2. them bubble down, swapping it with one of its children until the min-heap is properly restored (there is no order between right and left and it takes O(log n) time.   
+
+<br>
+
+----
+
+### tries
+
+<br>
+
+* a variant of n-ary tree in which characters are stored in each node
+* each path down the tree represents a word
+* the * nodes (null nodes) are often used to indicate complete words (usually represented by a special type of child) or a boolean flag that terminates the parent node
+* a node can have anywhere from 1 through alphabet_size + 1 child
+* can be used to store the entire english language for quick prefix lookup (O(k), where k is the length of the string)
 
 <br>
 
