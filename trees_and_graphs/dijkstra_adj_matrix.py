@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 # dijkstra's single source shortest path algorithm
 # with adjacency matrix representation
 
