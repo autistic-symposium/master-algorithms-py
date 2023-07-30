@@ -23,10 +23,12 @@
 
 <br>
 
+* the difference between a hash set and a hash map is that the set can never have repeated elements.
+
 * to implement a HashSet data structure, you need to implement:
     - a hash function (to assign an address to store a given value), and
     - a collision handling (since the nature of a hash function is to map a value from a space A to a corresponding smaller space B).
- 
+
     
 * overall, there are several strategies to resolve the collisions:
     - separate chaining: for value with the same hash key, we keep them in a bucket, and each bucket is independent of each other.
@@ -45,7 +47,7 @@
 
 <br>
 
-* a good choice for buckets is linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). 
+* a good choice for buckets is linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
 * time complexicity for search is O(N/K) where N is the number of all possible values and K is the number of predefined buckets (the average size of bucket is N/K). 
 * space complexity is O(K+M), where K is the number of predefined buckets, and M is the number of unique values that have been inserted in the HashSet. 
 * lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain O(logN) time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
@@ -56,11 +58,23 @@
 
 <br>
 
-* another option for a bucket is a binary search tree, with O(logN) time complexity for search, insert, and delete.
+* another option for a bucket is a binary search tree, with O(logN) time complexity for search, insert, and delete. in addition, bst can not hold repeated elements, just like sets.
 * time complexity for search is O(logN/K), where N is the number of all possible values and K is the number of predefined buckets.
 * space complexity is O(K+M) where K is the number of predefined buckets, and M is the number of unique values in the HashSet.
 
 <br>
+
+
+#### implementing a hash map
+
+<br>
+
+* same as before, we need to tackle two main issues: hash funcion design and collision handling.
+* a good approach is using a module function with an array or linked list. at this time, there is no constraint for repeated numbers.
+
+
+<br>
+
 
 ---
 
