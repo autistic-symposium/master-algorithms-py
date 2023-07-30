@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+
 def binary_search_recursive(array, item, higher=None, lower=0):
 
     higher = higher or len(array)
@@ -29,6 +30,7 @@ def binary_search_iterative(array, item):
         else:
             lower=mid+1
     return False
+
 
 def binary_search_matrix(matrix, item, lower=0, higher=None):
     """ Binary search in a matrix """
