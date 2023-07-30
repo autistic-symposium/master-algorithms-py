@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 '''
 Given an integer array nums, return the third distinct maximum 
 number in this array. If the third maximum does not exist, 
