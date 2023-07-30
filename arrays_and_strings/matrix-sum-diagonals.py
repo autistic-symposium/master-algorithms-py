@@ -1,5 +1,9 @@
-#!/bin/python3
-# Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+# Given a square matrix, calculate the absolute difference 
+# between the sums of its diagonals.
 
 import math
 import os
