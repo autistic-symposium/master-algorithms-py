@@ -1,4 +1,8 @@
-### find the length of the longest substring without repeating characters
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+# find the length of the longest substring without repeating characters
 
 
 def length_longest_substring(s: str) -> int:
