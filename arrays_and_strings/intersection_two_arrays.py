@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
 def intersect(nums1: list[int], nums2: list[int]) -> list[int]:
         
   result = []
