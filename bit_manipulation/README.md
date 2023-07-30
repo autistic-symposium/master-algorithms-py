@@ -117,6 +117,8 @@ Swap bit in place: (90, 144)
 
 <br>
 
+* the complement is the number with respect to 2**n:
+
 1. start with the equivalent positive number
 2. invert (or flip) all bits, changing every 0 to 1, and every 1 to 0
 3. add 1 to the entire inverted number, ignoring overflow
