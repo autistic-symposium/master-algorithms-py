@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 # Given a fixed-length integer array arr, duplicate each occurrence of zero, 
 # shifting the remaining elements to the right.
 
