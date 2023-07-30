@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 # Given the root of a binary tree, return the level order traversal of its nodes' values. 
 # (i.e., from left to right, level by level).
 
