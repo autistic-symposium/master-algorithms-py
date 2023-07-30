@@ -1,4 +1,4 @@
-## arrays and strings and hash objects
+## arrays, strings, hash objects
 
 <br>
 
