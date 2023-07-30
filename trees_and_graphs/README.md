@@ -5,25 +5,65 @@
 
 ---
 
-### tree tranversals
+### breath-first search
+
+
+* similar to pre-order, but work with queue (level order problem)
 
 <br>
 
-* **breath-first search**:
-  	- similar to pre-order, but work with queue (level order problem)
-* **depth-first search**:
-	* if the depth of the tree is too large, stack overflow might happen, therefore iterative solutions might be better.
- 	* work with stacks
-	* **in-order**:
- 		* left -> node -> right
-	* **pre-order** 
- 		* node -> left -> right
-   		* top-down (parameters are passed down to children).
-	* **post-order**
- 		* left -> right -> node 
- 		* bottom-up solution (if you know the answer of the children, can you concatenate the answer of the nodes?):
-		- deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
-		- also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
+---
+
+### depth-first search
+
+* if the depth of the tree is too large, stack overflow might happen, therefore iterative solutions might be better.
+* work with stacks
+
+<br>
+
+#### in-order
+
+- left -> node -> right
+
+```python
+def inorder(self, root):
+        if root is None:
+            return []
+	return inorder(root.left) + [root.val] + inorder(root.right)
+````
+
+<br>
+
+#### pre-order
+
+- node -> left -> right
+
+```python
+def preorder(self, root):
+        if root is None:
+            return []
+	return [root.val] + preorder(root.left) + preorder(root.right)
+````
+
+- top-down (parameters are passed down to children).
+
+
+<br>
+
+#### post-order
+
+- left -> right -> node
+
+```python
+def postorder(self, root):
+        if root is None:
+            return []
+	return postorder(root.left) + postorder(root.right) + [root.val] 
+````
+
+- bottom-up solution (if you know the answer of the children, can you concatenate the answer of the nodes?):
+- deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
+- also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
 
 
 <br>
