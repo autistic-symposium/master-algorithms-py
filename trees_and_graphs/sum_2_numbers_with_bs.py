@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 # given a collection of numbers, find the pair 
 # of numbers that sum to a given number
-
-
 
 def bs(array, desired_num):
 
