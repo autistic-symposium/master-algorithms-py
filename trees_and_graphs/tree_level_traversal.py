@@ -2,7 +2,7 @@
 # (i.e., from left to right, level by level).
 
 
-def levelOrder(root: Optional[TreeNode]) -> list[list[int]]:
+def level_order(root: Optional[TreeNode]) -> list[list[int]]:
         
         if root is None:
             return []
