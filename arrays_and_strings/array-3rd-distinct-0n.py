@@ -9,7 +9,7 @@ Do it O(n).
 import math
 
 
-def thirdMax(nums: list[int]) -> int:
+def third_max(nums: list[int]) -> int:
         
         first_max = -math.inf
         second_max = -math.inf
@@ -38,4 +38,4 @@ def thirdMax(nums: list[int]) -> int:
 if __name__ == "__main__":
 
     nums = [3,2,1]
-    assert(thirdMax(nums) == 1)
+    assert(third_max(nums) == 1)
