@@ -1,6 +1,29 @@
-## arrays and strings
+## arrays and strings and hash objects
 
 <br>
+
+### hash objects
+
+<br>
+
+* hash tables are data structure that organizes data using hash functions, in order to support quick insertion and search (map keys to buckets).
+* ideally, a perfect hash function will be a 1-1 mapping between the key and the buckets. however, in most cases, a hash function is not perfect and there is a tradeoff between the amount of buckets and the capacity of a bucket.
+* if the hash function is not a 1-1 mapping, collisions must be handled:
+    - how to organize the values in the same bucket?
+    - what if too many values are assigned to the same bucket?
+    - hwo to search for a target value in a specific bucket?
+
+<br>
+<img width="732" src="https://github.com/go-outside-labs/master-python-with-algorithms-py/assets/138340846/aa798e45-d53b-45b9-9f95-0e508eb923d7">
+
+
+<br>
+
+
+
+<br>
+
+---
 
 ### `is_palindrome.py`
 
