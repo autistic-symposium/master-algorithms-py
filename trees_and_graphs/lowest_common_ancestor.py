@@ -1,8 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 '''
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 '''
 
-class ThisTree:
+class Tree:
     def lowest_common_ancestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
         def dfs(root, p, q):
