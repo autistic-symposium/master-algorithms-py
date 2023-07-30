@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 '''
 Given an array of integers arr, return true if and only if it is a valid mountain array.
 
