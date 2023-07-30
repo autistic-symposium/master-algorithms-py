@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 '''
 Given the root of a binary tree, return the number of uni-value subtrees.
 A uni-value subtree means all nodes of the subtree have the same value.
