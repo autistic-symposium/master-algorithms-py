@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
 '''
 Serialization is the process of converting a data structure or object into 
 a sequence of bits so that it can be stored in a file or memory buffer, or 
