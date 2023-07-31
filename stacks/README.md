@@ -1,8 +1,5 @@
 ## stacks 
 
-<br>
-
-### stacks
 
 <br>
 
@@ -14,7 +11,7 @@
 
 ---
 
-## examples
+### examples
 
 <br>
 
