@@ -23,16 +23,20 @@ def binary_search_recursive(array, item, higher=None, lower=0):
 
 
 def binary_search_iterative(array, item):
+    
+    if lens(nums) == 0:
+        return False
+        
     lower, higher = 0, len(array)
 
-    while lower < higher:
+    while lower <= higher:
         mid = (higher + lower) // 2
         
         if array[mid] == item:
-            return mid
+            return mid 
             
         elif array[mid] > item:
-            higher = mid
+            higher = mid - 1
             
         else:
             lower = mid + 1
