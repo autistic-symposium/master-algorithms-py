@@ -21,7 +21,7 @@ def search(nums):
         # 2. write a binary search
         def bs(left, right, target):
 
-            while left < right:
+            while left <= right:
 
                 mid = (left + right) // 2
 
@@ -29,7 +29,7 @@ def search(nums):
                     return mid
                 
                 elif nums[mid] > target:
-                    right = mid
+                    right = mid - 1
                 
                 else:
                     left = mid + 1
