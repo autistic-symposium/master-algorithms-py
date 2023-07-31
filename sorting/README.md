@@ -10,7 +10,11 @@
 
 ----
 
-### `sorting_algorithms.py`
+## examples
+
+<br>
+
+#### `sorting_algorithms.py`
 
 <br>
 
@@ -25,7 +29,7 @@ Testing quick sort: [1, 2, 3, 5, 6, 10]
 
 <br>
 
-### `binary_search.py`
+#### `binary_search.py`
 
 <br>
 
