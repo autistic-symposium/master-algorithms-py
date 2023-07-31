@@ -16,7 +16,7 @@
 - **➡️ [one of the first-ever publications to solve classic computer science algorithm and data structure problems in python, published by hanbit media in 2014](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
 - **➡️ [as of today, it has 4.6/5 stars and 33 reviews (not bad for a book written in school by a self-taught)](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
 - **➡️ [this book as a reference for a CMU computer science class](https://www.andrew.cmu.edu/user/ramesh/teaching/course/48784.pdf)**.
-- **➡️ [here is a pic when this repo used to have 600+ stars and 300 forks (before 💩 happened 😞)](book/600_stars.png)**.
+- **➡️ [here is a pic when this repo used to have 600+ stars and 300 forks (before 💩 happened 😞)](MY_BOOK/600_stars.png)**.
 
 
 <br>
