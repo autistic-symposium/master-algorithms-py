@@ -23,7 +23,7 @@ Input: board =
 Output: true
 ```
 
-def isValidSudoku(self, board: List[List[str]]) -> bool:
+def is_valid_sudoku(board) -> bool:
         
   N = 9
 
