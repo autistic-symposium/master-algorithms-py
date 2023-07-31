@@ -19,6 +19,17 @@
 <br>
 <br>
 
+#### notes on keys
+
+<br>
+
+* when the order of each element in the string/array doesn't matter, you can use the sorted string/array as the key.
+* if you only care about the offset of each value, you can use it as as the key.
+* in a tree, you might want to directly use the `Node()` class as key sometimes, but in general, the serialization of the subtree might be a better idea.
+* in a matrix, you might want to use the row index or the column index as key. sometimes you might want to aggregate the values in the same diagonal line.
+
+<br>
+
 #### implementing a hash set
 
 <br>
@@ -48,7 +59,7 @@
 <br>
 
 * a good choice for buckets is linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
-* time complexicity for search is O(N/K) where N is the number of all possible values and K is the number of predefined buckets (the average size of bucket is N/K). 
+* time complexity for search is O(N/K) where N is the number of all possible values and K is the number of predefined buckets (the average size of bucket is N/K). 
 * space complexity is O(K+M), where K is the number of predefined buckets, and M is the number of unique values that have been inserted in the HashSet. 
 * lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain O(logN) time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
 
@@ -69,7 +80,7 @@
 
 <br>
 
-* same as before, we need to tackle two main issues: hash funcion design and collision handling.
+* same as before, we need to tackle two main issues: hash function design and collision handling.
 * a good approach is using a module function with an array or linked list. at this time, there is no constraint for repeated numbers.
 
 
