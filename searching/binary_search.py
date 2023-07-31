@@ -6,54 +6,61 @@
 def binary_search_recursive(array, item, higher=None, lower=0):
 
     higher = higher or len(array)
+    
     if higher < lower:
         return False
     
-    mid = (higher + lower)//2
+    mid = (higher + lower) // 2
+    
     if  item == array[mid]:
         return mid
+        
     elif item < array[mid]:
-        return binary_search_recursive(array, item, higher=mid-1, lower=lower)
+        return binary_search_recursive(array, item, mid - 1, lower)
+        
     else:
-        return binary_search_recursive(array, item, higher=higher, lower=mid+1)
+        return binary_search_recursive(array, item, =higher, mid + 1)
 
 
 def binary_search_iterative(array, item):
     lower, higher = 0, len(array)
 
     while lower < higher:
-        mid = (higher+lower)//2
+        mid = (highe r+ lower) // 2
+        
         if array[mid] == item:
             return mid
+            
         elif array[mid] > item:
             higher = mid
+            
         else:
-            lower=mid+1
+            lower = mid + 1
+            
     return False
 
 
 def binary_search_matrix(matrix, item, lower=0, higher=None):
-    """ Binary search in a matrix """
 
     if not matrix:
         return None
     
     rows = len(matrix)
     cols = len(matrix[0])
-    higher = higher or rows*cols
+    higher = higher or rows * cols
 
     if higher > lower:
-        mid = (higher + lower)//2
-        row = mid//cols
-        col = mid%cols
+        mid = (higher + lower) // 2
+        row = mid // cols
+        col = mid % cols
         item = matrix[row][col]
 
         if item == item:
             return row, col
         elif item < item:
-            return binary_search_matrix(matrix, item, lower, mid-1)
+            return binary_search_matrix(matrix, item, lower, mid - 1)
         else:
-            return binary_search_matrix(matrix, item, mid+1, higher)
+            return binary_search_matrix(matrix, item, mid + 1, higher)
         
     return None
 
