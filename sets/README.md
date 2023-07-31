@@ -32,8 +32,8 @@ class RandomizedSet:
 
     def remove(self, val: int) -> bool:
         if val in self.dict:
-            index = self.dict[val]
-            self.set[index] = self.set[-1]
+            last_element, idx = self.set[-1], self.dict[val]
+            self.set[idx], self.dict[last_element] = last_element, idx
             self.set.pop()
             del self.dict[val]
             return True
