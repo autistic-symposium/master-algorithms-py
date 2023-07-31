@@ -9,7 +9,7 @@
 
 <br>
 
-## [📖 my book on algorithms and data structure in python (2014)](book)
+## [📖 my book on algorithms and data structure in python (2014)](MY_BOOK)
 
 <br>
 
@@ -33,14 +33,20 @@
 
 <br>
 
-* 𝟘𝟘𝟙𝟘. **[arrays, strings, hash objects](arrays_and_strings)**
-* 𝟘𝟘𝟙𝟙. **[linked lists](linked_lists)**
-* 𝟘𝟙𝟘𝟘. **[stacks and queues](stacks_and_queues)**
-* 𝟘𝟙𝟘𝟙. **[bit manipulation](bit_manipulation)**
-* 𝟘𝟙𝟙𝟘. **[math, logic, dynamic programming](math_logic_dp)**
-* 𝟙𝟘𝟘𝟙. **[sorting and searching](sorting_and_searching)**
-* 𝟙𝟘𝟙𝟙. **[trees, heaps, tries, graphs](trees_and_graphs/)**
-
+* 𝟘𝟘𝟘𝟙. **[arrays and strings](arrays_and_strings)**
+* 𝟘𝟘𝟙𝟘. **[bit operations](bit_operations)**
+* 𝟘𝟘𝟙𝟙. **[dynamic programming](dynamic_programming)**
+* 𝟘𝟙𝟘𝟘. **[graphs](graphs)**
+* 𝟘𝟙𝟘𝟙. **[hash objects](hash_objects)**
+* 𝟘𝟙𝟙𝟘. **[heaps](heaps)**
+* 𝟘𝟙𝟙𝟙. **[linked lists](linked_lists)**
+* 𝟙𝟘𝟘𝟘. **[math](math)**
+* 𝟙𝟘𝟘𝟙. **[queues](queues)**
+* 𝟙𝟘𝟙𝟘. **[searching](searching)**
+* 𝟙𝟘𝟙𝟙. **[sorting](sorting)**
+* 𝟙𝟙𝟘𝟘. **[stacks](stacks)**
+* 𝟙𝟙𝟘𝟙. **[trees](trees)**
+* 𝟙𝟙𝟙𝟘. **[tries](tries)**
 
 <br>
 
