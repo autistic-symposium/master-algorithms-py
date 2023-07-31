@@ -97,6 +97,7 @@ def climbing_stairs(n) -> int:
 
 * tail recursion is a recursion where the recursive call is the final instruction in the recursion function. and there should be only one recursive call in the function.
 * tail recursion is exempted from the space overhead discussed above, ad it skips an entire chain of recursive calls returning and returns straight to the original caller (it does not need a call stack for all the recursive calls - instead of allocating new space on the stack, the system could simply reuse the space allocated earlier for this second recursion call).
+* when stack overflows, tail recursion might help.
 * some languages' compiler recognizes tail recursion pattern and optimizes their execution (e.g., C and C++, but not Java, Rust, or Python - although it's possible to implement ad-hoc).
 
 <br>
