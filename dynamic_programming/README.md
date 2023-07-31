@@ -50,7 +50,7 @@ def reverse(s):
 * memoization is an optimization technique that avoids recursion's duplicate calculations.
 * it's primarily used to speed up code by storing the intermediate results in a cache so that it can be reused later.
 * for example, a hash table can be used as a cache and should be passed along each subroutine call.
-* classical examples are fibonnaci and the "climbing stairs" problem:
+* classical examples are fibonacci and the "climbing stairs" problem:
 
 ```python
 cache = {1: 1, 0: 1}
@@ -63,5 +63,65 @@ def climbing_stairs(n) -> int:
    return cache[n]
 ```
 
+<br>
+
+----
+
+### time complexity
+
+<br>
+
+* the time complexity of a recursion algorithm is the product of the number of recursion invocations and the time complexity of the calculation, `R*O(s)`.
+* you can also look at the "execution tree", which is a tree that is used to denote the execution flow of a recursive function in particular. each node represents an invocation of the recursive function. therefore, the total number of nodes in the tree corresponds to the number of recursion calls during the execution.
+   * the execution tree of a recursive function would form a n-ary tree, with as the number of times recursion appears in the recurrence relation (for example, fibonacci would be a binary tree).
+   * in a full binary tree with n levels, the total number of nodes is 2**n -1, so O(2**n) would be the time complexity of the function.
+   * with memoization, fibonacci becomes O(1)*n = O(n)
+
+<br>
+
+----
+
+### space complexity
+
+<br>
+
+* there are mainly two parts of the space consumption that one should see in a recursive algorithm:
+   * recursion related space: refers to the memory cost that is incurred directly by the recursion, i.e. the stack to keep track of recursive function calls. in order to complete a recursive call, the system allocates some space in the stack to hold: the returning address of the function call, the parameters that are passed to the function call, the local variables within the funcion call. once the function call is done, the space is freed. for recursive algorithms, the function calls chain up successively until it reaches a base case, so the space used for each call is accumulated. overconsumption can cause stack overflow.
+   * non-recursive related space: refers to the memory that is not directly related to recursion, which includes the space (normally in heap) that is allocated for global variables.
+ 
+<br>
+
+#### tail recursion
+
+<br>
+
+* tail recursion is a recursion where the recursive call is the final instruction in the recursion function. and there should be only one recursive call in the function.
+* tail recursion is exempted from the space overhead discussed above, ad it skips an entire chain of recursive calls returning and returns straight to the original caller (it does not need a call stack for all the recursive calls - instead of allocating new space on the stack, the system could simply reuse the space allocated earlier for this second recursion call).
+* some languages' compiler recognizes tail recursion pattern and optimizes their execution (e.g., C and C++, but not Java, Rust, or Python - although it's possible to implement ad-hoc).
+
+<br>
+
+```python
+def sum_non_tail_recursion(ls):
+    if len(ls) == 0:
+        return 0
+    
+    # not a tail recursion because it does some computation after the recursive call returned
+    return ls[0] + sum_non_tail_recursion(ls[1:])
 
 
+def sum_tail_recursion(ls):
+
+    def helper(ls, acc):
+        if len(ls) == 0:
+            return acc
+
+        # this is a tail recursion because the final instruction is a recursive call
+        return helper(ls[1:], ls[0] + acc)
+    
+    return helper(ls, 0)
+```
+
+<br>
+
+ 
