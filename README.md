@@ -43,10 +43,11 @@
 * 𝟙𝟘𝟘𝟘. **[math](math)**
 * 𝟙𝟘𝟘𝟙. **[queues](queues)**
 * 𝟙𝟘𝟙𝟘. **[searching](searching)**
-* 𝟙𝟘𝟙𝟙. **[sorting](sorting)**
-* 𝟙𝟙𝟘𝟘. **[stacks](stacks)**
-* 𝟙𝟙𝟘𝟙. **[trees](trees)**
-* 𝟙𝟙𝟙𝟘. **[tries](tries)**
+* 𝟙𝟘𝟙𝟙. **[sets](sets)**
+* 𝟙𝟙𝟘𝟘. **[sorting](sorting)**
+* 𝟙𝟙𝟘𝟙. **[stacks](stacks)**
+* 𝟙𝟙𝟙𝟘. **[trees](trees)**
+* 𝟙𝟙𝟙𝟙. **[tries](tries)**
 
 <br>
 
