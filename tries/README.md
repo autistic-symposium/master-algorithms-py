@@ -7,7 +7,7 @@
 * the root is associated with the empty string.
 * the * nodes (null nodes) are often used to indicate complete words (usually represented by a special type of child) or a boolean flag that terminates the parent node.
 * a node can have anywhere from 1 through alphabet_size + 1 child.
-* can be used to store the entire english language for quick prefix lookup (O(k), where k is the length of the string). they are also widely used on autocompletes, spell checkers, etc.
+* can be used to store the entire english language for quick prefix lookup (O(k), where k is the length of the string). they are also widely used on autocompletes, spell checkers, and ip routing (longest prefix matching).
 * tries structures can be represented by arrays and maps or trees.
 
 <br>
