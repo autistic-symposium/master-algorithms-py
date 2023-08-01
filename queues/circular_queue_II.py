@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-## implement a circular queue
-
-
 class CircularQueue:
 
     def __init__(self, k: int):
@@ -13,15 +10,18 @@ class CircularQueue:
         self.size = k
         self.queue = [None] * self.size
         
+    def _get_next_position(self, end) -> int:
+        return (end + 1) % self.size
+        
     def enQueue(self, value: int) -> bool:
 
         if self.isFull():
             return False
 
-        if self.isEmpty():
-            head = 0;
-
-        self.tail = (self.tail + 1) % self.size
+        if self.isEmpty() :
+            self.head = 0;
+        
+        self.tail = self._get_next_position(self.tail)
         self.queue[self.tail] = value
 
         return True
@@ -36,7 +36,7 @@ class CircularQueue:
             self.tail = -1
             return True
         
-        self.head = (self.head + 1) % self.size
+        self.head = self._get_next_position(self.head)
 
         return True
 
@@ -54,7 +54,7 @@ class CircularQueue:
         return self.head == -1
 
     def isFull(self) -> bool:
-        return (self.tail + 1) % self.size == self.head
+        return self._get_next_position(self.tail) == self.head
         
 
 if __name__ == "__main__":
