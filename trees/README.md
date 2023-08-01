@@ -20,11 +20,10 @@
 
 <br>
 
-- iterative solutions use a queu (level order problem)
-- one common application of breadth-first search (BFS) is to find the shortest path from the root node to the target node.
-- in the first round, we process the root node, in the second round, we process the nodes next to the root node, in the third round, we process the nodes which are two steps from the root node, etc. newly-added nodes will not be traversed immediately but will be processed in the next round.
-- if node X is added to the kth round queue, the shortest path between the root node and X is exactly k.
-- the processing order of the nodes in the exact same order as how they were added to the queue, which is FIFO.
+- iterative solutions use a queue for traversal or find the shortest path from the root node to the target node (level order problem)
+	- in the first round, we process the root node, in the second round, we process the nodes next to the root node, in the third round, we process the nodes which are two steps from the root node, etc. newly-added nodes will not be traversed immediately but will be processed in the next round.
+	- if node X is added to the kth round queue, the shortest path between the root node and X is exactly k.
+	- the processing order of the nodes in the exact same order as how they were added to the queue, which is FIFO.
 
 <br>
 
