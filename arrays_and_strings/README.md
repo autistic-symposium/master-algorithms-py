@@ -2,6 +2,38 @@
 
 <br>
 
+### comparing strings
+
+<br>
+
+* "==" can be used to compare two strings only if the language support operator overloading (like C++).
+
+<br>
+
+----
+
+### two-pointer technique
+
+<br>
+
+* a typical scenario is when you want to iterate the array from two ends to the middle. 
+* another secnario is when you need one slow-runner and one fast-runner at the same time (so that you can determine the movement strategy for both pointers).
+* in any case, this technique is usually used when the array is sorted.
+
+<br>
+
+---
+
+### two-dimensional arrays
+
+<br>
+
+* in some languages (like C++), 2d arrays are represented as 1d, so an array of `m * n` elements represents `array[i][j]` as `array[i * n + j]`.
+* dynamic 2d arrays a nested dynamic array.
+
+
+<br>
+
 ---
 
 ### examples
