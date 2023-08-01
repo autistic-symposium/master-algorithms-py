@@ -13,12 +13,12 @@ class CircularQueue:
     def _get_next_position(self, end) -> int:
         return (end + 1) % self.size
         
-    def enQueue(self, value: int) -> bool:
+    def enqueue(self, value: int) -> bool:
 
-        if self.isFull():
+        if self.is_full():
             return False
 
-        if self.isEmpty() :
+        if self.is_empty() :
             self.head = 0;
         
         self.tail = self._get_next_position(self.tail)
@@ -26,9 +26,9 @@ class CircularQueue:
 
         return True
 
-    def deQueue(self) -> bool:
+    def dequeue(self) -> bool:
 
-        if self.isEmpty():
+        if self.is_empty():
             return False
 
         if self.head == self.tail:
@@ -41,71 +41,18 @@ class CircularQueue:
         return True
 
     def Front(self) -> int:
-        if self.isEmpty():
+        if self.is_empty():
             return -1
         return self.queue[self.head]
         
     def Rear(self) -> int:
-        if self.isEmpty():
+        if self.is_empty():
             return -1
         return self.queue[self.tail]
         
-    def isEmpty(self) -> bool:
+    def is_empty(self) -> bool:
         return self.head == -1
 
-    def isFull(self) -> bool:
+    def is_full(self) -> bool:
         return self._get_next_position(self.tail) == self.head
         
-
-if __name__ == "__main__":
-
-    q = CircularQueue(5)
-    print(f'q: {q.queue}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q.isFull(): {q.isFull()}')
-    print(f'q.enQueue(1): {q.enQueue(1)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.enQueue(2): {q.enQueue(2)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.enQueue(3): {q.enQueue(3)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.enQueue(4): {q.enQueue(4)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'isFull(): {q.isFull()}')
-    print(f'q.enQueue(5): {q.enQueue(5)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'isFull(): {q.isFull()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q: {q.queue}')
-    print(f'q.enQueue(6): {q.enQueue(6)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'isFull(): {q.isFull()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print()
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.Front(): {q.Front()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q.isFull(): {q.isFull()}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.Front(): {q.Front()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q.isFull(): {q.isFull()}')
