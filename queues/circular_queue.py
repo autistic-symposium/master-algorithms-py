@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-## implement a circular queue
-
-
 class CircularQueue:
 
     def __init__(self, k: int):
@@ -13,18 +10,18 @@ class CircularQueue:
         self.size = k
         self.queue = [None] * self.size
         
-    def enQueue(self, value: int) -> bool:
+    def enqueue(self, value: int) -> bool:
 
         if value is None:
             return False
             
-        if self.isFull():
+        if self.is_full():
             return False
 
-        if self.isEmpty():
+        if self.is_empty():
             self.heard = 0
         
-        while self.queue[self.tail] != None:
+        while self.queue[self.tail] is not None:
             self.tail += 1 
             if self.tail == self.size:
                 self.tail = 0
@@ -32,9 +29,9 @@ class CircularQueue:
         self.queue[self.tail] = value
         return True
 
-    def deQueue(self) -> bool:
+    def dequeue(self) -> bool:
 
-        if self.isEmpty():
+        if self.is_empty():
             return False
 
         value = self.queue[self.head]
@@ -46,74 +43,21 @@ class CircularQueue:
 
         return True
 
-    def Front(self) -> int:
+    def front(self) -> int:
         return self.queue[self.head] or -1
         
-    def Rear(self) -> int:
+    def rear(self) -> int:
         return self.queue[self.tail] or -1
         
-    def isEmpty(self) -> bool:
+    def is_empty(self) -> bool:
         for n in self.queue:
             if n is not None:
                 return False
         return True
 
-    def isFull(self) -> bool:
+    def is_full(self) -> bool:
         for n in self.queue:
             if n is None:
                 return False
         return True
         
-
-if __name__ == "__main__":
-
-    q = CircularQueue(5)
-    print(f'q: {q.queue}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q.isFull(): {q.isFull()}')
-    print(f'q.enQueue(1): {q.enQueue(1)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.enQueue(2): {q.enQueue(2)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.enQueue(3): {q.enQueue(3)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.enQueue(4): {q.enQueue(4)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'isFull(): {q.isFull()}')
-    print(f'q.enQueue(5): {q.enQueue(5)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'isFull(): {q.isFull()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q: {q.queue}')
-    print(f'q.enQueue(6): {q.enQueue(6)}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'isFull(): {q.isFull()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print()
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.Front(): {q.Front()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q.isFull(): {q.isFull()}')
-    print(f'q.deQueue(): {q.deQueue()}')
-    print(f'q: {q.queue}')
-    print(f'h: {q.head}, t: {q.tail}')
-    print(f'q.Front(): {q.Front()}')
-    print(f'q.isEmpty(): {q.isEmpty()}')
-    print(f'q.isFull(): {q.isFull()}')
