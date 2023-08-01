@@ -3,7 +3,13 @@
 <br>
 
 * queues are **first in, first out structures (FIFO)** (i.e., items are removed at the same order they are added) that can be implemented with two arrays or a dynamic array (linked list), as long as items are added and removed from opposite sides.
-* if implemented with a dynamic array, a more efficient solution is to use a circular queue (ring buffer), i.e. a fixed-size array and two pointers to indicate the starting and ending positions. an advantage of circular queues is that we can use the spaces in front of the queue. in a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue. but using the circular queue, we can use the space to store new values.
+
+  
+* if implemented with a dynamic array, a more efficient solution is to use a circular queue (ring buffer), i.e. a fixed-size array and two pointers to indicate the starting and ending positions.
+    * an advantage of circular queues is that we can use the spaces in front of the queue.
+    * in a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue. but using the circular queue, we can use the space to store new values.
+ 
+    
 * queues are often used in breath-first search (where you store a list of nodes to be processed) or when implementing a cache.
 
 
@@ -24,7 +30,7 @@ tail_index = (head_index + queue_length - 1) % queue_capacity
 
 <br>
 
-* here is an example of an implementation using a "fixed-sized" array (sort of):
+* here is an example of an implementation using a "fixed-sized" array (sort of) using arrays:
 
 <br>
 
@@ -83,6 +89,80 @@ class CircularQueue:
     def is_full(self) -> bool:
         return self._get_next_position(self.tail) == self.head
 ```
+
+<br>
+
+* and here is a much clear example using a linked list:
+
+<br>
+
+```python
+class Node:
+
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+
+
+class CircularQueue:
+
+    def __init__(self, k: int):
+      
+        self.capacity = k
+        self.count = 0
+        self.head = None
+        self.tail = None
+        
+    def enqueue(self, value: int) -> bool:
+
+        if self.count == self.capacity:
+            return False
+        
+        if self.count == 0:
+            self.head = Node(value)
+            self.tail = self.head
+        else:
+            new_node = Node(value)
+            self.tail.next = new_node
+            self.tail = new_node
+          
+        self.count += 1
+      
+        return True
+
+    def dequeue(self) -> bool:
+
+        if self.count == 0:
+            return False
+          
+        self.head = self.head.next
+        self.count -= 1
+      
+        return True
+
+    def front(self) -> int:
+
+        if self.count == 0:
+            return -1
+          
+        return self.head.value
+
+    def rear(self) -> int:
+
+        if self.count == 0:
+            return -1
+          
+        return self.tail.value
+    
+    def is_empty(self) -> bool:
+
+        return self.count == 0
+
+    def is_full(self) -> bool:
+
+        return self.count == self.capacity
+```
+
 
 <br>
 
