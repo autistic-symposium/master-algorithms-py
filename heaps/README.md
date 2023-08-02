@@ -229,3 +229,19 @@ class MaxHeap:
         return str(self.maxheap[1 : self.realsize + 1])
 ```
 
+<br>
+
+---
+
+
+### heap sort
+
+<br>
+
+
+* the core concept of the heap sort involves constructing a heap from our input and then repeatedly removing the min/max element to sort the array.
+* the key idea for in-place heap sort involves a balance of these two ideas:
+	- building a heap from an unsorted array through a "bottom-up heapification" process, and
+ 	- using the heap to sort the input array
+* heapsort traditionally uses a max-heap to sort the array, although a min-heap also works.
+* this is not a stable sort.
