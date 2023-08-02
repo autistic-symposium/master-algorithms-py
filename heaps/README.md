@@ -10,12 +10,12 @@
 
 <br> 
 
+* heap is a data structure capable of giving you the smallest (or the largest) element in constant time, while adding or removing the smallest (or the largest) element on logarithmic time.
+
 * a heap is a binary tree with these properties:
 	* it must have all of **its nodes in a specific order**, and
  	* its shape must be **complete** (all the levels of the tree must be completely filled except maybe for the last one and the last level must have the left-most nodes filled, always).
 	* a max heap's **root node must** have all its children either **greater than or equal** to its children. a min heap is the opposite. duplicate values are allowed.
-
-* since you always remove the root, insertion and deletion takes `O(log(N))`. the maximum/minimum value in the heap can be obtained with `O(1)` time complexity.
 
 * heaps can be represented with linked lists or queues (arrays) or binary trees. in the case of a tree to array heap:
 	* the parent node index is given by `n / 2`
