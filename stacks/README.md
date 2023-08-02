@@ -3,8 +3,8 @@
 
 <br>
 
-* last in, first out structures (LIFO)
-* useful in certain recursive algorithms, where you can push temp data as you recurse, and remove them from the (memory or data structure) stack as you backtrace.
+* stacks are **last in, first out** structures (LIFO), where the newest element is first one to be removed from the structure.
+* stacks are useful in certain recursive algorithms, where you can push temp data as you recurse, and remove them from the (memory or data structure) stack as you backtrace.
 
 
 <br>
