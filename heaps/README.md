@@ -10,7 +10,7 @@
 
 <br> 
 
-* heap is a data structure capable of giving you the smallest (or the largest) element in constant time, while adding or removing the smallest (or the largest) element on logarithmic time. however, adding a new element can be `O(N)`.
+* heap is a data structure capable of giving you the smallest (or the largest) element in constant time, while adding or removing the smallest (or the largest) element on logarithmic time. 
 
 * a heap is a binary tree with these properties:
 	* it must have all of **its nodes in a specific order**, and
