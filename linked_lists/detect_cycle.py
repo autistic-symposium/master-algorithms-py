@@ -2,6 +2,12 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+class tNode:
+
+   def __init__(self, val):
+       self.val = val
+       self.next = None
+
 
 def has_cycle(self, head) -> bool:
         
