@@ -50,7 +50,7 @@ def bfs(root):
 <br>
 
 - similar to BFS, deep-first search (DFS) can also be used to find the path from the root node to the target node.
-- prefered if you want to visit every node.
+- it's a good option for finding the first path (instead of the first path), or if you want to visit every node.
 - overall, we only trace back and try another path after we reach the deepest node. as a result, the first path you find in DFS is not always the shortest path.
 - we first push the root node to the stack, then we try the first neighbor and push its node to the stack, etc.
 - when we reach the deepest node, we need to trace back. when we track back, we pop the deepest node from the stack, which is actually the last node pushed to the stack.
@@ -59,7 +59,20 @@ def bfs(root):
 - if the depth of the tree is too large, stack overflow might happen, therefore iterative solutions might be better.
 - work with stacks.
 
+<br>
 
+```python
+def dfs(root, visited):
+	if root is None:
+		return root
+	while root.next:
+		if root.next not in visited:
+			visited.add(root.next)
+		return dfs(root.next, visited)
+	return False	
+```
+
+<br>
 
 #### in-order
 
