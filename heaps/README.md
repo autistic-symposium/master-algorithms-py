@@ -27,6 +27,13 @@
     
 <br>
 
+<p align="center">
+<img src="https://github.com/go-outside-labs/master-python-with-algorithms-py/assets/138340846/38d660ab-cdba-49d6-99d9-e489b5dab138" width="80%"/>
+</p>
+
+
+<br>
+
 ----
 
 ### priority queues
