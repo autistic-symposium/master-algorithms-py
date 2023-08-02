@@ -62,7 +62,7 @@ class LinkedList:
         new_node.next = node.next
         node.next = new_node
 
-    def deleteAtIndex(self, index: int) -> None:
+    def delete_at_index(self, index: int) -> None:
         
         if self.len <= index or index < 0:
             return -1
