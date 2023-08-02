@@ -34,17 +34,17 @@ class LinkedList:
         
         return node.val
 
-    def addAtHead(self, val: int) -> None:
+    def add_at_head(self, val: int) -> None:
         
-        self.addAtIndex(0, val)
+        self.add_at_index(0, val)
 
 
-    def addAtTail(self, val: int) -> None:
+    def add_at_tail(self, val: int) -> None:
         
-        self.addAtIndex(self.len, val)
+        self.add_at_index(self.len, val)
         
 
-    def addAtIndex(self, index: int, val: int) -> None:
+    def add_at_index(self, index: int, val: int) -> None:
         
         if self.len < index:
             return -1
@@ -74,5 +74,3 @@ class LinkedList:
             node = node.next
             
         node.next = node.next.next
-        
-       
