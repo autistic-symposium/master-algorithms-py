@@ -16,13 +16,22 @@
 	* a max heap's **root node must** have all its children either **greater than or equal** to its children. a min heap is the opposite. duplicate values are allowed.
 
 * since you always remove the root, insertion and deletion takes `O(log(n))`. the maximum/minimum value in the heap can be obtained with `O(1)` time complexity.
-* heaps can be represented with linked lists or queues (arrays).
-	* in the case of arrays, the index of the parent `node = [(n-1)/2]`.
+
+* heaps can be represented with linked lists or queues (arrays) or binary trees.
+
+* in the case of a tree to array heap:
+	* the parent node index is given by `n / 2`
+	* the left children index is `2 * n`
+	* the right children index is `2 * n + 1`
+ 	* a node is a leaf when its index `> n / 2` 
+    
 <br>
 
 ----
 
 ### priority queues
+
+<br>
 
 * a priority queue is an abstract data type with the following properties:
 	1. every item has a priority (usually an integer).
@@ -37,6 +46,8 @@
 
 ### min heaps
 
+<br>
+
 * a **min heap** is a complete binary tree where each node is smaller than its children (the root is the min element).
 
 * `insert`:
@@ -48,7 +59,9 @@
   	- then bubble down, swapping it with one of its children until the min-heap is properly restored
   	- there is no need for order between right and left, so this operation would only take `O(log n)` runtime.
 
-* the code below is an example:
+* the code below is an example of an ad-hoc heap class in python.
+
+<br>
 
 ```python
 class MinHeap:
@@ -128,6 +141,8 @@ class MinHeap:
 
 ### max heaps
 
+<br>
+
 * a **max heap** is a complete binary tree where each node is larger than its children (the root is the max element).
 
 * `insert`:
@@ -138,7 +153,9 @@ class MinHeap:
 	* remove/return the top and then replace the tree's top with its bottom rightmost element.
  	* swap up until the max element is on the top. 
 
-* the code below is an example:
+* the code below is an example of a max heap class built in python:
+
+  <br>
 
 ```python
 class MaxHeap:
