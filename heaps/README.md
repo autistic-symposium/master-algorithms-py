@@ -15,16 +15,18 @@
  	* its shape must be **complete** (all the levels of the tree must be completely filled except maybe for the last one and the last level must have the left-most nodes filled, always).
 	* a max heap's **root node must** have all its children either **greater than or equal** to its children. a min heap is the opposite. duplicate values are allowed.
 
-* since you always remove the root, insertion and deletion takes `O(log(n))`. the maximum/minimum value in the heap can be obtained with `O(1)` time complexity.
+* since you always remove the root, insertion and deletion takes `O(log(N))`. the maximum/minimum value in the heap can be obtained with `O(1)` time complexity.
 
-* heaps can be represented with linked lists or queues (arrays) or binary trees.
-
-* in the case of a tree to array heap:
+* heaps can be represented with linked lists or queues (arrays) or binary trees. in the case of a tree to array heap:
 	* the parent node index is given by `n / 2`
 	* the left children index is `2 * n`
 	* the right children index is `2 * n + 1`
  	* a node is a leaf when its index `> n / 2` 
-    
+
+* it's cheaper to heapify an array of data (`O(N)`) than creating an empty heap and inserting each element ((`O(N log(N))`). heapify means create a binary tree and then comparing each nodes with their child (and swapping when necessary). leaves are left out. parents node can simply exchange with their smallest child (so the max number of exchanges is `N/2`).
+
+* common applications of heap are: sort (heap sort), getting the top-k elements, and finding the kth element.
+
 <br>
 
 <p align="center">
@@ -59,12 +61,12 @@
 
 * `insert`:
   	- insert the element at the bottom, by finding the most rightmost node and checking its children: if left is empty, insert there, otherwise, insert on right.
-  	- then compare this node to each parent, exchanging them until the tree's properties are corret.
+  	- then compare this node to each parent, exchanging them until the tree's properties are correct.
   	
 * `extract_min`:
   	- first, remove/return the top and then replace the tree's top with its latest element (the bottom most rightmost).
   	- then bubble down, swapping it with one of its children until the min-heap is properly restored
-  	- there is no need for order between right and left, so this operation would only take `O(log n)` runtime.
+  	- there is no need for order between right and left, so this operation would only take `O(log N)` runtime.
 
 * the code below is an example of an ad-hoc heap class in python.
 
