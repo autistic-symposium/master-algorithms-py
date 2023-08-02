@@ -245,3 +245,30 @@ class MaxHeap:
  	- using the heap to sort the input array
 * heapsort traditionally uses a max-heap to sort the array, although a min-heap also works.
 * this is not a stable sort.
+
+<br>
+
+----
+
+### top k elements problem (`O(klog(N) + N)`)
+
+<br>
+
+1. construct a max (min) heap and add all elements into it (`O(N)`)
+2. traverse and delete the top element, storing the value into a resulting array 
+3. repeat 2. until all k elements are removed (`O(k * log(N))`)
+
+<br>
+
+----
+
+### the kth-element problem
+
+<br>
+
+1. construct a max (min) heap and add all elements into it (`O(N)`)
+2. traverse and delete the top element
+3. repeat 2. until k-th largest (smallest) is found (`O(k * log(N))`)
+
+<br>
+
