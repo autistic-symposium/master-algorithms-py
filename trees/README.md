@@ -25,6 +25,48 @@
 
 <br>
 
+#### search for a value
+
+<br>
+
+```python
+def search_bst_recursive(root, val):
+        
+        if root is None or root.val == val:
+            return root
+        
+        if val > root.val:
+            return search_bst_recursive(root.right, val)
+        
+        else:
+            return search_bst_recursive(root.left, val)
+
+
+def search_bst_iterative(root, val):
+        
+        node = root
+        while node:
+            
+            if node.val == val:
+                return node
+
+            if node.val < val:
+                node = node.right
+
+            else:
+                node = node.left
+        
+        return False
+```
+
+
+<br>
+
+* for the recursive solution, in the worst case, the depth of the recursion is equal to the height of the tree. therefore, the time complexity would be `O(h)`. the space complexity is also `O(h)`.
+* for an iterative solution, the time complexity is equal to the loop time which is also `O(h)`, while the space complexity is `O(1)`.
+
+<br>
+
 
 #### checking if valid
 
@@ -84,9 +126,82 @@ def is_valid_bst_inorder(root):
 
 <br>
 
+#### inserting a node
+
+<br>
+
+* the main strategy is to find out a proper leaf position for the target and then insert the node as a leaf (therefore, insertion will begin as a search).
+* the time complexity is `O(H)` where `H` is a tree height. that results in `O(log(N))` in the average case, and `O(N)` worst case.
+
+<br>
+
+```python
+def bst_insert_iterative(root, val):
+
+  new_node = Node(val)
+  this_node = root
+  
+  while this_node:
+    
+    if  val > this_node.val:
+        if not this_node.right:
+          this_node.right = new_node
+          return root
+        else:
+          this_node = this_node.right
+    
+    else:
+        if not this_node.left:
+          this_node.left = new_node
+          return this_node
+        else:
+          this_node = this_node.left
+        
+  return new_node
+
+
+def bst_insert_recursive(root, val):
+        
+    if not root:
+        return Node(val)
+
+    if val > root.val:
+        root.right = self.insertIntoBST(root.right, val)
+        
+    else:
+        root.left = self.insertIntoBST(root.left, val)
+        
+    return root
+```
+
+<br>
+
 ---
 
-### breath-first search (level-order)
+#### deleting a node
+
+<br>
+
+* deletion is a more complicated operation, and there are several strategies. one of them is to replace the target node with a proper child:
+  	- if the target node has no child: simply remove the node
+  	- if the target node has one child, use the child to replace the node
+  	- if the target node has two child, replace the node with its in-order successor or predecessor node and delete the node
+
+* similar to the recursion solution of the search operation, the time complexity is `O(H)` in the worst case. according to the depth of recursion, the space complexity is also `O(H)` in the worst case. we can also represent the complexity using the total number of nodes `N`. The time complexity and space complexity will be `O(logN)` in the best case but `O(N)` in the worse case.
+
+
+
+<br>
+
+```python
+
+````
+
+<br>
+
+---
+
+### tree traversal: breath-first search (level-order)
 
 <br>
 
@@ -115,7 +230,7 @@ def bfs(root):
 
 ---
 
-### depth-first search
+### tree traversal: depth-first search
 
 <br>
 
@@ -151,7 +266,7 @@ def dfs(root, visited):
 <br>
 
 - `left -> node -> right`
-- in a bst, in-order traversal will be in ascending order (therefore, it's the most frequent used method).
+- in a bst, in-order traversal will be in ascending order (therefore, it's the most frequently used method).
 
 ```python
 def inorder(self, root):
@@ -192,7 +307,7 @@ def preorder(self, root):
 - `left -> right -> node`
 - bottom-up solution (if you know the answer of the children, can you concatenate the answer of the nodes?):
 - deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
-- also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
+- also, post-order is used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet an operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
 
 <br>
 
