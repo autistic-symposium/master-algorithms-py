@@ -96,6 +96,36 @@ def search_bst_iterative(root, val):
 
 ---
 
+#### find lowest common ancestor
+
+<br>
+
+```python
+  def lca(self, root, p, q):
+        
+        node = root
+        this_lcw = root.val
+        
+        while node:
+            
+            this_lcw = node
+            
+            if node.val > p.val and node.val > q.val:
+                node = node.left
+                
+            elif node.val < p.val and node.val < q.val:
+                node = node.right
+                
+            else:
+                break
+        
+        return this_lcw
+```
+
+<br>
+
+---
+
 #### checking if valid
 
 <br>
