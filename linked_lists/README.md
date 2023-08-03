@@ -8,7 +8,7 @@
   * if you need to add or delete a node frequently, a linked list could be a good choice.
   * if you need to access an element by index often, an array might be a better choice than a linked list. 
 
-* nodes can be added at the beginning, head needs to be update (`current -> head` and `head = current`).
+* nodes can be added at the beginning, head needs to be updated (`current -> head` and `head = current`).
 
 * to remove a node you set `prev.next` equal to `node.next`. if it's a double list, you also update `node.next` with `node.next.prev` to `node.prev` (and deallocate the memory).
 
@@ -27,7 +27,7 @@
 
 <br>
 
-* cycles in a linked list can be detecting by using a hash table or with the two-pointer technique.
+* cycles in a linked list can be detected by using a hash table or with the two-pointer technique.
   
 * if there is no cycle, the faster pointer (going 2 steps) will stop at the end of the list, but if there is a cycle, the fast pointer will eventually meet the slow pointer (going 1 step).
 
@@ -68,7 +68,7 @@ def reverse_list(head):
 
 ---
 
-### removing linked list elements
+### removing elements
 
 <br>
 
@@ -76,7 +76,7 @@ def reverse_list(head):
 
 * this problem is easy if one has to delete a node in the middle, as all you need to do is loop until the predecessor node and change the pointers.
 
-* however, if the node to be deleted is in the head of the list, the best way is to use a sentinel node. sentinel nodes are widely used in trees and linked lists as pseudo-heads, pseudo-tails, markers of level end, etc. they are purely functional and usually does not hold any data. their main purpose is to standardize the process (by making the list never be empty or headless).
+* however, if the node to be deleted is in the head of the list, the best way is to use a sentinel node. sentinel nodes are widely used in trees and linked lists as pseudo-heads, pseudo-tails, markers of level end, etc. they are purely functional and usually do not hold any data. their main purpose is to standardize the process (by making the list never empty or headless).
 
 * examples are LRU cache (where sentinel nodes are used as pseudo-head and pseudo-tail) and tree level order traversal (where sentinel nodes are used to mark level end).
 
@@ -111,38 +111,7 @@ def remove_elements(head, val):
   
 * when it comes to add and delete operations, extra attention is needed when you want to delete or insert at the beginning or at the end of the list.
 
-<br>
-
-```python
-
-
-```
 
 
 <br>
 
-----
-
-### some exercises in this dir
-
-<br>
-
-#### `LinkedListFIFO.py`
-
-<br>
-
-```python
-python LinkedListFIFO.py
-
-Linked List FIFO
-Add 1: None
-Add 2: Nonew
-Add 3: None
-Length: 3
-Find 1: (None, None, 0)
-Delete 1: None
-Length: 0
-Find 1: (None, None, 0)
-```
-
-<br>
