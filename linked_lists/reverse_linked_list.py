@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-class ListNode:
-    def __init__(self, val=0, next=None):
+class Node:
+    def __init__(self, val=0, next):
         self.val = val
         self.next = next
 
 
-def reverse_list(head: Optional[ListNode]) -> Optional[ListNode]:
+def reverse_list(head: Optional[Node]) -> Optional[Node]:
             
-        if (not head) or (not head.next):
+        if not head or not head.next:
             return head
                 
         new_head = reverse_list(head.next)
