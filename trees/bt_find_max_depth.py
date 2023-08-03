@@ -8,3 +8,4 @@ def max_depth(root: Optional[Node]) -> int:
             return 0
         
         return max(max_depth(root.left) + 1, max_depth(root.right)  + 1)
+        
