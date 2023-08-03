@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-def build_tree(preorder: list[int], inorder: list[int]) -> Optional[TreeNode]:
+def build_tree(preorder: list[int], inorder: list[int]) -> Optional[Node]:
         
         def helper(i_left, i_right, index_map):
             
