@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# author: bt3gl
 
 
-def selection_sort(lst):
 
-    for i in range(len(lst)):
+def selection_sort(array):
+
+    for i in range(len(array)):
         min_index = i
-        for j in range(i + 1, len(lst)):
-            if lst[j] < lst[min_index]:
+        
+        for j in range(i + 1, len(array)):
+            if array[j] < array[min_index]:
                 min_index = j
 
-    lst[min_index], lst[i] = lst[i], lst[min_index]
+    array[min_index], array[i] = array[i], array[min_index]
