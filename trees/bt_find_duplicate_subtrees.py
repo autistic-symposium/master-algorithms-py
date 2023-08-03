@@ -1,18 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # author: bt3gl
-#
+
 # Given the root of a binary tree, return all duplicate subtrees.
-#
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 
 
-def find_duplicates(root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
+def find_duplicates(root: Optional[Node]) -> list[Optional[Node]]:
 
         result = []
         counter = {}
