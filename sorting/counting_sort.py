@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# author: bt3gl
 
 
-def counting_sort(list):
+def counting_sort(array):
 
-        K = max(lst)
-        counts = [0] * (K + 1)
-        for elem in lst:
-            counts[elem] += 1
+        k = max(array)
+        counts = [0] * (k + 1)
+        
+        for e in array:
+            counts[e] += 1
 
         starting_index = 0
         for i, count in enumerate(counts):
             counts[i] = starting_index
             starting_index += count
 
-        sorted_lst = [0] * len(lst)
+        sorted_list = [0] * len(array)
 
-        for elem in lst:
+        for e in array:
 
-            sorted_lst[counts[elem]] = elem
-            counts[elem] += 1
+            sorted_list[counts[e]] = e
+            counts[e] += 1
 
-        for i in range(len(lst)):
-            lst[i] = sorted_lst[i]
+        for i in range(len(array)):
+            array[i] = sorted_list[i]
