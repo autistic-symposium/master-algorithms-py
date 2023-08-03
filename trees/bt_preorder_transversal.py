@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-# recursive and iterative inorder traversal
 
-def preorder_recursive(root: Optional[TreeNode]) -> list[int]:
+def preorder_recursive(root: Optional[Node]) -> list[int]:
        
         if root == None:
                 return []
@@ -12,7 +11,7 @@ def preorder_recursive(root: Optional[TreeNode]) -> list[int]:
         return [root.val] + preorder_recursive(root.left) + preorder_recursive(root.right)
     
 
-def preorder_iterative(root: Optional[TreeNode]) -> list[int]:
+def preorder_iterative(root: Optional[Node]) -> list[int]:
         
         result = []
         stack = [root]
