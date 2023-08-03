@@ -25,6 +25,31 @@
 
 <br>
 
+#### predecessor and successor
+
+<br>
+
+```python
+def successor(root):
+  
+  root = root.right
+  while root.left:
+      root = root.left
+      
+  return root
+
+
+def predecessor(root):
+  
+  root = root.left
+  while root.right:
+      root = root.right
+  
+  return root
+```
+
+<br>
+
 #### search for a value
 
 <br>
@@ -183,7 +208,7 @@ def bst_insert_recursive(root, val):
 <br>
 
 * deletion is a more complicated operation, and there are several strategies. one of them is to replace the target node with a proper child:
-  	- if the target node has no child: simply remove the node
+  	- if the target node has no child (it's a leaf): simply remove the node
   	- if the target node has one child, use the child to replace the node
   	- if the target node has two child, replace the node with its in-order successor or predecessor node and delete the node
 
@@ -194,7 +219,30 @@ def bst_insert_recursive(root, val):
 <br>
 
 ```python
+def delete_node(root, key):
+        
+    if not root:
+            return root
 
+    if key > root.val:
+            root.right = deleteNode(root.right, key)
+      
+    elif key < root.val:
+            root.left = deleteNode(root.left, key)
+      
+    else:
+        if not (root.left or root.right):
+            root = None
+          
+        elif root.right:
+            root.val = successor(root)
+            root.right = deleteNode(root.right, root.val)
+          
+        else:
+            root.val = predecessor(root)
+            root.left = deleteNode(root.left, root.val)
+        
+    return root
 ````
 
 <br>
