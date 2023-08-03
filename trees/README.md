@@ -21,7 +21,7 @@
 <br>
 
 * **binary search tree** are binary trees where all nodes on the left are smaller than the root, which is smaller than all nodes on the right.
-* if a bst is **balanced**, it guarantees `O(log(N))` for insert and search. common types of balanced trees: **red-black** and **avl**.
+* if a bst is **balanced**, it guarantees `O(log(N))` for insert and search (as we keep the tree's height as `H = log(N)`). common types of balanced trees: **red-black** and **avl**.
 
 <br>
 
