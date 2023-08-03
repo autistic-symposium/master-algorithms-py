@@ -4,7 +4,7 @@
 
 def remove_elements(head, val):
         
-  sentinel = ListNode(0)
+  sentinel = Node(0)
   sentinel.next = head
   prev, current = sentinel, head
 
