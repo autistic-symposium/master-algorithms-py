@@ -1,9 +1,5 @@
 ## hash objects
 
-<br>
-
-
-### hash objects
 
 <br>
 
@@ -18,9 +14,10 @@
 <img width="732" src="https://github.com/go-outside-labs/master-python-with-algorithms-py/assets/138340846/aa798e45-d53b-45b9-9f95-0e508eb923d7">
 
 <br>
-<br>
 
-#### notes on keys
+----
+
+### notes on keys
 
 <br>
 
@@ -31,7 +28,9 @@
 
 <br>
 
-#### implementing a hash set
+---
+
+### implementing a hash set
 
 <br>
 
@@ -55,7 +54,9 @@
 
 <br>
 
-#### buckets as linked lists
+----
+
+### buckets as linked lists
 
 <br>
 
@@ -66,7 +67,9 @@
 
 <br>
 
-#### buckets as binary search trees
+---
+
+### buckets as binary search trees
 
 <br>
 
@@ -76,8 +79,9 @@
 
 <br>
 
+----
 
-#### implementing a hash map
+### implementing a hash map
 
 <br>
 
