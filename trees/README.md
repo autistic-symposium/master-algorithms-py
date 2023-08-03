@@ -50,6 +50,8 @@ def predecessor(root):
 
 <br>
 
+---
+
 #### search for a value
 
 <br>
@@ -92,6 +94,7 @@ def search_bst_iterative(root, val):
 
 <br>
 
+---
 
 #### checking if valid
 
@@ -150,6 +153,8 @@ def is_valid_bst_inorder(root):
 ```
 
 <br>
+
+---
 
 #### inserting a node
 
