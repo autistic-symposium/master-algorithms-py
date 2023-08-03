@@ -12,8 +12,9 @@
 
 <br>
 
+
 <p align="center">
-<img src="https://github.com/go-outside-labs/master-algorithms-py/assets/138340846/7037aee5-9a83-4949-83df-e4c730debea4" width="60%" align="center" style="padding:1px;border:1px solid black;">
+<img src="https://github.com/go-outside-labs/master-algorithms-py/assets/138340846/54ab4d2c-a8b7-4e5c-9e98-5d7d2e627007" width="60%" align="center" style="padding:1px;border:1px solid black;">
 </p>
 
 
