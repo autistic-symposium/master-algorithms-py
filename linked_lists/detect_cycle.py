@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-class tNode:
+class Node:
 
    def __init__(self, val):
        self.val = val
