@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
+def quick_sort_partition(array):
+    """Sort an array using quick sort"""
+
+    pivot, array = array[0], array[1:]
+
+    lower = [i for i in array if i <= pivot]
+    higher = [i for i in array if i > pivot]
+
+    return lower, pivot, higher
+
+
+def quick_sort_divided(array):
+    """Sort an array using quick sort"""
+
+    if len(array) < 2:
+        return array
+
+    lower, pivot, higher = quick_sort_partition(array)
+    return quick_sort_divided(lower) + [pivot] + quick_sort_divided(higher)
+
