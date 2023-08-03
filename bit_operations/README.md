@@ -4,6 +4,7 @@
 <br>
 
 * the base is a carry counting system with fixed digital symbols and rules.
+
 * to convert a decimal number to a base-X non-decimal, you need to convert the integer part and the fractional part separately.
   * to convert the integer part, integer divide it by X until it reaches 0, and record the remainder each time.
   * traversing the remainder in reverse order will give the representation in the base-X system.
@@ -15,7 +16,7 @@
 
 ----
 
-### binary in computers:
+### binary in computers
 
 <br>
 
@@ -110,7 +111,7 @@
 
 ---
 
-### examples
+### some examples in this dir
 
 <br>
 
