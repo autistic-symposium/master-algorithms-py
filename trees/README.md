@@ -39,6 +39,26 @@ def height(root):
 
 <br>
 
+---
+
+#### find if balanced
+
+<br>
+
+```python
+def is_balanced(root):
+  
+    if not root:
+      return True
+
+    return abs(height(root.left) - height(root.right)) < 2 and \
+            is_balanced(root.left) and is_balanced(root.right)
+```
+
+<br>
+
+---
+
 #### predecessor and successor
 
 <br>
