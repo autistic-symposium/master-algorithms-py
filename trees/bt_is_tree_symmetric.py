@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-def is_symmetrical(root: Optional[TreeNode]) -> bool:
+
+def is_symmetric(root: Optional[Node]) -> bool:
         
         stack = [(root, root)]
         
@@ -25,7 +26,7 @@ def is_symmetrical(root: Optional[TreeNode]) -> bool:
         return True
 
 
-def is_symmetrical_recursive(root: Optional[TreeNode]) -> bool:
+def is_symmetric_recursive(root: Optional[TreeNode]) -> bool:
             
             def helper(node1, node2):
                 if (not node1 and node2) or \
