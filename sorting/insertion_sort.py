@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# author: bt3gl
 
-def insertion_sort(lst):
 
-        for i in range(1, len(lst)):
+def insertion_sort(array):
+
+        for i in range(1, len(array)):
             current_index = i
 
-            while current_index > 0 and lst[current_index - 1] > lst[current_index]:
+            while current_index > 0 and array[current_index - 1] > array[current_index]:
 
-                lst[current_index], lst[current_index - 1] = lst[current_index - 1], lst[current_index]
+                array[current_index], array[current_index - 1] = array[current_index - 1], array[current_index]
                 current_index -= 1
