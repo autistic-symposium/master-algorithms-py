@@ -73,3 +73,15 @@ class Trie:
 * if the search succeeds, we need to check if the target word is only a prefix of words in the trie or if it's exactly a word (for example, by adding a boolean flag).
 
 <br>
+
+
+----
+
+### comparison with hash tables
+
+<br>
+
+* hash table wins in terms of time complexity, as its insert is usually `O(1)` (worst case `O(log(N))` and trie's are `O(M)` (where `M` is the maximum length of a key).
+* trie wins in terms of space complexity. both `O(M *N)` in theory, but tries can be much smaller as there will be a lot of words that have similar prefix.
+
+  
