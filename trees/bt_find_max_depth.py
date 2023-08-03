@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-def max_depth(root: Optional[TreeNode]) -> int:
+def max_depth(root: Optional[Node]) -> int:
         
         if root is None:
             return 0
