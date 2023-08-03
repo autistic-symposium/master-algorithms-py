@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# author: bt3gl
 
-def bucket_sort(list):
 
-        buckets = [[] for _ in range(K)]
+def bucket_sort(array, k):
 
-        shift = min(lst)
-        max_val = max(lst) - shift
-        bucket_size = max(1, max_val / K)
+        buckets = [[] for _ in range(k)]
 
-        for i, elem in enumerate(lst):
+        shift = min(array)
+        max_val = max(array) - shift
+        bucket_size = max(1, max_val / k)
 
-            index = (elem - shift) // bucket_size
+        for i, e in enumerate(array):
 
-            if index == K:
-                buckets[K - 1].append(elem)
+            index = (e - shift) // bucket_size
+
+            if index == k:
+                buckets[k - 1].append(e)
             else:
-                buckets[index].append(elem)
+                buckets[index].append(e)
 
         for bucket in buckets:
             bucket.sort()
@@ -26,5 +26,5 @@ def bucket_sort(list):
         for bucket in buckets:
             sorted_array.extend(bucket)
 
-        for i in range(len(lst)):
-            lst[i] = sorted_array[i]
+        for i in range(len(array)):
+            array[i] = sorted_array[i]
