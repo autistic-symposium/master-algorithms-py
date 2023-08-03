@@ -7,6 +7,8 @@
 <br>
 
 * **binary trees** are trees that have each up to 2 children. a node is called **leaf** if it has no children.
+* the **depth of node** is the number of edges from the tree's root node until the node.
+* the **height of node** is the number of edges on the longest path between that node and a leaf. the **height of tree** is the height of its root node.
 * a **complete tree** is a tree on which every level is fully filled (except perhaps for the last).
 * a **full binary tree** has each node with either zero or two children (and no node has only one child).
 * a **perfect tree** is both full and complete (it must have exactly 2**k - 1 nodes, where k is the number of levels).
