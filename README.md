@@ -1,4 +1,4 @@
-## 👾🐍 master python with algorithms (my book 🖤)
+## 👾🐍 master algorithms with python (and my book 🖤)
 
 <br>
 
