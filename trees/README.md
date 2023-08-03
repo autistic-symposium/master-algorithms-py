@@ -383,7 +383,8 @@ def dfs(root, visited):
 <br>
 
 - `left -> node -> right`
-- in a bst, in-order traversal will be in ascending order (therefore, it's the most frequently used method).
+- in a bst, in-order traversal will be sorted in the ascending order (therefore, it's the most frequently used method).
+- note, however, that convert a sorted array to a bst with inorder has no unique solution (at the same time, both preorder and postorder are unique identifiers of a bst).
 
 ```python
 def inorder(self, root):
