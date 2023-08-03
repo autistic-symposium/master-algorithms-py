@@ -25,11 +25,11 @@ class Node(object):
     def search(self, item):
         if self.value == item:
             return True
-        found = False
+
         if (self.left and self.left.search(item)) or \
                 (self.right and self.right.search(item)):
-            found = True
-        return found
+            return True
+        return False
 
     def preorder(self):
         yield self.value
