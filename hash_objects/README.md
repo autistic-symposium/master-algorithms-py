@@ -11,7 +11,13 @@
     - how to search for a target value in a specific bucket?
 
 <br>
-<img width="732" src="https://github.com/go-outside-labs/master-python-with-algorithms-py/assets/138340846/aa798e45-d53b-45b9-9f95-0e508eb923d7">
+
+
+<p align="center">
+<img src="https://github.com/go-outside-labs/master-python-with-algorithms-py/assets/138340846/aa798e45-d53b-45b9-9f95-0e508eb923d7" width="60%" align="center" style="padding:1px;border:1px solid black;">
+</p>
+
+
 
 <br>
 
