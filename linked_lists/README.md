@@ -1,10 +1,12 @@
-## Linked List
+## Linked Lists
 
 <br>
 
-* each node in a singly-linked list contains a valye and a reference fiedl to link to the next node. the head node (first node) usually represents the whole list.
+* each node in a singly-linked list contains a value and a reference field to link to the next node. the head node (first node) usually represents the whole list.
 
 * unlike an array, a linked list does not provide constant time access to an index (as it needs to interact through all k elements), however addition and removal of elements are constant time.
+  * if you need to add or delete a node frequently, a linked list could be a good choice.
+  * if you need to access an element by index often, an array might be a better choice than a linked list. 
 
 * nodes can be added at the beginning, head needs to be update (`current -> head` and `head = current`).
 
@@ -12,6 +14,12 @@
 
 <br>
 
+<p align="center">
+<img src="https://github.com/go-outside-labs/master-python-with-algorithms-py/assets/138340846/046045d6-f749-4322-a11b-3dc48322fed0" width="70%" align="center" style="padding:1px;border:1px solid black;">
+</p>
+
+
+<br>
 
 --- 
 
@@ -19,7 +27,9 @@
 
 <br>
 
-* can be done with hash table or the two-pointer technique, where if there is no cycle, the faster pointer (going 2 steps) will stop at the end of the list, but if there is a cycle, the fast pointer will eventually meet the slow pointer (going 1 step).
+* cycles in a linked list can be detecting by using a hash table or with the two-pointer technique.
+  
+* if there is no cycle, the faster pointer (going 2 steps) will stop at the end of the list, but if there is a cycle, the fast pointer will eventually meet the slow pointer (going 1 step).
 
 * if there is no cycle, the faster pointer takes `N/2` to reach the end of the list (`N` being the length).
 
@@ -55,6 +65,59 @@ def reverse_list(head):
 
 
 <br>
+
+---
+
+### removing linked list elements
+
+<br>
+
+* given a head of a linked list and a value, how to remove all the nodes of the list that have that value?
+
+* this problem is easy if one has to delete a node in the middle, as all you need to do is loop until the predecessor node and change the pointers.
+
+* however, if the node to be deleted is in the head of the list, the best way is to use a sentinel node. sentinel nodes are widely used in trees and linked lists as pseudo-heads, pseudo-tails, markers of level end, etc. they are purely functional and usually does not hold any data. their main purpose is to standardize the process (by making the list never be empty or headless).
+
+* examples are LRU cache (where sentinel nodes are used as pseudo-head and pseudo-tail) and tree level order traversal (where sentinel nodes are used to mark level end).
+
+<br>
+
+```python
+def remove_elements(head, val):
+        
+        sentinel = ListNode(0)
+        sentinel.next = head
+        prev, current = sentinel, head
+
+        while current:
+            if current.val == val:
+                prev.next = current.next
+            else:
+                prev = current
+            current = current.next
+                
+        return sentinel.next
+```
+
+<br>
+
+----
+
+### doubly linked lists
+
+<br>
+
+* in doubly linked lists, a node has a `previous` field.
+  
+* when it comes to add and delete operations, extra attention is needed when you want to delete or insert at the beginning or at the end of the list.
+
+<br>
+
+```python
+
+
+```
+
 
 <br>
 
