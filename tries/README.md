@@ -43,7 +43,7 @@ class Trie:
     def search(self, word: str) -> bool:
         return self.match(word)
         
-    def startsWith(self, prefix: str) -> bool:
+    def starts_with(self, prefix: str) -> bool:
         return self.match(prefix, True)
 ```
 
