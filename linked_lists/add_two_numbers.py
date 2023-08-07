@@ -9,6 +9,7 @@ class Node:
        self.val = val
        self.next = None
 
+
 def add_two_numbers(l1, l2):
   
         n1, n2, i = '', '', 1
@@ -25,11 +26,11 @@ def add_two_numbers(l1, l2):
         n2 = int(n2[::-1])
         n = str(n1 + n2)[::-1]
     
-        current = ListNode(n[0])
+        current = Node(n[0])
         head = current
      
         while i < len(n):
-            current.next = ListNode(n[i])
+            current.next = Node(n[i])
             current = current.next
             i += 1
    
