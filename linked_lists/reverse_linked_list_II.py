@@ -18,10 +18,10 @@ def reverse_list(head: Optional[Node]) -> Optional[Node]:
    curr = head
         
    while curr:
-       next_temp = curr.next     // save the pointer for the next node so we can continue the loop
-       curr.next = prev          // revert the list
-       prev = curr               // save for the next node revert
-       curr = next_temp          // receive the pointer for the next node so we can continue the loop
+       next_temp = curr.next     
+       curr.next = prev          
+       prev = curr               
+       curr = next_temp          
 
    return prev
-       
+    
