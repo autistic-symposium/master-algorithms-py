@@ -36,19 +36,22 @@ class Bucket:
 class HashMap:
 
     def __init__(self, key_space):
-        self.key_space = key_space
-        self.table = [Bucket() for _ in range(self.key_space)]
+        self.size = size
+        self.table = [Bucket() for _ in range(self.size)]
+
+    def _get_hash_key(self, key):
+        return key % self.size
         
     def put(self, key: int, value: int):
-        hash_key = key % self.key_space
+        hash_key = self._get_hash_key(key)
         self.table[hash_key].put(key, value)
 
     def get(self, key: int):
-        hash_key = key % self.key_space
+        hash_key = self._get_hash_key(key)
         return self.table[hash_key].get(key)
 
     def remove(self, key: int):
-        hash_key = key % self.key_space
+        hash_key = self._get_hash_key(key)
         self.table[hash_key].remove(key)
         
 
