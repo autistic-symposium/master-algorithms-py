@@ -4,6 +4,8 @@
 
 * like arrays, a linked list is used to represent sequential data. it's a linear collection of data elements (nodes) whose order is not given by their physical placement in memory (as opposed to arrays where data is stored in sequential blocks of memory). instead, each element contains an address of the next element.
 
+<br>
+
 ```python
 class Node:
   def __init__(self, val=0, next=None):
@@ -11,6 +13,7 @@ class Node:
       self.next = next
 ```
 
+<br>
 
 * unlike an array, a linked list does not provide constant time access to an index (as it needs to interact through all `k` elements), however addition and removal of elements are constant time (`O(1)`).
   * if you need to add or delete a node frequently, a linked list could be a good choice.
@@ -44,21 +47,6 @@ class Node:
 
 <br>
 
-----
-
-### deleting without head
-
-<br>
-
-```python
-def delete_node_without_head(node):
-
-  node.val = node.next.val
-  node.next = node.next.next
-```
-
-
-<br>
 
 ----
 
@@ -121,11 +109,23 @@ def reverse_list(head):
 
 <br>
 
-* given a head of a linked list and a value, how to remove all the nodes of the list that have that value? this problem is easy if one has to delete a node in the middle, as all you need to do is loop until the predecessor node and change the pointers.
+* given a head of a linked list and a value, how to remove all the nodes of the list that have that value?
+
+<br>
+
+```python
+def delete_node_without_head(node):
+
+  node.val = node.next.val
+  node.next = node.next.next
+```
+<br>
+  
+* this problem is easy if one has to delete a node in the middle, as all you need to do is loop until the predecessor node and change the pointers.
 
 * however, if the node to be deleted is in the head of the list, the best way is to use a sentinel node. sentinel nodes are widely used in trees and linked lists as pseudo-heads, pseudo-tails, markers of level end, etc. they are purely functional and usually do not hold any data. their main purpose is to standardize the process (by making the list never empty or headless).
 
-* 
+
 
 <br>
 
@@ -144,6 +144,43 @@ def remove_elements(head, val):
             node = node.next
                 
         return sentinel.next
+```
+
+<br>
+
+
+---
+
+### remove kth node
+
+<br>
+
+```python
+def remove_kth_node(self, head, n):
+  
+        if head is None or head.next is None:
+            return None
+
+        # find the length of the list
+        node, length = head, 0
+        while node:
+            node = node.next
+            length += 1
+
+        # if n is the entire list, remove head
+        if n == length:
+            return head.next
+    
+        # loop to kth element
+        node, i = head, 0
+        while i <= length - n:
+            node = node.next
+            i += 1
+
+        # remove the kth element
+        node.next = node.next.next
+                
+        return head
 ```
 
 <br>
@@ -179,4 +216,45 @@ def swap_pairs(head):
       second_node.next = first_node
 
       return second_node
+```
+
+
+----
+
+
+### rotate list by k
+
+<br>
+
+* the nodes in the list are already linked, so the rotation means:
+  * to close the linked list in the ring
+  * to break the ring after the new tail and in front of the new head
+
+* the new head will be at `n - k`, and the new tail will be at `n - k - 1` (found with `n - k % n - 1`).
+
+<br>
+
+```python3
+def rotate_list_by_k(head, k):
+        
+    if head is None:
+        return head
+
+    # get the size of the list
+    end, n = head, 1
+    while end.next:
+        end = end.next
+        n += 1
+
+    # rotate
+    end.next = head
+    new_end, i = head, 0
+    while i < n - (k % n) - 1:     
+        new_end = new_end.next
+        i += 1
+
+    # remove cycle
+    new_head = new_end.next
+        
+    return new_head
 ```
