@@ -79,14 +79,18 @@ function answerToProblem(input)
 <br>
 
 ```python
-cache = {1: 1, 0: 1}
-    
-def climbing_stairs(n) -> int:
-        
-   if n not in cache:
-         cache[n] = climbing_stairs(n-1) + climbing_stairs(n-2)
-        
-   return cache[n]
+def climb_stairs_memoization(n: int) -> int:
+ 
+    memo = {}    
+
+    def helper(n: int, memo: dict[int, int]) -> int:
+        if n == 0 or n == 1:
+            return 1
+        if n not in memo:
+            memo[n] = helper(n-1, memo) + helper(n-2, memo)
+        return memo[n]
+ 
+   return helper(n, memo)
 ```
 
 <br>
@@ -178,4 +182,3 @@ def backtrack(candidate):
             remove(next_candidate)
 ````
 
- 
