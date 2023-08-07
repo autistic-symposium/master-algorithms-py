@@ -8,7 +8,7 @@ class Node:
       self.next = None
 
 
-def get_intersection_node(self, head_a: Node, head_b: Node) -> Optional[ListNode]:
+def get_intersection_node(self, head_a: Node, head_b: Node) -> Optional[Node]:
         
         seen_b = set()
         
@@ -23,4 +23,4 @@ def get_intersection_node(self, head_a: Node, head_b: Node) -> Optional[ListNode
                 return head_a
             
             head_a = head_a.next
-            
+        
