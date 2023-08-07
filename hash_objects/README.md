@@ -218,7 +218,7 @@ class BSTree():
             root = root.right
         return root.value
 
-    def delete(self, root, key) -> TreeNode:
+    def delete(self, root, key) -> Node:
         if not root:
             return None
 
