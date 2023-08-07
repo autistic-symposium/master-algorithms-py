@@ -31,7 +31,6 @@
 
 <br>
 
----
 
 #### vizualing the stack
 
