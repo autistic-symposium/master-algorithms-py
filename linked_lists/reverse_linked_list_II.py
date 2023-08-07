@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+
 class Node:
     def __init__(self, val=0, next):
         self.val = val
@@ -10,17 +11,17 @@ class Node:
 
 def reverse_list(head: Optional[Node]) -> Optional[Node]:
 
-  if head is None:
-            return head
+   if head is None:
+       return head
+
+   prev = None
+   curr = head
         
-    final_head = head
-        
-    while head.next:
-      
-        new_node = head.next
-        head.next = new_node.next
-        new_node.next = final_head
-        final_head = new_node
-        
-    return final_head
-        
+   while curr:
+       next_temp = curr.next     // save the pointer for the next node so we can continue the loop
+       curr.next = prev          // revert the list
+       prev = curr               // save for the next node revert
+       curr = next_temp          // receive the pointer for the next node so we can continue the loop
+
+   return prev
+       
