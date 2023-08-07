@@ -35,7 +35,7 @@ class Bucket:
 
 class HashMap:
 
-    def __init__(self, key_space):
+    def __init__(self, size):
         self.size = size
         self.table = [Bucket() for _ in range(self.size)]
 
