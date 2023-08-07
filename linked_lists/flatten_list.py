@@ -27,14 +27,15 @@ def dfs(prev, node):
         return dfs(last, temp_next)
 
 
-    def flatten(head):
+def flatten(head):
         
         if head is None:
             return head
 
-        pseudo_head = Node(None, None, head, None)
-      
-        dfs(pseudo_head, head)
-        pseudo_head.next.prev = None
-      
-        return pseudo_head.next
+        sentinel = Node(None, None, head, None)
+    
+        dfs(prev=sentinel, node=head)
+
+        # erase the pointer to sentinel and return
+        sentinel.next.prev = None 
+        return sentinel.next
