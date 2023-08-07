@@ -5,9 +5,9 @@
 
 class HashSet:
 
-    def __init__(self):
-        self.size = 131
-        self.bucket = [Bucket() for _ in range(self.key_range)]
+    def __init__(self, size):
+        self.size = size
+        self.bucket = [Bucket() for _ in range(self.size)]
 
     def _get_hash_key(self, key):
         return key % self.size
