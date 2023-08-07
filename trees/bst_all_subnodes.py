@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-class TreeNode:
+class Node:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
@@ -21,19 +21,19 @@ def all_possible_bst(start, end, memo):
             return memo[(start, end)]
 
         for i in range(start, end + 1):
-            left = all_possible_bst(start, i-1, memo)
-            right = all_possible_bst(i+1, end, memo)
+            left = all_possible_bst(start, i - 1, memo)
+            right = all_possible_bst(i + 1, end, memo)
 
             for l in left:
                 for r in right:
-                    root = TreeNode(i, l, r)
+                    root = Node(i, l, r)
                     result.append(root)
 
         memo[(start, end)] = result
         return result
 
 
-def generateTrees(n) -> List[Optional[TreeNode]]:
+def generate_trees(n):
 
     memo = {}
     return all_possible_bst(1, n, memo)
