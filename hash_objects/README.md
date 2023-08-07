@@ -31,9 +31,6 @@
     - separate chaining: a linked list is used for each value, so that it stores all the collided items.
     - open addressing: all entry records are stored in the bucket array itself. when a new entry has to be inserted, the buckets are examined, starting with the hashed-to slot and proceeding in some probe sequence, until an unoccupied slot is found. 
 
-<br>
-
-
 
 <br>
 
@@ -76,32 +73,11 @@
 
 <br>
 
-#### buckets as linked lists
-
-<br>
-
-* a good choice for buckets are linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
-* time complexity for search is `O(N/K)` where `N` is the number of all possible values and `K` is the number of predefined buckets (the average size of bucket is `N/K`). 
-* space complexity is `O(K+M)`, where `K` is the number of predefined buckets, and `M` is the number of unique values that have been inserted in the HashSet. 
-* lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain `O(log(N))` time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
-
-<br>
-
-#### buckets as binary search trees
-
-<br>
-
-* another option for a bucket is a binary search tree, with `O(log(N))` time complexity for search, insert, and delete. in addition, bst can not hold repeated elements, just like sets.
-* time complexity for search is `O(log (N/K)`, where `N` is the number of all possible values and `K` is the number of predefined buckets.
-* space complexity is `O(K+M)` where `K` is the number of predefined buckets, and `M` is the number of unique values in the hash set.
-
-<br>
-
 ```python
 class HashSet:
 
-    def __init__(self):
-        self.size = 131
+    def __init__(self, size):
+        self.size = size
         self.bucket = [Bucket() for _ in range(self.size)]
 
     def _get_hash_key(self, key):
@@ -118,8 +94,73 @@ class HashSet:
     def contains(self, element: int) -> bool:
         bucket_index = self._get_hash_key(element)
         return self.bucket[bucket_index].exists(element)
-        
+````
 
+<br>
+
+
+#### buckets as linked lists
+
+<br>
+
+* a good choice for buckets are linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
+* time complexity for search is `O(N/K)` where `N` is the number of all possible values and `K` is the number of predefined buckets (the average size of bucket is `N/K`). 
+* space complexity is `O(K+M)`, where `K` is the number of predefined buckets, and `M` is the number of unique values that have been inserted in the HashSet. 
+* lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain `O(log(N))` time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
+
+<br>
+
+```python
+class Node:
+    def __init__(self, value=None, next=None):
+        self.value = value
+        self.next = next
+
+
+class Bucket:
+    def __init__(self):
+        self.head = Node(0)
+
+    def insert(self, value):
+        if not self.exists(value):
+            self.head.next =  Node(value, self.head.next)
+        else:
+            print(f'node {value} already exists')
+        
+    def delete(self, value):
+        prev = self.head
+        current = self.head.next
+        while current is not None:
+            if current.value == value:
+                prev.next = current.next
+                return True
+            prev = current
+            current = current.next
+        return False
+    
+    def exists(self, value):
+        current = self.head.next
+        while current is not None:
+            if current.value == value:
+                return True
+            current = current.next
+        return False
+```
+
+
+<br>
+
+#### buckets as binary search trees
+
+<br>
+
+* another option for a bucket is a binary search tree, with `O(log(N))` time complexity for search, insert, and delete. in addition, bst can not hold repeated elements, just like sets.
+* time complexity for search is `O(log (N/K)`, where `N` is the number of all possible values and `K` is the number of predefined buckets.
+* space complexity is `O(K+M)` where `K` is the number of predefined buckets, and `M` is the number of unique values in the hash set.
+
+<br>
+
+```python        
 class Node:
     def __init__(self, value=None):
         self.val = value
@@ -242,29 +283,6 @@ class Bucket:
                 # to make it O(1) we could swap the element we want to remove
                 # with the last element in the bucket
                 del self.bucket[i]
-
-
-class HashMap:
-
-    def __init__(self, key_space):
-        self.size = size
-        self.table = [Bucket() for _ in range(self.size)]
-
-    def _get_hash_key(self, key):
-        return key % self.size
-        
-    def put(self, key: int, value: int):
-        hash_key = self._get_hash_key(key)
-        self.table[hash_key].put(key, value)
-
-    def get(self, key: int):
-        hash_key = self._get_hash_key(key)
-        return self.table[hash_key].get(key)
-
-    def remove(self, key: int):
-        hash_key = self._get_hash_key(key)
-        self.table[hash_key].remove(key)
 ```
-
 <br>
 
