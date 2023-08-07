@@ -3,7 +3,9 @@
 <br>
 
 * dynamic programming is the process of taking a recursive algorithm and cache overlapping problems (repeated calls). the runtime is given by the number of calls.
+  
 * **top-down** (**memoization**): how can we divide the problem into sub-problems?
+  
 * **bottom-up** (**tabulation**): solve for a simple case, then figure out for more elements.
 
 
@@ -16,11 +18,15 @@
 <br>
 
 * recursion is an approach to solving problems using a function that calls itself as a subroutine. every time the function calls itself, it reduces the problem into subproblems. the recursion calls continue until it reaches a point where the subproblem can be solved without further recursion.
+
 * a recursive function should have the following properties so it does not result in an infinite loop:
    * one or more base cases (a terminating scenario that does not use recursion to produce an answer)
    * a set of rules, also known as a recurrence relation, that reduces all other cases towards the base case.
+
 * there can be multiple places where the function may call itself. 
+
 * any recursion problem can be solved iteratively and vice-versa.
+
 * the **master theorem** is an advanced technique of asymptotic analysis (time complexity) for many of the recursion algorithms that follow the pattern of divide-and-conquer.
 
 <br>
@@ -32,6 +38,8 @@
 <br>
 
 * to visualize how the stack operates during recursion calls, check the example below where we reverse a string:
+
+<br>
 
 ```python
 def reverse(s):
@@ -50,9 +58,10 @@ def reverse(s):
 <br>
 
 * memoization is an optimization technique that avoids recursion's duplicate calculations.
+
 * it's primarily used to speed up code by storing the intermediate results in a cache so that it can be reused later.
+
 * for example, a hash table can be used as a cache and should be passed along each subroutine call.
-* here is a basic template with pseudo-code:
 
 <br>
 
@@ -102,6 +111,7 @@ def climb_stairs_memoization(n: int) -> int:
 <br>
 
 * the time complexity of a recursion algorithm is the product of the number of recursion invocations and the time complexity of the calculation, `R*O(s)`.
+
 * you can also look at the "execution tree", which is a tree that is used to denote the execution flow of a recursive function in particular. each node represents an invocation of the recursive function. therefore, the total number of nodes in the tree corresponds to the number of recursion calls during the execution.
    * the execution tree of a recursive function would form a n-ary tree, with as the number of times recursion appears in the recurrence relation (for example, fibonacci would be a binary tree).
    * in a full binary tree with n levels, the total number of nodes is `2**N - 1`, so `O(2**N)` would be the time complexity of the function.
@@ -128,8 +138,11 @@ def climb_stairs_memoization(n: int) -> int:
 <br>
 
 * tail recursion is a recursion where the recursive call is the final instruction in the recursion function. and there should be only one recursive call in the function.
+
 * tail recursion is exempted from the space overhead discussed above, ad it skips an entire chain of recursive calls returning and returns straight to the original caller (it does not need a call stack for all the recursive calls - instead of allocating new space on the stack, the system could simply reuse the space allocated earlier for this second recursion call).
+
 * when stack overflows, tail recursion might help.
+
 * some languages' compiler recognizes tail recursion pattern and optimizes their execution (e.g., C and C++, but not Java, Rust, or Python - although it's possible to implement ad-hoc).
 
 <br>
@@ -164,6 +177,7 @@ def sum_tail_recursion(ls):
 <br>
 
 * backtracking is a general algorithm for finding solutions to some computation problems, which incrementally builds candidates to the solution and abandons a candidate ("backtracks") as soon as it determines that the candidate cannot lead to a valid solution.
+
 * you can imagine the procedure as the tree traversal.
 
 <br>
