@@ -9,7 +9,7 @@ class Node:
        self.next = None
 
 
-def detect_cycle(self, head):
+def detect_cycle(head):
 
         seen = set()
         node = head
