@@ -7,25 +7,24 @@ def remove_kth_node(self, head, n):
   
         if head is None or head.next is None:
             return None
-        
-        node = head
-        lenght = 0
-        
-        # find the lenght of the list
+
+        # find the length of the list
+        node, length = head, 0
         while node:
             node = node.next
-            lenght += 1
-            
-        if n == lenght:
+            length += 1
+
+        # if n is the entire list, remove head
+        if n == length:
             return head.next
     
-        i = 0
-        node = head
-        while i < lenght - n - 1:
+        # loop to kth element
+        node, i = head, 0
+        while i <= length - n:
             node = node.next
             i += 1
-        
+
+        # remove the kth element
         node.next = node.next.next
                 
         return head
-        
