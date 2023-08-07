@@ -3,13 +3,13 @@
 # author: bt3gl
 
 
-class ListNode:
+class Node:
    def __init__(self, x):
        self.val = x
        self.next = None
 
 
-def detectCycle(self, head):
+def detect_cycle(self, head):
 
         seen = set()
         node = head
