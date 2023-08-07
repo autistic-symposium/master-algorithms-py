@@ -6,26 +6,26 @@
 class HashSet:
 
     def __init__(self):
-        self.key_range = 131
-        self.bucket = [Bucket() for _ in range(self.key_range)]
+        self.size = 131
+        self.bucket = [Bucket() for _ in range(self.size)]
 
-    def _hash(self, key):
-        return key % self.key_range
+    def _get_hash_key(self, key):
+        return key % self.size
 
     def add(self, element: int) -> None:
-        bucket_index = self._hash(element)
+        bucket_index = self._get_hash_key(element)
         self.bucket[bucket_index].insert(element)
     
     def remove(self, element: int) -> None:
-        bucket_index = self._hash(element)
+        bucket_index = self._get_hash_key(element)
         self.bucket[bucket_index].delete(element)
 
     def contains(self, element: int) -> bool:
-        bucket_index = self._hash(element)
+        bucket_index = self._get_hash_key(element)
         return self.bucket[bucket_index].exists(element)
         
 
-class TreeNode:
+class Node:
     def __init__(self, value=None):
         self.val = value
         self.left = None
@@ -50,16 +50,16 @@ class BSTree():
     def __init__(self):
         self.root = None
 
-    def search(self, root, value) -> TreeNode:
+    def search(self, root, value) -> Node:
         if root is None or value == root.val:
             return root
 
         return self.search(root.left, value) if val < root.value \
             else self.search(root.right, value)
     
-    def insert(self, root, value) -> TreeNode:
+    def insert(self, root, value) -> Node:
         if not root:
-            return TreeNode(value)
+            return Node(value)
         
         if value > root.val:
             root.right = self.insert(root.right, value)
