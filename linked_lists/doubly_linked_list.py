@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-class Node():
+class Node:
 
     def __init__(self, data, previous=None):
         self.data = data
