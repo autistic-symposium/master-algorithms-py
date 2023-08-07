@@ -3,14 +3,10 @@
 
 <br>
 
-* hash tables are data structure that organizes data using hash functions, in order to support quick insertion and search (map keys to buckets).
-* ideally, a perfect hash function will be a 1-1 mapping between the key and the buckets. however, in most cases, a hash function is not perfect and there is a tradeoff between the amount of buckets and the capacity of a bucket.
-* if the hash function is not a 1-1 mapping, collisions must be handled:
-    - how to organize the values in the same bucket?
-    - what if too many values are assigned to the same bucket?
-    - how to search for a target value in a specific bucket?
+* hash tables (also known as hash maps) are data structure that organizes data using hash functions, in order to support quick insertion and search (map keys to buckets).
 
 <br>
+
 
 
 <p align="center">
@@ -18,12 +14,32 @@
 </p>
 
 
+<br>
+
+---
+
+### collision
+
+<br>
+
+* ideally, a perfect hash function will be a 1-1 mapping between the key and the buckets. however, in most cases, a hash function is not perfect and there is a tradeoff between the amount of buckets and the capacity of a bucket. if the hash function is not a 1-1 mapping, collisions must be handled:
+    - how to organize the values in the same bucket?
+    - what if too many values are assigned to the same bucket?
+    - how to search for a target value in a specific bucket?
+
+* popular collision techniques are:
+    - separate chaining: a linked list is used for each value, so that it stores all the collided items.
+    - open addressing: all entry records are stored in the bucket array itself. when a new entry has to be inserted, the buckets are examined, starting with the hashed-to slot and proceeding in some probe sequence, until an unoccupied slot is found. 
+
+<br>
+
+
 
 <br>
 
 ----
 
-### notes on keys
+### keys
 
 <br>
 
@@ -42,7 +58,7 @@
 
 * the difference between a hash set and a hash map is that the set can never have repeated elements.
 
-* to implement a HashSet data structure, you need to implement:
+* to implement a hash set data structure, you need to implement:
     - a hash function (to assign an address to store a given value), and
     - a collision handling (since the nature of a hash function is to map a value from a space A to a corresponding smaller space B).
 
@@ -60,28 +76,24 @@
 
 <br>
 
-----
-
-### buckets as linked lists
+#### buckets as linked lists
 
 <br>
 
-* a good choice for buckets is linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
-* time complexity for search is O(N/K) where N is the number of all possible values and K is the number of predefined buckets (the average size of bucket is N/K). 
-* space complexity is O(K+M), where K is the number of predefined buckets, and M is the number of unique values that have been inserted in the HashSet. 
-* lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain O(logN) time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
+* a good choice for buckets are linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
+* time complexity for search is `O(N/K)` where `N` is the number of all possible values and `K` is the number of predefined buckets (the average size of bucket is `N/K`). 
+* space complexity is `O(K+M)`, where `K` is the number of predefined buckets, and `M` is the number of unique values that have been inserted in the HashSet. 
+* lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain `O(log(N))` time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
 
 <br>
 
----
-
-### buckets as binary search trees
+#### buckets as binary search trees
 
 <br>
 
-* another option for a bucket is a binary search tree, with O(logN) time complexity for search, insert, and delete. in addition, bst can not hold repeated elements, just like sets.
-* time complexity for search is O(logN/K), where N is the number of all possible values and K is the number of predefined buckets.
-* space complexity is O(K+M) where K is the number of predefined buckets, and M is the number of unique values in the HashSet.
+* another option for a bucket is a binary search tree, with `O(log(N))` time complexity for search, insert, and delete. in addition, bst can not hold repeated elements, just like sets.
+* time complexity for search is `O(log (N/K)`, where `N` is the number of all possible values and `K` is the number of predefined buckets.
+* space complexity is `O(K+M)` where `K` is the number of predefined buckets, and `M` is the number of unique values in the hash set.
 
 <br>
 
@@ -199,15 +211,9 @@ class BSTree():
 * same as before, we need to tackle two main issues: hash function design and collision handling.
 * a good approach is using a module function with an array or linked list. at this time, there is no constraint for repeated numbers.
 
-
 <br>
 
 ```python
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# author: bt3gl
-
-
 class Bucket:
 
     def __init__(self):
@@ -259,4 +265,6 @@ class HashMap:
         hash_key = self._get_hash_key(key)
         self.table[hash_key].remove(key)
 ```
+
+<br>
 
