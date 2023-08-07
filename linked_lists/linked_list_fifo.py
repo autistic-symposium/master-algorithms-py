@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-class Node():
-    """Implementation of a Node for a binary tree"""
+class Node:
 
     def __init__(self, value=None):
         self.value = value
@@ -16,7 +15,6 @@ class Node():
 
 
 class LinkedListFIFO:
-    '''A Linked-List class with a first-in-first-out logic'''
 
     def __init__(self):
         self.head = None
