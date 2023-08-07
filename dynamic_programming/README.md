@@ -50,10 +50,11 @@ def reverse(s):
 <br>
 
 * memoization is an optimization technique that avoids recursion's duplicate calculations.
-  
 * it's primarily used to speed up code by storing the intermediate results in a cache so that it can be reused later.
 * for example, a hash table can be used as a cache and should be passed along each subroutine call.
 * here is a basic template with pseudo-code:
+
+<br>
 
 ```python
 function dp(dp_state, memo_dict):
@@ -74,6 +75,8 @@ function answerToProblem(input)
 <br>
 
 * classic examples where memoization can be used are fibonacci and the "climbing stairs" problem:
+
+<br>
 
 ```python
 cache = {1: 1, 0: 1}
