@@ -85,6 +85,111 @@
 
 <br>
 
+```python
+class HashSet:
+
+    def __init__(self):
+        self.size = 131
+        self.bucket = [Bucket() for _ in range(self.size)]
+
+    def _get_hash_key(self, key):
+        return key % self.size
+
+    def add(self, element: int) -> None:
+        bucket_index = self._get_hash_key(element)
+        self.bucket[bucket_index].insert(element)
+    
+    def remove(self, element: int) -> None:
+        bucket_index = self._get_hash_key(element)
+        self.bucket[bucket_index].delete(element)
+
+    def contains(self, element: int) -> bool:
+        bucket_index = self._get_hash_key(element)
+        return self.bucket[bucket_index].exists(element)
+        
+
+class Node:
+    def __init__(self, value=None):
+        self.val = value
+        self.left = None
+        self.right = None
+
+
+class Bucket:
+    def __init__(self):
+        self.tree = BSTree()
+
+    def insert(self, value):
+        self.tree.root = self.tree.insert(self.tree.root, value)
+        
+    def delete(self, value):
+        self.tree.root = self.tree.delete(self.tree.root, value)
+    
+    def exists(self, value):
+        return (self.tree.search(self.tree.root, value) is not None)
+
+
+class BSTree():
+    def __init__(self):
+        self.root = None
+
+    def search(self, root, value) -> Node:
+        if root is None or value == root.val:
+            return root
+
+        return self.search(root.left, value) if val < root.value \
+            else self.search(root.right, value)
+    
+    def insert(self, root, value) -> Node:
+        if not root:
+            return Node(value)
+        
+        if value > root.val:
+            root.right = self.insert(root.right, value)
+        elif value == root.val:
+            return root
+        else:
+            root.left = self.insert(root.left, value)
+    
+    def successor(self, root):
+        # one step right and then all left
+        root = root.right
+        while root.left:
+            root = root.left
+        return root.value
+    
+    def predecessor(self, root):
+        # one step left and then always right
+        root = root.left
+        while root.right:
+            root = root.right
+        return root.value
+
+    def delete(self, root, key) -> TreeNode:
+        if not root:
+            return None
+
+        if key > root.val:
+            root.right = self.delete(root.right, key)
+        
+        elif key < root.val:
+            root.left = self.delete(root.left, key)
+        
+        else:
+            if not (root.left or root.right):
+                root = None
+            elif root.right:
+                root.val = self.sucessor(root)
+                root.right = self.delete(root.right, root.val)
+            else:
+                root.val = self.predecessor(root)
+                root.left = self.delete(root.left, root.val)
+        
+        return root
+```
+
+<br>
+
 ----
 
 ### implementing a hash map
@@ -96,4 +201,62 @@
 
 
 <br>
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# author: bt3gl
+
+
+class Bucket:
+
+    def __init__(self):
+        self.bucket = []
+
+    def get(self, key):
+        for (k, v) in self.bucket:
+            if k == key:
+                return v
+        return -1
+    
+    def put(self, key, value):
+        found = False
+        for i, k in enumerate(self.bucket):
+            if key == k[0]:
+                self.bucket[i] = (key, value)
+                found = True
+                break
+        if not found:
+            self.bucket.append((key, value))
+
+    def remove(self, key):
+        for i, k in enumerate(self.bucket):
+            if key == k[0]:
+                # del is an O(N) operation, as we would copy all the i: elements
+                # to make it O(1) we could swap the element we want to remove
+                # with the last element in the bucket
+                del self.bucket[i]
+
+
+class HashMap:
+
+    def __init__(self, key_space):
+        self.size = size
+        self.table = [Bucket() for _ in range(self.size)]
+
+    def _get_hash_key(self, key):
+        return key % self.size
+        
+    def put(self, key: int, value: int):
+        hash_key = self._get_hash_key(key)
+        self.table[hash_key].put(key, value)
+
+    def get(self, key: int):
+        hash_key = self._get_hash_key(key)
+        return self.table[hash_key].get(key)
+
+    def remove(self, key: int):
+        hash_key = self._get_hash_key(key)
+        self.table[hash_key].remove(key)
+```
 
