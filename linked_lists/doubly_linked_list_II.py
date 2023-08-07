@@ -10,7 +10,7 @@ class Node:
         self.next = None
         self.prev = None
 
-class MyLinkedList:
+class DoublyList:
 
     def __init__(self):
         self.head = Node(0)
@@ -31,13 +31,13 @@ class MyLinkedList:
         node = self._loop(index)
         return node.val
 
-    def addAtHead(self, val: int) -> None:
-        self.addAtIndex(0, val)
+    def add_at_head(self, val: int) -> None:
+        self.add_at_index(0, val)
 
-    def addAtTail(self, val: int) -> None:
-        self.addAtIndex(self.len, val)
+    def add_at_tail(self, val: int) -> None:
+        self.add_at_index(self.len, val)
         
-    def addAtIndex(self, index: int, val: int) -> None:
+    def add_at_index(self, index: int, val: int) -> None:
         if self.len < index:
             return -1
 
@@ -55,7 +55,7 @@ class MyLinkedList:
         new_node.prev = node
         node.next = new_node
 
-    def deleteAtIndex(self, index: int) -> None:
+    def delete_at_index(self, index: int) -> None:
         
         if self.len <= index or index < 0:
             return -1
@@ -68,7 +68,3 @@ class MyLinkedList:
         
         node.next.prev = node
         node.next = node.next.next
-        
-        
-        
-        
