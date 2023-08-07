@@ -126,8 +126,8 @@ def climb_stairs_memoization(n: int) -> int:
 <br>
 
 * there are mainly two parts of the space consumption that one should see in a recursive algorithm:
-   * recursion related space: refers to the memory cost that is incurred directly by the recursion, i.e. the stack to keep track of recursive function calls. in order to complete a recursive call, the system allocates some space in the stack to hold: the returning address of the function call, the parameters that are passed to the function call, the local variables within the function call. once the function call is done, the space is freed. for recursive algorithms, the function calls chain up successively until it reaches a base case, so the space used for each call is accumulated. overconsumption can cause stack overflow.
-   * non-recursive related space: refers to the memory that is not directly related to recursion, which includes the space (normally in heap) that is allocated for global variables.
+   * **recursion related space**: refers to the memory cost that is incurred directly by the recursion, i.e. the stack to keep track of recursive function calls. in order to complete a recursive call, the system allocates some space in the stack to hold: the returning address of the function call, the parameters that are passed to the function call, the local variables within the function call. once the function call is done, the space is freed. for recursive algorithms, the function calls chain up successively until it reaches a base case, so the space used for each call is accumulated. overconsumption can cause stack overflow.
+   * **non-recursive related space**: refers to the memory that is not directly related to recursion, which includes the space (normally in heap) that is allocated for global variables.
  
 <br>
 
