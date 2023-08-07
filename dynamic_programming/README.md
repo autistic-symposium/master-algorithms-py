@@ -50,6 +50,46 @@ def reverse(s):
 
 <br>
 
+
+#### tail recursion
+
+<br>
+
+* tail recursion is a recursion where the recursive call is the final instruction in the recursion function. and there should be only one recursive call in the function.
+
+* tail recursion is exempted from the space overhead discussed above, ad it skips an entire chain of recursive calls returning and returns straight to the original caller (it does not need a call stack for all the recursive calls - instead of allocating new space on the stack, the system could simply reuse the space allocated earlier for this second recursion call).
+
+* when stack overflows, tail recursion might help.
+
+* some languages' compiler recognizes tail recursion pattern and optimizes their execution (e.g., C and C++, but not Java, Rust, or Python - although it's possible to implement ad-hoc).
+
+<br>
+
+```python
+def sum_non_tail_recursion(ls):
+    if len(ls) == 0:
+        return 0
+    
+    # not a tail recursion because it does some computation after the recursive call returned
+    return ls[0] + sum_non_tail_recursion(ls[1:])
+
+
+def sum_tail_recursion(ls):
+
+    def helper(ls, acc):
+        if len(ls) == 0:
+            return acc
+
+        # this is a tail recursion because the final instruction is a recursive call
+        return helper(ls[1:], ls[0] + acc)
+    
+    return helper(ls, 0)
+```
+
+<br>
+
+
+
 ---
 
 ### memoization
@@ -130,44 +170,6 @@ def climb_stairs_memoization(n: int) -> int:
  
 <br>
 
----
-
-#### tail recursion
-
-<br>
-
-* tail recursion is a recursion where the recursive call is the final instruction in the recursion function. and there should be only one recursive call in the function.
-
-* tail recursion is exempted from the space overhead discussed above, ad it skips an entire chain of recursive calls returning and returns straight to the original caller (it does not need a call stack for all the recursive calls - instead of allocating new space on the stack, the system could simply reuse the space allocated earlier for this second recursion call).
-
-* when stack overflows, tail recursion might help.
-
-* some languages' compiler recognizes tail recursion pattern and optimizes their execution (e.g., C and C++, but not Java, Rust, or Python - although it's possible to implement ad-hoc).
-
-<br>
-
-```python
-def sum_non_tail_recursion(ls):
-    if len(ls) == 0:
-        return 0
-    
-    # not a tail recursion because it does some computation after the recursive call returned
-    return ls[0] + sum_non_tail_recursion(ls[1:])
-
-
-def sum_tail_recursion(ls):
-
-    def helper(ls, acc):
-        if len(ls) == 0:
-            return acc
-
-        # this is a tail recursion because the final instruction is a recursive call
-        return helper(ls[1:], ls[0] + acc)
-    
-    return helper(ls, 0)
-```
-
-<br>
 
 ---
 
