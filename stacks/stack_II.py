@@ -11,7 +11,7 @@ class Stack:
 
     def push(self, val: int) -> None:
         self.stack.append((val, self.min))
-        if self.min != None:
+        if self.min is not None:
             self.min = min(self.min, val)
         else:
             self.min = val
@@ -30,7 +30,7 @@ class Stack:
         
         return False
 
-    def getMin(self) -> int:
+    def get_min(self) -> int:
         if self.stack:
             return self.min
         
