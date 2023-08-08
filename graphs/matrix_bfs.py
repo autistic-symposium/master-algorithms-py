@@ -2,18 +2,8 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-'''
-You are given an m x n grid rooms initialized with these three possible values.
 
-* -1 A wall or an obstacle.
-* 0 A gate.
-* INF Infinity means an empty room (2^31 - 1 = 2147483647 to represent INF)
-
-Fill each empty room with the distance to its nearest gate. 
-If it is impossible to reach a gate, it should be filled with INF.
-'''
-
-def matrix_bfs(rooms: list[list[int]]) -> None:
+def matrix_bfs(rooms) -> None:
         
         m = len(rooms)
         if m == 0:
@@ -24,7 +14,7 @@ def matrix_bfs(rooms: list[list[int]]) -> None:
         EMPTY = 2147483647
         DIRECTIONS = ((1, 0), (-1, 0), (0, 1), (0, -1))
 
-        q = collections.deque()
+        queue = collections.deque()
 
         for i in range(m):
             for j in range(n):
@@ -32,9 +22,9 @@ def matrix_bfs(rooms: list[list[int]]) -> None:
                 if rooms[i][j] == GATE:
                     q.append((i, j))
 
-        while q:
+        while queue:
 
-            row, col = q.popleft()
+            row, col = queue.popleft()
 
             for (x, y) in DIRECTIONS:
 
@@ -45,4 +35,4 @@ def matrix_bfs(rooms: list[list[int]]) -> None:
                     continue
 
                 rooms[r][c] = rooms[row][col] + 1
-                q.append((r, c))            
+                queue.append((r, c))            
