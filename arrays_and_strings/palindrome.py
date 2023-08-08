@@ -12,12 +12,3 @@ def is_palindrome(sentence):
         return is_palindrome(sentence[1:-1])
     
     return False
-
-
-if __name__ == '__main__':
-    print('Testing is_palindrome()...')
-    sentence ="subi no onibus"
-    print(f'Is {sentence} a palindrone?: {is_palindrome(sentence)}')
-
-    sentence ="helllo there"
-    print(f'Is {sentence} a palindrone?: {is_palindrome(sentence)}')
