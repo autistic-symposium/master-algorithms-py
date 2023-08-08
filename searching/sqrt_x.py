@@ -12,16 +12,16 @@ def sqrt(x) -> int:
         
         while left <= right:
             
-            pivot = left + (right - left) // 2
-            num = pivot * pivot
+            mid = (right + left) // 2
+            num = mid * mid
             
             if num > x:
-                right = pivot - 1
+                right = mid - 1
                 
             elif num < x:
-                left = pivot + 1
+                left = mid + 1
                 
             else:
-                return pivot
+                return mid
             
         return right
