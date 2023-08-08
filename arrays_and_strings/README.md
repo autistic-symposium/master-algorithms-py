@@ -186,7 +186,11 @@ def intersect(nums1: list[int], nums2: list[int]) -> list[int]:
 
 <br>
 
+--- 
+
 ### check if anagram
+
+<br>
 
 ```python
 def is_anagram(string1, string2) -> bool:
@@ -258,6 +262,8 @@ def diagonal_difference(arr):
 ```
 
 <br>
+
+---
 
 ### is palindrome
 
@@ -333,7 +339,3 @@ def length_longest_substring(s) -> int:
 ```
 
 <br>
-
----
-
-### 
