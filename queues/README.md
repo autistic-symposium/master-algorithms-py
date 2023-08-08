@@ -57,13 +57,6 @@ self.head += 1
 ```
 
 <br>
-
-* there is one occasion when `tail` index is set to zero:
-   * when the enqueue operation adds to the last position in the array and tail has to loop back (`self.tail == self.size`).
-
-* there are two occasions when `head` index is set to zero:
-   * when the queue is checked as empty
-   * when the dequeue operation popped the last element in the array and head has to loop back (`self.head == self.size`). 
   
 * as long as we know the length of the queue, we can instantly locate its tails based on this formula:
 
@@ -75,6 +68,14 @@ tail_index = (head_index + current_length - 1) % size
 
 <br>
 
+* there is one occasion when `tail` index is set to zero:
+   * when the enqueue operation adds to the last position in the array and tail has to loop back (`self.tail == self.size`).
+
+* there are two occasions when `head` index is set to zero:
+   * when the queue is checked as empty
+   * when the dequeue operation popped the last element in the array and head has to loop back (`self.head == self.size`).
+ 
+<br>
 
 ```python
 class CircularQueue:
@@ -134,13 +135,106 @@ class CircularQueue:
 
 <br>
 
-
-
-### with linked lists
+* another version used only one index (for `head`) and calculates the tail with the equation:
 
 <br>
 
-* in this example we implement the methods `is_empty` and `is_full` using an extra counter variable `self.count` that can be compared to `self.size` or `0` and used to validate `rear` and `front`.
+```python
+(self.head + self.count - 1) % self.size
+````
+
+<br>
+
+* and the next tail with:
+
+<br>
+
+```python
+(self.head + self.count) % self.size
+```
+
+<br>
+
+* and the next `head` is always given by:
+
+<br>
+
+```python
+(self.head + 1) % self.size
+```
+
+<br>
+
+* * in this example we also implement the methods `is_empty` and `is_full` using an extra counter variable `self.count` that can be compared to `self.size` or `0` and used to validate `rear` and `front`.
+
+<br>
+
+```python
+class CircularQueue:
+
+    def __init__(self, size):
+        self.head = 0
+        self.count = 0
+        self.queue = [0] * size
+        self.size = size
+
+    def _get_tail(self):
+        return (self.head + self.count - 1) % self.size
+
+    def _get_next_tail(self):
+        return (self.head + self.count) % self.size
+
+    def _get_next_head(self):
+        return (self.head + 1) % self.size
+
+    def enqueue(self, value: int) -> bool:
+
+        if self.is_empty():
+          return False
+          
+        self.queue[self._get_next_tail()] = value
+        self.count += 1
+      
+        return True
+
+    def dequeue(self) -> bool:
+
+        if self.is_empty():
+          return False
+          
+        self.head = self._get_next_head()
+        self.count -= 1
+      
+        return True
+
+    def Front(self) -> int:
+        if self.is_empty():
+          return False
+        
+      return self.queue[self.head]
+
+    def Rear(self) -> int:
+        if self.is_empty():
+          return False
+          
+        return self.queue[self._get_tail()]
+
+    def isEmpty(self) -> bool:
+        return self.count == 0
+
+    def isFull(self) -> bool:
+        return self.count == self.size
+```
+
+<br>
+
+
+
+#### with linked lists
+
+<br>
+
+* a simpler and more natural implementation, as the size of the queue is not "artificial" like before.
 
 * note that this queue is not thread-safe: the data structure could be corrupted in a multi-threaded environment (as race-condition could occur). to mitigate this problem, one could add the protection of a lock.
 
