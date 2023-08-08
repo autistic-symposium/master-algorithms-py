@@ -234,7 +234,8 @@ class CircularQueue:
 
 <br>
 
-* a simpler and more natural implementation, as the size of the queue is not "artificial" like before.
+
+* a linked list could be more memory efficient, since it does not pre-allocate memory for unused capacity (and size of the queue is not "artificial" like before).
 
 * note that this queue is not thread-safe: the data structure could be corrupted in a multi-threaded environment (as race-condition could occur). to mitigate this problem, one could add the protection of a lock.
 
