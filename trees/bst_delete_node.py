@@ -7,7 +7,7 @@ def successor(root):
    
     root = root.right
     while root.left:
-            root = root.left
+         root = root.left
     return root.val
 
 
@@ -15,20 +15,20 @@ def predecessor(root):
   
     root = root.left
     while root.right:
-            root = root.right
+         root = root.right
     return root.val
 
 
 def delete_node(root, key):
         
-    if not root:
-            return root
+    if root is None:
+         return root
 
     if key > root.val:
-            root.right = deleteNode(root.right, key)
+         root.right = delete_node(root.right, key)
       
     elif key < root.val:
-            root.left = deleteNode(root.left, key)
+            root.left = delete_node(root.left, key)
       
     else:
         if not (root.left or root.right):
@@ -36,11 +36,11 @@ def delete_node(root, key):
           
         elif root.right:
             root.val = successor(root)
-            root.right = deleteNode(root.right, root.val)
+            root.right = delete_node(root.right, root.val)
           
         else:
             root.val = predecessor(root)
-            root.left = deleteNode(root.left, root.val)
+            root.left = delete_node(root.left, root.val)
         
     return root
         
