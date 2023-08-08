@@ -2,15 +2,6 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-# Given a square matrix, calculate the absolute difference 
-# between the sums of its diagonals.
-
-import math
-import os
-import random
-import re
-import sys
-
 def diagonal_difference(arr):
 
     diag_1 = 0
@@ -27,9 +18,3 @@ def diagonal_difference(arr):
         
     return diag_1, diag_2, abs(diag_1 - diag_2)
             
-            
-
-if __name__ == '__main__':
-    
-    arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    print(diagonal_difference(arr))
