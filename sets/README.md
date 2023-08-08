@@ -13,7 +13,7 @@
 * this type of structure widely used in statistical algorithms such as markov chain monte carlo and metropolis-hastings algorithms, which needs sampling from a probability distribution when it's difficult to compute the distribution itself.
   
 * candidates for `O(1)` average insert time are:
-    * **hashmaps (or hashsets)**: to be able to implement `get_random()` at `O(1)` (choose a random index and to retrieve narandom element), we would have to convert hashmap keys in a list, which is `O(N)`. a solution is to build a list of keys aside and use this list to compute `get_random` in `O(1)`.
+    * **hashmaps (or hashsets)**: to be able to implement `get_random` at `O(1)` (choose a random index and to retrieve narandom element), we would have to convert hashmap keys in a list, which is `O(N)`. a solution is to build a list of keys aside and use this list to compute `get_random` in `O(1)`.
     * **array lists**: we would have `O(N)` with `delete`. the solution would be delete the last value (first swap the element to delete with the last one, then pop the last element out). for that, we need to compute an index of each element in `O(N)`, and we need a hashmap that stores `element -> index`.
 
 * either way, we need the same combination of data structures: a hashmap and an array.
