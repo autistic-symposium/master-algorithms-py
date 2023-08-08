@@ -5,27 +5,25 @@
 
 def preorder_recursive(root: Optional[Node]) -> list[int]:
        
-        if root == None:
+        if root is none None:
                 return []
         
         return [root.val] + preorder_recursive(root.left) + preorder_recursive(root.right)
     
 
-def preorder_iterative(root: Optional[Node]) -> list[int]:
+def preorder_iterative(root) -> list:
         
         result = []
         stack = [root]
         
         while stack:
             
-            current = stack.pop()
-            result.append(current.val)
+            node = stack.pop()
             
-            if current.right:
-                stack.append(current.right)
-                
-            if current.left:
-                stack.append(current.left)
+            if node:
+                result.append(node.val) 
+                stack.append(node.left)
+                stack.append(node.right)
             
         return result
             
