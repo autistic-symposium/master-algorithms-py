@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-def is_symmetric(root: Optional[Node]) -> bool:
+def is_symmetric(root) -> bool:
         
         stack = [(root, root)]
         
@@ -14,11 +14,11 @@ def is_symmetric(root: Optional[Node]) -> bool:
             if (not node1 and node2) or (not node2 and node1):
                 return False
             
+            elif node1 and node2 and node1.val != node2.val:
+                 return False
+
             elif not node1 and not node2:
                 continue
-            
-            elif node1 and node2 and node1.val != node2.val:
-                    return False
             
             stack.append([node1.left, node2.right])
             stack.append([node1.right, node2.left])
@@ -26,9 +26,9 @@ def is_symmetric(root: Optional[Node]) -> bool:
         return True
 
 
-def is_symmetric_recursive(root: Optional[TreeNode]) -> bool:
+def is_symmetric_recursive(root) -> bool:
             
-            def helper(node1, node2):
+        def helper(node1, node2):
                 if (not node1 and node2) or \
                    (not node2 and node1) or \
                    (node1 and node2 and node1.val != node2.val):
@@ -39,5 +39,5 @@ def is_symmetric_recursive(root: Optional[TreeNode]) -> bool:
                 
                 return helper(node1.left, node2.right) and helper(node2.left, node1.right)
             
-            return helper(root.left, root.right)
+        return helper(root.left, root.right)
             
