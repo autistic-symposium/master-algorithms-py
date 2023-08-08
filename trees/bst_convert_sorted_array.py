@@ -2,11 +2,8 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-# note that there is no unique solution, and different choices
-# for the root node would reflect on p is defined
 
-
-def convert_sorted_array_bst(nums):
+def convert_sorted_array_to_bst(nums):
 
       def helper(left, right):
         
