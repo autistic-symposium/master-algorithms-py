@@ -3,25 +3,27 @@
 # author: bt3gl
 
 
-class Tree:
+def lowest_common_ancestor(root, p, q):
+
+    stack = [root]
+    parent = {root: None}
     
-    def lowest_common_ancestor(self, root, p, q):
-        
-        def dfs(root, p, q):
+    while p not in parent or q not in parent:
 
-            if not root:
-                return False
-            
-            left = dfs(root.left, p, q)
-            right = dfs(root.right, p, q)
-            mid = root == p or root == q
+        node = stack.pop()
+        if node:
+            parent[node.left] = node
+            parent[node.right] = node
+            stack.append(node.left)
+            stack.append(node.right)
 
-            if mid + left + right >= 2:
-                self.answer = root
+    ancestors = set()
+    while p:
+        ancestors.add(p)
+        p = parent[p]
+
+    while q not in ancestors:
+        q = parent[q]
             
-            return left or right or mid
+    return q
                 
-        dfs(root, p, q)
-        
-        return self.answer
-    
