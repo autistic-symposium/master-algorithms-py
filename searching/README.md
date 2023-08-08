@@ -136,3 +136,57 @@ def sqrt(x) -> int:
             
         return right
 ```
+
+<br>
+
+---
+
+### find min in a rotated array
+
+<br>
+
+```python
+def find_min(nums):
+        
+        left, right = 0, len(nums) - 1
+        
+        while nums[left] > nums[right]:
+            
+            mid = (left + right) // 2
+            
+            if nums[mid] < nums[right]:
+                right = mid
+            else:
+                left =  mid + 1
+                
+        return nums[left]
+```
+
+<br>
+
+---
+
+### find a peak element
+
+<br>
+
+* a peak element is an element that is strictly greater than its neighbors.
+
+<br>
+
+```python
+def peak_element(nums):
+
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+
+            mid = (left + right) // 2
+
+            if nums[mid + 1] < nums[mid]:
+                right = mid
+            else:
+                left = mid + 1
+
+        return left
+```
