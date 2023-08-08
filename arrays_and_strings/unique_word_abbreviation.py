@@ -14,17 +14,22 @@ that word and word are the same.
 
 class ValidWordAbbr:
 
-    def __init__(self, dictionary: List[str]):
+    def __init__(self, dictionary):
+        
         self.dict = collections.defaultdict(set)
         for w in dictionary:
             aux_dict[self.get_abr(w)].add(w)
+            
         return aux_dict
         
     def get_abr(self, word):
+        
         return word[0] + str(len(word[1:-1])) + word[-1] if len(word) != 2 else word
         
-    def isUnique(self, word: str) -> bool:
+    def is_unique(self, word: str) -> bool:
+        
         abr = self.get_abr(word)
         words = self.dict[abr]
+        
         return len(words) == 0 or (len(words) == 1 and word in words)
     
