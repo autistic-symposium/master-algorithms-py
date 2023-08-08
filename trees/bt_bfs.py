@@ -8,9 +8,6 @@ def bfs_iterative(root) -> list:
         result = []
         queue = collections.deque([root])
         
-        if root is None:
-            return result
-        
         while queue:
     
             node = queue.popleft()
@@ -26,9 +23,7 @@ def bfs_iterative(root) -> list:
 def bfs_recursive(root) -> list:
 
         result = []
-        if root is None:
-            return root
-        
+
         def helper(node):
         
             if node:
