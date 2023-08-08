@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-  def lca(self, root, p, q):
-        
-        node = root
-        this_lcw = root.val
+
+def lowest_common_ancestor(root, p, q):
+
+        node, result = root, root
         
         while node:
             
-            this_lcw = node
+            result = node
             
             if node.val > p.val and node.val > q.val:
                 node = node.left
@@ -20,4 +20,4 @@
             else:
                 break
         
-        return this_lcw
+        return result
