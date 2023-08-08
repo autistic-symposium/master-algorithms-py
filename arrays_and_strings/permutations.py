@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-def permutation(string) -> list:
+def permutations(string) -> list:
 
     if len(string) == 1:
         return [string]
@@ -14,9 +14,3 @@ def permutation(string) -> list:
             result += [char + perm]
     
     return result
-
-
-if __name__ == '__main__':
-    print('Testing permutation()...')
-    string = "bt3gl"
-    print(f'Permutation of {string}: {permutation(string)}')
