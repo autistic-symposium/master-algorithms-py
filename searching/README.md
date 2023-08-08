@@ -2,7 +2,7 @@
 
 <br>
 
-* a binary search operates on a contiguous sequence with a specified left and right index (this is called the **search space**).
+* a binary search operates on a (sorted) contiguous sequence with a specified left and right index (this is called the **search space**).
   
 * binary searching is composed of 3 sections:
     * **pre-processing**: sort if collection is unsorted
