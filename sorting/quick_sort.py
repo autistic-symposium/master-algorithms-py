@@ -19,5 +19,6 @@ def quick_sort_divided(array):
         return array
 
     lower, pivot, higher = quick_sort_partition(array)
+    
     return quick_sort_divided(lower) + [pivot] + quick_sort_divided(higher)
 
