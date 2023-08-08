@@ -17,7 +17,7 @@
 
 * multiply by `2^k`: `num << k`
 
-* dvide by `2^k`: `num >> k`
+* divide by `2^k`: `num >> k`
 
 * check if a number is a power of 2: `(num & num - 1) == 0` or `(num & (-num)) == num`
 
