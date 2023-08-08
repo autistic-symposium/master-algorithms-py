@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-```
+'''
 Binary exponentiation, also known as exponentiation by squaring, is a technique for 
 efficiently computing the power of a number. By repeatedly squaring x and halving n, 
 we can quickly compute x^n using a logarithmic number of multiplications.
-````
+'''
 
 def binary_exp(x: float, n: int) -> float:
 
