@@ -3,29 +3,39 @@
 # author: bt3gl
 
 
-def level_order(root: Optional[Node]) -> list[list[int]]:
+def bfs_iterative(root) -> list:
+
+        result = []
+        queue = collections.deque([root])
         
         if root is None:
-            return []
-        
-        queue = collections.deque()
-        queue.append(root)
-        result = []
+            return result
         
         while queue:
-            
-            this_level = []
-            
-            for _ in range(len(queue)):
+    
+            node = queue.popleft()
                 
-                current = queue.popleft()
-                
-                if current:
-                    this_level.append(current.val)
-                    queue.append(current.left)
-                    queue.append(current.right)
-            
-            if this_level:
-                result.append(this_level)
+            if node:
+                result.append(node.val)
+                queue.append(node.left)
+                queue.append(node.right)
         
         return result
+
+
+def bfs_recursive(root) -> list:
+
+        result = []
+        if root is None:
+            return root
+        
+        def helper(node):
+        
+            if node:
+                result.append(node.val)
+                helper(node.left)
+                helper(node.right)
+        
+        helper(root)
+        return result
+        
