@@ -3,6 +3,29 @@
 
 <br>
 
+### techniques
+
+<br>
+
+* test if kth bit is set: `num & (1 << k) != 0`
+
+* set kth bit: `num |= (1 << k)`
+
+* turn off kth bit: `num &= ~(1 << k)`
+
+* toggle the kth bit: `num ^= (1 << k)`
+
+* multiply by `2^k`: `num << k`
+
+* dvide by `2^k`: `num >> k`
+
+* check if a number is a power of 2: `(num & num - 1) == 0` or `(num & (-num)) == num`
+
+* swapping two variables: `num1 ^= num2; num2 ^= num`; `num1 ^= num2`
+
+
+
+<br>
 
 ---
 
