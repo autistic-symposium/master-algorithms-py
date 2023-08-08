@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-def find_inorder_successor(root):
+def find_successor(root, p):
 
     successor = None
 
