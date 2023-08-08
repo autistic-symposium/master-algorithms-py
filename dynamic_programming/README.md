@@ -23,6 +23,17 @@
    * one or more base cases (a terminating scenario that does not use recursion to produce an answer)
    * a set of rules, also known as a recurrence relation, that reduces all other cases towards the base case.
 
+<br>
+
+```python
+def fib(n):
+  if n <= 1:
+    return n
+  return fib(n - 1) + fib(n - 2)
+```
+
+<br>
+
 * there can be multiple places where the function may call itself. 
 
 * any recursion problem can be solved iteratively and vice-versa.
