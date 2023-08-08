@@ -3,11 +3,11 @@
 # author: bt3gl
 
 
-def get_row(self, irow: int) -> list[int]:
+def get_row(self, row: int) -> list[int]:
         
-        if irow == 0: 
+        if row == 0: 
             return [1]
 	
-        result = self.get_row(irow - 1)
+        result = self.get_row(row - 1)
         
         return [1] + [sum(_) for _ in zip(result, result[1:])] + [1]
