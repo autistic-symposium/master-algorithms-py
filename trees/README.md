@@ -60,7 +60,7 @@ def max_depth(root) -> int:
 ```python
 def height(root):
       
-      if not root:
+      if root is none:
             return 0
             
       return 1 + max(height(root.left), height(root.right))
@@ -90,9 +90,6 @@ def bfs_iterative(root):
         result = []
         queue = collections.deque([root])
         
-        if root is None:
-            return result
-        
         while queue:
     
             node = queue.popleft()
@@ -104,22 +101,6 @@ def bfs_iterative(root):
         
         return result
 
-
-def bfs_recursive(root) -> list:
-
-        result = []
-        if root is None:
-            return root
-        
-        def helper(node):
-        
-            if node:
-                result.append(node.val)
-                helper(node.left)
-                helper(node.right)
-        
-        helper(root)
-        return result
 ```
 
 <br>
@@ -155,6 +136,24 @@ def inorder(root):
         if root is None:
             return []
 	return inorder(root.left) + [root.val] + inorder(root.right)
+
+def inorder_iterative(root) -> list:
+        
+        result = []
+        stack = []
+        node = root
+        
+        while stack or node:
+
+            if node:
+		stack.append(node)
+                node = node.left
+            else: 
+                node = stack.pop()
+                result.append(node.val)
+                node = node.right
+            
+        return result
 ````
 
 <br>
@@ -171,10 +170,27 @@ def inorder(root):
 <br>
 
 ```python
-def preorder(root):
+def preorder_recursive(root):
         if root is None:
             return []
 	return [root.val] + preorder(root.left) + preorder(root.right)
+
+
+def preorder_iterative(root) -> list:
+        
+        result = []
+        stack = [root]
+        
+        while stack:
+            
+            node = stack.pop()
+            
+            if node:
+                result.append(node.val) 
+                stack.append(node.right) # not the order (stacks are fifo)
+                stack.append(node.left)
+            
+        return result
 ```
 
 
@@ -197,29 +213,203 @@ def preorder(root):
 def postorder(root):
         if root is None:
             return []
-	return postorder(root.left) + postorder(root.right) + [root.val] 
+	return postorder(root.left) + postorder(root.right) + [root.val]
+
+
+def postorder_iterative(root) -> list:
+    stack, result = [], []
+    node = root
+    
+    while node or stack:
+
+            while node:
+                if node.right:
+                    stack.append(node.right)
+                stack.append(node)
+                node = node.left
+            
+            node = stack.pop()
+            
+            if stack and node.right == stack[-1]:
+                stack[-1] = node
+                node = node.right
+
+            else:
+                result.append(node.val)
+                node = None
+                
+    return result
 ```
 
-
-
 <br>
-
 
 
 ----
 
-### find height
+### is same tree?
 
 <br>
 
 ```python
-def height(root):
-      if not root:
-            return -1
-      return 1 + max(height(root.left), height(root.right))
+def is_same_trees(p, q):
+
+        if not p and not q:
+            return True
+        
+        if (not p and q) or (not q and p):
+            return False
+        
+        if p.val != q.val:
+            return False
+        
+        return is_same_trees(p.right, q.right) and is_same_trees(p.left, q.left)
 ````
 
 <br>
+
+---
+
+### is symmetric?
+
+<br>
+
+```python
+def is_symmetric(root) -> bool:
+        
+        stack = [(root, root)]
+        
+        while stack:
+            
+            node1, node2 = stack.pop()
+            
+            if (not node1 and node2) or (not node2 and node1):
+                return False
+            
+            if node1 and node2:
+
+		if node1.val != node2.val:
+                     return False
+
+		stack.append([node1.left, node2.right])
+		stack.append([node1.right, node2.left])
+        
+        return True
+
+
+def is_symmetric_recursive(root) -> bool:
+            
+        def helper(node1, node2):
+                if (not node1 and node2) or \
+                   (not node2 and node1) or \
+                   (node1 and node2 and node1.val != node2.val):
+                        return False
+                
+                if (not node1 and not node2):
+                        return True
+                
+                return helper(node1.left, node2.right) and helper(node2.left, node1.right)
+            
+        return helper(root.left, root.right)
+```
+
+<br>
+
+---
+
+### lowest common ancestor
+
+<br>
+
+```python
+def lowest_common_ancestor(root, p, q):
+
+    stack = [root]
+    parent = {root: None}
+    
+    while p not in parent or q not in parent:
+
+        node = stack.pop()
+        if node:
+            parent[node.left] = node
+            parent[node.right] = node
+            stack.append(node.left)
+            stack.append(node.right)
+
+    ancestors = set()
+    while p:
+        ancestors.add(p)
+        p = parent[p]
+
+    while q not in ancestors:
+        q = parent[q]
+            
+    return q
+```
+
+<br>
+
+---
+
+### has path sum?
+
+<br>
+
+
+```python
+def has_path_sum(root, target_sum) -> bool:
+    
+        def transverse(node, sum_here=0):
+            
+            if not node:
+                return sum_here == target_sum
+            
+            sum_here += node.val
+            
+            if not node.left:
+                return transverse(node.right, sum_here)
+            if not node.right:
+                return transverse(node.left, sum_here)
+            else:   
+                return transverse(node.left, sum_here) or transverse(node.right, sum_here)
+    
+        if not root:
+            return False
+        
+        return transverse(root)
+```
+
+<br>
+
+---
+
+### build tree from preorder and inorder
+
+<br>
+
+```python
+def build_tree(preorder, inorder) -> Optional[Node]:
+        
+        def helper(left, right, index_map):
+            
+            if left > right:
+                return None
+            
+            root = Node(preorder.pop(0))
+            index_here = index_map[root.val]
+
+            # this order change from postorder
+            root.left = helper(left, index_here - 1, index_map)
+            root.right = helper(index_here + 1, right, index_map)
+            
+            return root
+        
+        index_map = {value: i for i, value in enumerate(inorder)}
+        
+        return helper(0, len(inorder) - 1, index_map)
+```
+
+<br>
+
 
 ----
 
@@ -228,7 +418,8 @@ def height(root):
 <br>
 
 * **binary search tree** are binary trees where all nodes on the left are smaller than the root, which is smaller than all nodes on the right.
-* if a bst is **balanced**, it guarantees `O(log(N))` for insert and search (as we keep the tree's height as `H = log(N)`). common types of balanced trees: **red-black** and **avl**.
+* if a bst is **balanced**, it guarantees `O(log(N))` for insert and search (as we keep the tree's height as `h = log(N)`).
+* common types of balanced trees are **red-black** and **avl**.
 
 <br>
 
