@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-def has_path_sum(root: Optional[Node], target_sum: int) -> bool:
+
+def has_path_sum(root, target_sum) -> bool:
     
         def transverse(node, sum_here=0):
             
