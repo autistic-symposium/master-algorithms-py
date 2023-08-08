@@ -16,7 +16,7 @@ def check_if_exist(arr: list[int]) -> bool:
         aux_dict = {}
         
         for i, num in enumerate(arr):
-            aux_dict[2*num] = i
+            aux_dict[2 * num] = i
         
         for j, num in enumerate(arr):
             if num in aux_dict.keys() and j != aux_dict[num]:
