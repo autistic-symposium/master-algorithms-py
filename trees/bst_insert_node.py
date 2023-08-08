@@ -5,38 +5,35 @@
 
 def bst_insert_iterative(root, val):
 
-  new_node = Node(val)
-  this_node = root
-  
-  while this_node:
+  node = root
+  while node:
     
-    if  val > this_node.val:
-        if not this_node.right:
-          this_node.right = new_node
-          return root
+    if val > node.val:
+        if not node.right:
+          node.right = Node(val)
+          break
         else:
-          this_node = this_node.right
+          node = node.right
     
     else:
-        if not this_node.left:
-          this_node.left = new_node
-          return this_node
+        if not node.left:
+          node.left = Node(val)
+          break
         else:
-          this_node = this_node.left
+          node = node.left
         
-  return new_node
+  return root
 
 
 def bst_insert_recursive(root, val):
         
-    if not root:
+    if root is None:
         return Node(val)
 
     if val > root.val:
-        root.right = self.insertIntoBST(root.right, val)
+        root.right = self.bst_insert_recursive(root.right, val)
         
     else:
-        root.left = self.insertIntoBST(root.left, val)
+        root.left = self.bst_insert_recursive(root.left, val)
         
     return root
-            
