@@ -33,6 +33,8 @@
   
 * as long as we know the length of the queue, we can instantly locat its tails based on this formula:
 
+<br>
+
 ```
 tail_index = (head_index + queue_length - 1) % queue_capacity
 ```
