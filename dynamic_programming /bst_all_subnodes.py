@@ -14,7 +14,6 @@ def all_possible_bst(start, end, memo):
 
         result = []
         if start > end:
-            result.append(None)
             return result
         
         if (start, end) in memo:
@@ -26,8 +25,7 @@ def all_possible_bst(start, end, memo):
 
             for l in left:
                 for r in right:
-                    root = Node(i, l, r)
-                    result.append(root)
+                    result.append(Node(i, l, r))
 
         memo[(start, end)] = result
         return result
