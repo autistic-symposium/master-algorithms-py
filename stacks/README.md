@@ -9,7 +9,7 @@
   
 * stacks are useful in **depth-first search** algorithms, where you can push temp data as you recurse, and remove them from the (memory or data structure) stack as you backtrace.
 
-* to keep `find_min()` at `O(1)`, you can keep track of the minimum when pushing and poping:
+* to keep `find_min()` at `O(1)`, you can keep track of "prior minimum" when pushing and poping:
 
 <br>
 
