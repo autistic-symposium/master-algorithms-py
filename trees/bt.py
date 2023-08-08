@@ -12,24 +12,17 @@ class Node(object):
 
     def add(self, value):
         new_node = Node(value)
-        if not self.value:
-            self.value = new_node
-        elif not self.left:
+        if not self.left:
             self.left = new_node
-        elif not self. right:
+        elif not self.right:
             self.right = new_node
         else:
             self.left = self.left.add(value)
-        return self
 
     def search(self, item):
-        if self.value == item:
-            return True
-
-        if (self.left and self.left.search(item)) or \
-                (self.right and self.right.search(item)):
-            return True
-        return False
+        return self.value == item or \
+            (self.left and self.left.search(item)) or \
+            (self.right and self.right.search(item))
 
     def preorder(self):
         yield self.value
@@ -101,5 +94,3 @@ if __name__ == '__main__':
 
     print(f'\n🟢 Search for node 5: {bt.search(5)}')
     print(f'❌ Search for node 15: {bt.search(15)}')
-
-
