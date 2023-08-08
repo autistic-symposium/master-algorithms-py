@@ -3,38 +3,47 @@
 
 <br>
 
-* stacks are **last in, first out** structures (LIFO), where the newest element is first one to be removed from the structure.
-* stacks are useful in certain recursive algorithms, where you can push temp data as you recurse, and remove them from the (memory or data structure) stack as you backtrace.
+* stacks are **last in, first out** (LIFO) abstract structures, where the newest element is first one to be removed from the structure.
 
+* a stack support `push` and `pop` at `O(1)`, and they be implmented with arrays or singly linked list.
+  
+* stacks are useful in **depth-first search** algorithms, where you can push temp data as you recurse, and remove them from the (memory or data structure) stack as you backtrace.
 
-<br>
-
----
-
-### some examples in this dir
-
-<br>
-
-#### `stack.py`
+* to keep `find_min()` at `O(1)`, you can keep track of the minimum when pushing and poping:
 
 <br>
 
 ```python
-python3 stack.py
+class Stack:
 
-Testing Stack...
+    def __init__(self):
+        self.stack = []
+        self.min = None
 
-Stack: [12, 13, 14, 15, 16, 17, 18, 19, 20]
-Stack size: 9
-Stack peek: 20
-Stack is empty: False
-Stack min: 12
+    def push(self, val: int) -> None:
+        self.stack.append((val, self.min))
+        if self.min is not None:
+            self.min = min(self.min, val)
+        else:
+            self.min = val
 
-Popping...
-20
-19
-18
-17
-16
-Stack: [12, 13, 14, 15]
-```
+    def pop(self) -> None:
+        if self.stack:
+            (val, prior_min) = self.stack.pop()
+            self.min = prior_min
+            return val
+        
+        return False
+        
+    def top(self) -> int:
+        if self.stack:
+            return self.stack[-1][0]
+        
+        return False
+
+    def get_min(self) -> int:
+        if self.stack:
+            return self.min
+        
+        return False
+  ```
