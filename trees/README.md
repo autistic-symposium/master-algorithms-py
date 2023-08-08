@@ -66,32 +66,6 @@ def is_leaf(node):
 
 <br>
 
----
-
-### balanced trees
-
-<br>
-
-* a **balanced tree** is a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
-
-<br>
-
-```python
-def height(root):
-    if root is None:
-      return -1
-      
-    return 1 + max(height(root.left), height(root.right))
-
-def is_balanced(root):
-    if root is None:
-      return True
-
-    return abs(height(root.left) - height(root.right)) < 2 and \
-            is_balanced(root.left) and is_balanced(root.right)
-```
-
-<br>
 
 ----
 
@@ -134,6 +108,35 @@ def height(root):
             
       return 1 + max(height(root.left), height(root.right))
 ```
+
+<br>
+
+---
+
+### balanced trees
+
+<br>
+
+* a **balanced tree** is a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
+
+<br>
+
+```python
+def height(root):
+    if root is None:
+      return -1
+      
+    return 1 + max(height(root.left), height(root.right))
+
+def is_balanced(root):
+    if root is None:
+      return True
+
+    return abs(height(root.left) - height(root.right)) < 2 and \
+            is_balanced(root.left) and is_balanced(root.right)
+```
+
+<br>
 
 ---
 
