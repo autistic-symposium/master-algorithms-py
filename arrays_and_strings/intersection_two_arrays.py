@@ -10,7 +10,7 @@ def intersect(nums1: list[int], nums2: list[int]) -> list[int]:
   counter = Counter(nums1) & Counter(nums2)
         
   for n in set_nums:
-    result.extend([n]*counter[n])
+    result.extend([n] * counter[n])
         
   return result
         
