@@ -18,19 +18,3 @@ def bfs_iterative(root) -> list:
                 queue.append(node.right)
         
         return result
-
-
-def bfs_recursive(root) -> list:
-
-        result = []
-
-        def helper(node):
-        
-            if node:
-                result.append(node.val)
-                helper(node.left)
-                helper(node.right)
-        
-        helper(root)
-        return result
-        
