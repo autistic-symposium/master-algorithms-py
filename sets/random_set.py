@@ -4,28 +4,41 @@
 
 import random
 
+
 class RandomizedSet:
 
     def __init__(self):
-        self.set = []
-        self.dict = {}
+        
+        self.random_set = {}
+        self.index_list = []
         
     def insert(self, val: int) -> bool:
-        if val in self.dict:
+        
+        if val in self.random_set.keys():
             return False
-        self.set.append(val)
-        self.dict[val] = len(self.set)
+            
+        self.index_list.append(val)
+        self.random_set[val] = len(self.index_list)
+        
         return True
 
     def remove(self, val: int) -> bool:
-        if val in self.dict:
-            last_element, idx = self.set[-1], self.dict[val]
-            self.set[idx], self.dict[last_element] = last_element, idx
-            self.set.pop()
-            del self.dict[val]
+        
+        if val in self.random_set.keys():
+            
+            last_element = self.index_list[-1]
+            index_val = self.random_set[val]
+            self.index_list[index_val] = last_element
+            self.random_set[last_element] = index_val
+            
+            self.index_list.pop()
+            del self.random_set[val]
+            
             return True
+            
         return False
         
     def get_random(self) -> int:
-        return random.choice(self.set)
+        
+        return random.choice(self.index_list)
   
