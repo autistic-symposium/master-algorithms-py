@@ -20,10 +20,7 @@ Output: [0]
 
 
 def move_zeroes(nums: list[int]) -> list[int]:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        
+
         i = 0
         
         while i < len(nums) - 1:
@@ -39,9 +36,3 @@ def move_zeroes(nums: list[int]) -> list[int]:
             
             
         return nums
-
-
-if __name__ == "__main__":
-
-    nums = [0,1,0,3,12]
-    assert(move_zeroes(nums) == [1,3,12,0,0])
