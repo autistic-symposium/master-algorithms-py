@@ -58,4 +58,4 @@
 <br>
 
 * **[big-o complexity chart](https://www.bigocheatsheet.com/)**
-* **[hacker rank videos on algorithms](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)**
+* **[hacker rank videos on algorithms](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL) and on [data structures](https://www.youtube.com/playlist?list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX)**
