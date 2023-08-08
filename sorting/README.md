@@ -17,4 +17,39 @@
 <img src="https://github.com/go-outside-labs/master-algorithms-py/assets/138340846/54ab4d2c-a8b7-4e5c-9e98-5d7d2e627007" width="60%" align="center" style="padding:1px;border:1px solid black;">
 </p>
 
+<br>
 
+---
+
+### merge sort
+
+<br>
+
+```python
+def ms(array):
+
+  if len(array) < 2:
+      return array
+
+  mid = len(array) // 2
+  left = array[:mid]
+  right = array[mid:]
+
+  result, i, j = [], 0, 0
+
+  while i < len(left) and j < len(right):
+
+      if left[i] <= right[j]:
+          result.append(left[i])
+          i += 1
+      else:
+          result.append(right[j])
+          j += 1
+
+  if left[i:]:
+      result.extend(left[i:])
+  if right[j:]:
+      result.extend(right[j:])
+
+  return result
+```
