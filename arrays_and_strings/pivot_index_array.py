@@ -3,11 +3,9 @@
 # author: bt3gl
 
 
-def pivotIndex(nums):
+def pivot_index(nums):
 
-        s = sum(nums)
-
-        left_sum = 0
+        s, left_sum = sum(nums), 0
 
         for i, x in enumerate(nums):
 
