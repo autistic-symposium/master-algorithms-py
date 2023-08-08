@@ -182,7 +182,7 @@ def dfs(graph, v, discovered):
     print(v, end=' ')              
  
     for u in graph.adj_list[v]:
-        if not discovered[u]:       #
+        if not discovered[u]:       
             dfs(graph, u, discovered)
  
  
