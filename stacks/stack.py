@@ -10,15 +10,9 @@ class Stack:
         self.min_array = []
         self.min = float('inf')
 
-    ######################
-    #   Private methods
-    ######################
     def __repr__(self):
         return f'{self.content}'
 
-    ######################
-    #  Properties
-    ######################
     @property
     def size(self):
         return len(self.content)
@@ -34,9 +28,6 @@ class Stack:
     def is_empty(self):
         return not bool(self.content)
 
-    ######################
-    #   Public methods
-    ######################
     def push(self, value):
         if value < self.min:
             self.min = value
