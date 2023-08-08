@@ -29,8 +29,7 @@ def dfs(graph, v, discovered):
 
 def iterative_dfs(graph, v, discovered):
  
-    stack = deque()
-    stack.append(v)
+    stack = [v]
  
     while stack:
  
