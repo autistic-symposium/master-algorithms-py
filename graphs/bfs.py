@@ -18,34 +18,32 @@ class Graph:
  
 def bfs(graph, v, discovered):
  
-    q = deque()
+    queue = deque(v)
     discovered[v] = True
  
-    q.append(v)
+    while queue:
  
-    while q:
- 
-        v = q.popleft()
+        v = queue.popleft()
         print(v, end=' ')
  
         for u in graph.adj_list[v]:
             if not discovered[u]:
                 discovered[u] = True
-                q.append(u)
+                queue.append(u)
 
 
-def recursive_bfs(graph, q, discovered):
+def recursive_bfs(graph, queue, discovered):
  
-    if not q:
+    if not queue:
         return
  
-    v = q.popleft()
+    v = queue.popleft()
     print(v, end=' ')
  
     for u in graph.adj_list[v]:
         if not discovered[u]:
             discovered[u] = True
-            q.append(u)
+            queue.append(u)
  
-    recursive_bfs(graph, q, discovered)
+    recursive_bfs(graph, queue, discovered)
   
