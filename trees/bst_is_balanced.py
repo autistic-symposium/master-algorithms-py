@@ -5,7 +5,7 @@
 
 def height(root):
   
-    if not root:
+    if root is None:
       return -1
       
     return 1 + max(height(root.left), height(root.right))
@@ -13,7 +13,7 @@ def height(root):
 
 def is_balanced(root):
   
-    if not root:
+    if root is None:
       return True
 
     return abs(height(root.left) - height(root.right)) < 2 and \
