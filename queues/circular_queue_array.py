@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+
 class CircularQueue:
 
     def __init__(self, k: int):
