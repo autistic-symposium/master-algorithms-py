@@ -4,7 +4,6 @@
 
 
 def quick_sort_partition(array):
-    """Sort an array using quick sort"""
 
     pivot, array = array[0], array[1:]
 
@@ -15,7 +14,6 @@ def quick_sort_partition(array):
 
 
 def quick_sort_divided(array):
-    """Sort an array using quick sort"""
 
     if len(array) < 2:
         return array
