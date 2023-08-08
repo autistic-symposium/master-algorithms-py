@@ -112,55 +112,56 @@ class CircularQueue:
 <br>
 
 ```python
- class CircularQueue:
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+
+
+class CircularQueue:
 
     def __init__(self, k: int):
-        self.head = -1
-        self.tail = -1
-        self.size = k
-        self.queue = [None] * self.size
-        
-    def _get_next_position(self, end) -> int:
-        return (end + 1) % self.size
+        self.capacity = k
+        self.count = 0
+        self.head = None
+        self.tail = None
         
     def enqueue(self, value: int) -> bool:
-        if self.is_full():
+        if self.count == self.capacity:
             return False
-
-        if self.is_empty() :
-            self.head = 0;
-        
-        self.tail = self._get_next_position(self.tail)
-        self.queue[self.tail] = value
+        if self.count == 0:
+            self.head = Node(value)
+            self.tail = self.head
+        else:
+            new_node = Node(value)
+            self.tail.next = new_node
+            self.tail = new_node
+        self.count += 1
         return True
 
     def dequeue(self) -> bool:
-        if self.is_empty():
+        if self.count == 0:
             return False
-
-        if self.head == self.tail:
-            self.head = -1
-            self.tail = -1
-            return True
-        
-        self.head = self._get_next_position(self.head)
+        self.head = self.head.next
+        self.count -= 1
         return True
 
     def front(self) -> int:
-        if self.is_empty():
+        if self.count == 0:
             return -1
-        return self.queue[self.head]
         
+        return self.head.value
+
     def rear(self) -> int:
-        if self.is_empty():
+        if self.count == 0:
             return -1
-        return self.queue[self.tail]
-        
+        return self.tail.value
+    
     def is_empty(self) -> bool:
-        return self.head == -1
+        return self.count == 0
 
     def is_full(self) -> bool:
-        return self._get_next_position(self.tail) == self.head
+        return self.count == self.capacity
 ```
 
 
