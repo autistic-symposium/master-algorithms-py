@@ -115,11 +115,6 @@ def duplicate_zeros(arr: list[int]) -> list[int]:
 
 <br>
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# author: bt3gl
-
-
 ```python
 def remove_duplicates(nums: list[int]) -> int:
         
