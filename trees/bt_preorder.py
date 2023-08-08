@@ -8,4 +8,20 @@ def preorder(root) -> list:
       return []
     
   return [root.val] + preorder(root.left) + preorder(root.right)
+    
         
+def preorder_iterative(root) -> list:
+        
+        result = []
+        stack = [root]
+        
+        while stack:
+            
+            node = stack.pop()
+            
+            if node:
+                result.append(node.val) 
+                stack.append(node.right) # not the order 
+                stack.append(node.left)
+            
+        return result
