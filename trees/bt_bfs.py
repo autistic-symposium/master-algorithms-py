@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-def bfs_iterative(root) -> list:
+def bfs(root) -> list:
 
         result = []
         queue = collections.deque([root])
