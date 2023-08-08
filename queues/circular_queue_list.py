@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+
 class CircularQueue:
 
     def __init__(self, k: int):
@@ -14,7 +15,6 @@ class CircularQueue:
         return (end + 1) % self.size
         
     def enqueue(self, value: int) -> bool:
-
         if self.is_full():
             return False
 
@@ -23,11 +23,9 @@ class CircularQueue:
         
         self.tail = self._get_next_position(self.tail)
         self.queue[self.tail] = value
-
         return True
 
     def dequeue(self) -> bool:
-
         if self.is_empty():
             return False
 
@@ -37,15 +35,14 @@ class CircularQueue:
             return True
         
         self.head = self._get_next_position(self.head)
-
         return True
 
-    def Front(self) -> int:
+    def front(self) -> int:
         if self.is_empty():
             return -1
         return self.queue[self.head]
         
-    def Rear(self) -> int:
+    def rear(self) -> int:
         if self.is_empty():
             return -1
         return self.queue[self.tail]
