@@ -2,22 +2,19 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
-# given a collection of numbers, find the pair 
-# of numbers that sum to a given number
 
-def bs(array, desired_num):
+def bs(array, item):
 
-    start = 0
-    end = len(array)
+    start, end = 0, len(array)
     mid = (end - start) // 2
 
     while len(array) > 0:
-        if array[mid] == desired_num:
+        if array[mid] == item:
             return True
-        elif array[mid] > desired_num:
-            return bs(array[mid+1:], desired_num)
+        elif array[mid] > item:
+            return bs(array[mid + 1:], item)
         else:
-            return bs(array[:mid], desired_num)
+            return bs(array[:mid], item)
     
     return False
     
@@ -38,14 +35,16 @@ def find_pairs_max_sum(array, desired_sum):
     i, j = 0, len(array) - 1
 
     while i < j:
-        if array[i] + array[j] == desired_sum:
+        this_sum = array[i] + array[j]
+        if this_sum == desired_sum:
             return array[i], array[j]
-        elif array[i] + array[j] > desired_sum:
-            j = j - 1
-        elif array[i] + array[j] < desired_sum:
-            i = i + 1
+        elif this_sum > desired_sum:
+            j -= 1
+        else:
+            i += 1
             
     return False
+    
 
 def find_pairs_not_sorted(array, desired_sum):
 
