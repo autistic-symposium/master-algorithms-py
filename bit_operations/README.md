@@ -19,13 +19,19 @@
 * traversing the remainder in reverse order will give the representation in the base-X system.
 
 ```
-50/2 = 25, 50%2 = 0, 25/2 = 12, 25%2 =1, 12/2 = 6, 12%2 = 0, 6/2 - 3, 6%2 =0, 3/2 = 1, 3%2 =1, 1/2 = 0, 1%2 = 1 --> 110010
+50/2 = 25, 25/2 = 12, 12/2 = 6, 6/2 = 3,  3/2 = 1, 1/2 = 0
+50%2 = 0, 25%2 = 1, 12%2 = 0, 6%2 = 0, 3%2 = 1, 1%2 = 1 
+--> 110010
 ```
 
 * to convert a fractional part, multiply the fractional part of the decimal number by `X `until it becomes `0`, and record the integer part each time.
 
 ```
-0.6875x2 = 1.375 with integer 1, 0.375x2 = 0.75 with integer 0, 0.75x2 = 1.5 with integer 1, 0.5x2 = 1, with integer 1 --> 0.1011
+0.6875x2 = 1.375 with integer 1,
+0.375x2 = 0.75 with integer 0,
+0.75x2 = 1.5 with integer 1,
+0.5x2 = 1, with integer 1
+--> 0.1011
 ```
 
 <br>
@@ -103,12 +109,9 @@ def convert_to_hex(num: int) -> str:
 * the binary representation of a number in a computer is called its **machine number**. it's a signed number, and the highest bit of the machine number is the sign bit `0`.
   
 * inverse code: for non-negative numbers, it's the same, for negative numbers, you flip every bit of the original code, except the sign bit.
-  
+        * introducing the inverse code solves the problem of subtraction errors, but the issue of dual representation of `0` remains.
 * complement code: is obtained from the inverse code, for non-negative numbers it's the same, for negative numbers it's obtained by adding `1` to the inverse code. for example, for `-10`, the original code is `10001010`, the inverse code is `11110101`, and the complement code is `11110110`.
-  
-* introducing the inverse code solves the problem of subtraction errors, but the issue of dual representation of `0` remains.
-  
-* the complement code solves both the subtraction error and dual representation of the `0` problem (in complement code, there is no `-0`).,
+        * the complement code solves both the subtraction error and dual representation of the `0` problem (in complement code, there is no `-0`).,
 
 <br>
 
