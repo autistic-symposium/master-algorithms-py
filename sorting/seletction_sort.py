@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-
 def selection_sort(array):
 
     for i in range(len(array)):
