@@ -7,10 +7,7 @@
 
 
 def duplicate_zeros(arr: list[int]) -> list[int]:
-        """
-        Do not return anything, modify arr in-place instead.
-        """
-        
+
         i = 0
         while i < len(arr):
             
@@ -27,11 +24,4 @@ def duplicate_zeros(arr: list[int]) -> list[int]:
             else:
                 i += 1
 
-
         return arr
-
-
-if __name__ == "__main__":
-
-    arr = [1, 0, 2, 3, 0, 4, 5, 0]
-    print(duplicate_zeros(arr))
