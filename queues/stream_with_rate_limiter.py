@@ -5,11 +5,10 @@
 class Logger:
 
     def __init__(self):
-
         self.msg_set = set()
         self.msg_queue = deque()
         
-    def print_message(self, timestamp: int, message: str) -> bool:
+    def print_message(self, timestamp, message) -> bool:
         
         while self.msg_queue:
             msg, msg_timestamp = self.msg_queue[0]
@@ -23,6 +22,6 @@ class Logger:
             self.msg_set.add(message)
             self.msg_queue.append((message, timestamp))
             return True
-        else:
-            return False
+            
+        return False
     
