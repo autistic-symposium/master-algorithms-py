@@ -51,3 +51,4 @@ def is_valid_sudoku(board) -> bool:
       boxes[index].add(val)
         
   return True
+        
