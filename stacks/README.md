@@ -33,17 +33,10 @@ class Stack:
             self.min = prior_min
             return val
         
-        return False
-        
     def top(self) -> int:
         if self.stack:
             return self.stack[-1][0]
-        
-        return False
 
     def get_min(self) -> int:
-        if self.stack:
-            return self.min
-        
-        return False
+        return self.min
   ```
