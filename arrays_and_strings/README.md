@@ -137,9 +137,64 @@ def remove_duplicates(nums: list[int]) -> int:
 
 <br>
 
+--- 
+
+### anagrams
+
+<br>
+
+* to determine if two strings are anagrams, there are a few approaches:
+    - sorting both strings should produce the same string (`O(N log(N))` time and `O(log(N))` space.
+    - if we map each character to a prime number and we mutliply each mapped number together, anagrams should have the same multiple (prime factor decomposition, `O(N)`).
+    - frequency counting of characters can determine whether they are anagram (`O(N)`).
+
+<br>
+
+```python
+def is_anagram(string1, string2) -> bool:
+
+    string1 = string1.lower()
+    string2 = string2.lower()
+
+    if len(string1) != len(string2):
+        return False
+
+    for c in string1:
+        if c not in string2:
+            return False
+    
+    return True
+```
+
+<br>
+
+---
+
 ----
 
-### check if permutation is palindrome
+### palindromes
+
+<br>
+
+* ways to determine if a string is a palindrome:
+  * reverse the string and they should be equal.
+  * have two pointers at the start and end of the string, moving the pointers until they meet. 
+
+<br>
+
+```python
+def is_palindrome(sentence):
+
+    sentence = sentence.strip(' ')
+    if len(sentence) < 2:
+        return True
+    
+    if sentence[0] == sentence[-1]:
+        return is_palindrome(sentence[1:-1])
+    
+    return False
+```
+
 
 <br>
 
@@ -165,6 +220,8 @@ def is_permutation_of_palindromes(some_string):
 
 <br>
 
+
+
 ---
 
 ### intersection of two arrays
@@ -188,29 +245,6 @@ def intersect(nums1: list[int], nums2: list[int]) -> list[int]:
 
 --- 
 
-### check if anagram
-
-<br>
-
-```python
-def is_anagram(string1, string2) -> bool:
-
-    string1 = string1.lower()
-    string2 = string2.lower()
-
-    if len(string1) != len(string2):
-        return False
-
-    for c in string1:
-        if c not in string2:
-            return False
-    
-    return True
-```
-
-<br>
-
----
 
 ### check if isomorphic
 
@@ -261,26 +295,7 @@ def diagonal_difference(arr):
     return diag_1, diag_2, abs(diag_1 - diag_2)
 ```
 
-<br>
 
----
-
-### is palindrome
-
-<br>
-
-```python
-def is_palindrome(sentence):
-
-    sentence = sentence.strip(' ')
-    if len(sentence) < 2:
-        return True
-    
-    if sentence[0] == sentence[-1]:
-        return is_palindrome(sentence[1:-1])
-    
-    return False
-```
 
 <br>
 
