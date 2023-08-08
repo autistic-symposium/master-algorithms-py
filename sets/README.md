@@ -17,7 +17,7 @@
     * **array lists**: we would have `O(N)` with `delete`. the solution would be delete the last value (first swap the element to delete with the last one, then pop the last element out). for that, we need to compute an index of each element in `O(N)`, and we need a hashmap that stores `element -> index`.
 
 * either way, we need the same combination of data structures: a hashmap and an array.
-   * an array keeps the values appended in order. `deletes` always replace elements to the end.
+   * an array keeps the values appended in order. `delete` always replace elements to the end.
    * an dictionary maps the values (key) to the corresponding length of the array (their index) so it guarantees `O(1)` lookup and provide a list for `random.choice()`. 
  
   <br>
