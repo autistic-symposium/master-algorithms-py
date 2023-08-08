@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+
 def height(root):
       
       if not root:
