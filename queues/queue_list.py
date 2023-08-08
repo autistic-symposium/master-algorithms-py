@@ -5,52 +5,59 @@
 
 class Node:
     def __init__(self, value, next=None):
+        
         self.value = value
         self.next = next
 
 
-class CircularQueue:
+class Queue:
 
-    def __init__(self, k: int):
-        self.capacity = k
+    def __init__(self, size):
+        
+        self.size = size
         self.count = 0
         self.head = None
         self.tail = None
         
     def enqueue(self, value: int) -> bool:
-        if self.count == self.capacity:
+        
+        if self.is_full():
             return False
-        if self.count == 0:
-            self.head = Node(value)
-            self.tail = self.head
+            
+        if self.is_empty():
+            self.head = self.tail = Node(value)
+        
         else:
-            new_node = Node(value)
-            self.tail.next = new_node
-            self.tail = new_node
+            self.tail.next = Node(value)
+            self.tail = self.tail.next
+        
         self.count += 1
+        
         return True
 
     def dequeue(self) -> bool:
-        if self.count == 0:
+        
+        if self.is_empty():
             return False
+             
         self.head = self.head.next
         self.count -= 1
+        
         return True
 
     def front(self) -> int:
-        if self.count == 0:
-            return -1
-        
+        if self.is_empty():
+            return False
         return self.head.value
 
     def rear(self) -> int:
-        if self.count == 0:
-            return -1
+        if self.is_empty():
+            return False
         return self.tail.value
     
     def is_empty(self) -> bool:
         return self.count == 0
 
     def is_full(self) -> bool:
-        return self.count == self.capacity
+        return self.count == self.size
       
