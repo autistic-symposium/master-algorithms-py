@@ -10,11 +10,10 @@ def build_tree(preorder, inorder) -> Optional[Node]:
             if left > right:
                 return None
             
-            root = Node(preorder.pop(0))
+            root = Node(preorder.pop(0)) # # this order change from postorder
             index_here = index_map[root.val]
 
-            # this order change from postorder
-            root.left = helper(left, index_here - 1, index_map)
+            root.left = helper(left, index_here - 1, index_map) # this order change from postorder
             root.right = helper(index_here + 1, right, index_map)
             
             return root
