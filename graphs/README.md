@@ -212,7 +212,7 @@ def iterative_dfs(graph, v, discovered):
 
 ---
 
-### matrix bfs
+### matrix bfs and dfs
 
 <br>
 
@@ -223,6 +223,7 @@ def iterative_dfs(graph, v, discovered):
 
 * fill empty room with the distance to its nearest gate. if it is impossible to reach a gate, it should be filled with `INF`.
 
+<br>
 
 ```python
 
@@ -260,4 +261,79 @@ def matrix_bfs(rooms) -> None:
 
                 rooms[r][c] = rooms[row][col] + 1
                 queue.append((r, c))            
+```
+
+<br>
+
+
+* given an `m x n` 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+<br>
+
+```python
+def num_island_dfs(grid) -> int:
+        
+        LAND = '1'
+        answer = 0
+
+        def dfs(row, col):
+          
+            if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] != LAND:
+                return
+            
+            grid[row][col] = 'x'
+            dfs(row + 1, col)
+            dfs(row - 1, col)
+            dfs(row, col - 1)
+            dfs(row, col + 1)
+
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == LAND:
+                    answer += 1
+                    dfs(i, j)
+  
+        return answer
+```
+
+<br>
+
+* and a solution for the problem above, using bfs:
+
+<br>
+
+```python
+def num_island_bfs(grid) -> int:
+        
+        LAND = '1'
+        answer = 0
+        queue = collections.deque()
+
+        def bfs(row, col, queue):
+            
+            delta = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+            
+            while queue:
+                x, y = queue.popleft()
+                
+                for dx, dy in delta:
+                    
+                    px, py = x + dx, y + dy
+                    if px < 0 or px >= len(grid) or py < 0 or py >= len(grid[0]) or grid[px][py] != LAND:
+                        continue
+                        
+                    grid[px][py] = 'x'
+                    queue.append((px, py))
+
+
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                
+                if grid[i][j] == LAND:
+                    answer += 1
+                    queue.append((i, j))
+                    bfs(i, j, queue)
+
+  
+        return answer
 ```
