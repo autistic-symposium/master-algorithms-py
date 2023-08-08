@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # author: bt3gl
 
+
 def search_bst_recursive(root, val):
         
         if root is None or root.val == val:
@@ -17,16 +18,15 @@ def search_bst_recursive(root, val):
         
 def search_bst_iterative(root, val):
         
-        node = root
-        while node:
+        while root:
             
-            if node.val == val:
-                return node
+            if root.val == val:
+                break
 
-            if node.val < val:
-                node = node.right
+            if root.val < val:
+                root = root.right
 
             else:
-                node = node.left
+                root = root.left
         
-        return False
+        return root
