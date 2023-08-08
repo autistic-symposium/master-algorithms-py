@@ -12,14 +12,10 @@ The final sorted array should not be returned by the function,
 but instead be stored inside the array nums1. 
 To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements 
 that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
-
 """
 
 def merge(big_list: list[int], m: int, small_list: list[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
-        
+
         index_big, index_small, index_backward = m - 1, n - 1, m + n - 1
         
         while index_big >= 0 and index_small >= 0:
@@ -42,16 +38,3 @@ def merge(big_list: list[int], m: int, small_list: list[int], n: int) -> None:
             big_list[index_backward] = small_list[index_small]
             index_backward -= 1
             index_small -= 1
-    
-
-
-if __name__ == "__main__":
-    
-        nums1 = [1,2,3,0,0,0]
-        m = 3
-        nums2 = [2,5,6]
-        n = 3
-
-        merge(nums1, m, nums2, n)
-        print(nums1)
-        # [1,2,2,3,5,6]
