@@ -17,7 +17,7 @@
 * in **weighted graphs**, each edge has an associated weight. if the sum of the weights of all edges of a cycle is a negative values, it's a negative weight cycle.
 
   
-* the **degree of a vertex** is the number of edges connecting the vertex. in directed, graphs, if the **in-dregree** of a vertex is `d`, there are **d** directional edges incident to the vertex (and similarly, **out-degree** from the vertex).
+* the **degree of a vertex** is the number of edges connecting the vertex. in directed, graphs, if the **in-degree** of a vertex is `d`, there are **d** directional edges incident to the vertex (and similarly, **out-degree** from the vertex).
 
 
 * with `|V|` the number of vertices and `|E|` is the number of edges, search in a graph (either bfs of dfs) is `O(|V| + |E|)`.
@@ -221,7 +221,7 @@ def iterative_dfs(graph, v, discovered):
     * 0 A gate.
     * `INF` Infinity means an empty room (`2^31 - 1 = 2147483647` to represent `INF`)
 
-* fill empty room with the distance to its nearest gate. if it is impossible to reach a gate, it should be filled with `INF`.
+* fill the empty room with the distance to its nearest gate. if it is impossible to reach a gate, it should be filled with `INF`.
 
 <br>
 
