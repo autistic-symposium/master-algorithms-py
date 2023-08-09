@@ -11,6 +11,7 @@ def preorder(root: 'Node'):
         stack, result = [root, ], []
 
         while stack:
+                
             node = stack.pop()
             result.append(node.val)
             stack.extend(node.children[::-1])
