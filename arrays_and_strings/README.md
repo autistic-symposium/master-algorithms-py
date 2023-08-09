@@ -62,10 +62,37 @@ def merge_overlapping_intervals(a, b):
 
 <br>
 
+* a matrix is a 2d array. they can be used to represetn graphs where each node is a cell on the matrix which has 4 neighbors (except those cells on the edge and corners).
+
 * in some languages (like C++), 2d arrays are represented as 1d, so an array of `m * n` elements represents `array[i][j]` as `array[i * n + j]`.
   
-* dynamic 2d arrays a nested dynamic array.
+* creating an empty matrix:
 
+<br>
+
+```python
+zero_matrix = [ [0 for _ in range(len(matrix[0]))] for _ in range(len(matrix)) ]
+```
+
+<br>
+
+* copying a matrix:
+
+<br>
+
+```python
+copied_matrix = [ row[:] for row in mattrix ]
+```
+
+<br>
+
+* the transpose of a matrix can be found by interchanging its rows into columns or columns into rows:
+
+<br>
+
+```python
+transposed = zip(*matrix)
+```
 
 <br>
 
