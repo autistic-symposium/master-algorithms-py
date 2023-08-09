@@ -8,7 +8,8 @@
 
 ```python
 class Node:
-  def __init__(self, val=0, next=None):
+
+  def __init__(self, val, next=None):
       self.val = val
       self.next = next
 ```
@@ -52,6 +53,8 @@ class Node:
 
 ### detecting cycles
 
+<br>
+
 ```python
 def has_cycle(head) -> bool:
         
@@ -71,6 +74,8 @@ def has_cycle(head) -> bool:
         
         return True
 ```
+
+<br>
 
 ----
 
@@ -124,7 +129,6 @@ def delete_node_without_head(node):
 * this problem is easy if one has to delete a node in the middle, as all you need to do is loop until the predecessor node and change the pointers.
 
 * however, if the node to be deleted is in the head of the list, the best way is to use a sentinel node. sentinel nodes are widely used in trees and linked lists as pseudo-heads, pseudo-tails, markers of level end, etc. they are purely functional and usually do not hold any data. their main purpose is to standardize the process (by making the list never empty or headless).
-
 
 
 <br>
@@ -203,6 +207,8 @@ def remove_kth_node(self, head, n):
 
 ### swap every two nodes
 
+<br>
+
 ```python
 def swap_pairs(head):
   
@@ -218,6 +224,7 @@ def swap_pairs(head):
       return second_node
 ```
 
+<br>
 
 ----
 
