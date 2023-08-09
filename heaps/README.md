@@ -29,6 +29,8 @@
 
 * common applications of heap are: sort (heap sort), getting the top-k elements, and finding the kth element.
 
+* in python you can use `heapq.heapify(array)` with `heapq.heappush(array, value)` and `heapq.heappop()`.
+
 <br>
 
 ```python
