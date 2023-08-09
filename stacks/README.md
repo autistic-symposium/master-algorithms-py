@@ -5,7 +5,7 @@
 
 * stacks are **last in, first out** (LIFO) abstract structures, where the newest element is first one to be removed from the structure.
 
-* a stack support `push` and `pop` at `O(1)`, and they be implmented with arrays or singly linked list.
+* a stack support `push` and `pop` at `O(1)`, and they be implemented with arrays or singly linked list.
   
 * stacks are useful in **depth-first search** algorithms, where you can push temp data as you recurse, and remove them from the (memory or data structure) stack as you backtrace.
 
