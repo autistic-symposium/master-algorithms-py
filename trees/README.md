@@ -16,13 +16,13 @@
 
 <br>
 
-* **binary trees** are trees that have each up to 2 children.
+* **binary trees** are trees that have up to 2 children.
   
 * access, search, remove, insert are all `O(log(N)`. space complexity of traversing balanced trees is `O(h)` where `h` is the height of the tree (while very skewed trees will be `O(N)`.
   
 * the **width** is the number of nodes in a level.
   
-* the **degree** is the nunber of children of a node.
+* the **degree** is the number of children of a node.
   
 * a **complete tree** is a tree on which every level is fully filled (except perhaps for the last).
   
@@ -205,7 +205,7 @@ def bfs_iterative(root):
 
 - in a bst, in-order traversal will be sorted in the ascending order (therefore, it's the most frequently used method).
 
-- converting a sorted array to a bst with inorder has no unique solution (in another hadnd, both preorder and postorder are unique identifiers of a bst).
+- converting a sorted array to a bst with inorder has no unique solution (in another hand, both preorder and postorder are unique identifiers of a bst).
 
 <br>
 
