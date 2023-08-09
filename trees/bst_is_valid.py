@@ -14,10 +14,8 @@ def is_valid_bst_iterative(root):
             if node:
                 if min_val >= node.val or node.val >= max_val:
                     return False
-                if node.left:
-                    queue.append((node.left, min_val, node.val))
-                if node.right:
-                    queue.append((node.right, node.val, max_val))
+                queue.append((node.left, min_val, node.val))
+                queue.append((node.right, node.val, max_val))
         
         return True
 
