@@ -29,7 +29,29 @@
 * in any case, this technique is usually used when the array is sorted.
 
 * in the **sliding window** technique, the two pointers usually move in the same direction and never overtake each other. examples are: longest substring without repeating characters, minumum size subarray sum, minimum window substring.
-  
+
+
+----
+
+### intervals
+
+<br>
+
+* checking if two intervals overlap:
+
+```python
+def is_overlap(a, b):
+  return a[0] < b[1] and b[0] < a[1]
+```
+
+<br>
+
+* merging two intervals:
+
+```python
+def merge_overlapping_intervals(a, b):
+  return [min(a[0], b[0]), max(a[1], b[1])]
+```
 
 
 <br>
