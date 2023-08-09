@@ -40,9 +40,12 @@
 
 <br>
 
-* when the order of each element in the string/array doesn't matter, you can use the sorted string/array as the key.
+* when the order of each element in the string/array doesn't matter, you can use the sorted string/array to calculate a key.
+  
 * if you only care about the offset of each value, you can use it as the key.
+  
 * in a tree, you might want to directly use the `Node()` class as key sometimes, but in general, the serialization of the subtree might be a better idea.
+  
 * in a matrix, you might want to use the row index or the column index as key. sometimes you might want to aggregate the values in the same diagonal line.
 
 <br>
@@ -83,15 +86,15 @@ class HashSet:
     def _get_hash_key(self, key):
         return key % self.size
 
-    def add(self, element: int) -> None:
+    def add(self, element: int):
         bucket_index = self._get_hash_key(element)
         self.bucket[bucket_index].insert(element)
     
-    def remove(self, element: int) -> None:
+    def remove(self, element: int)L
         bucket_index = self._get_hash_key(element)
         self.bucket[bucket_index].delete(element)
 
-    def contains(self, element: int) -> bool:
+    def contains(self, element: int:
         bucket_index = self._get_hash_key(element)
         return self.bucket[bucket_index].exists(element)
 ````
@@ -103,10 +106,15 @@ class HashSet:
 
 <br>
 
-* a good choice for buckets are linked lists, as their time complexity for insertion and deletion is constant (once the position to be updated is located). you just need to be sure you never insert repeated elements.
+* a good choice for buckets are linked lists, as their time complexity for `insert` and `delete` is constant (once the position to be updated is located).
+    * you just need to be sure you never insert repeated elements.
+  
 * time complexity for search is `O(N/K)` where `N` is the number of all possible values and `K` is the number of predefined buckets (the average size of bucket is `N/K`). 
+
 * space complexity is `O(K+M)`, where `K` is the number of predefined buckets, and `M` is the number of unique values that have been inserted in the HashSet. 
-* lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain `O(log(N))` time complexity for the lookup operation). however, insert and delete are linear time (as elements would need to be shifted).
+
+* lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain `O(log(N))` time complexity for the lookup operation).
+*     however, `insert` and `delete` are linear time (as elements would need to be shifted).
 
 <br>
 
@@ -155,7 +163,9 @@ class Bucket:
 <br>
 
 * another option for a bucket is a binary search tree, with `O(log(N))` time complexity for search, insert, and delete. in addition, bst can not hold repeated elements, just like sets.
-* time complexity for search is `O(log (N/K)`, where `N` is the number of all possible values and `K` is the number of predefined buckets.
+  
+* time complexity for search is `O(log(N/K)`, where `N` is the number of all possible values and `K` is the number of predefined buckets.
+  
 * space complexity is `O(K+M)` where `K` is the number of predefined buckets, and `M` is the number of unique values in the hash set.
 
 <br>
@@ -250,6 +260,7 @@ class BSTree():
 <br>
 
 * same as before, we need to tackle two main issues: hash function design and collision handling.
+  
 * a good approach is using a module function with an array or linked list. at this time, there is no constraint for repeated numbers.
 
 <br>
@@ -279,10 +290,9 @@ class Bucket:
     def remove(self, key):
         for i, k in enumerate(self.bucket):
             if key == k[0]:
-                # del is an O(N) operation, as we would copy all the i: elements
-                # to make it O(1) we could swap the element we want to remove
-                # with the last element in the bucket
                 del self.bucket[i]
 ```
 <br>
+
+* del is an `O(N)` operation, as we would copy all the `i` elements. to make it `O(1)` we could swap the element we want to remove with the last element in the bucket.
 
