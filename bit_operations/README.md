@@ -148,7 +148,7 @@ def convert_to_hex(num: int) -> str:
    - `OR` and `AND`: symmetrical operations.
    - `XOR`: when the corresponding bits of the two numbers are the same, the result is `1`.
    - negation is unary: just flips the bit.
-   - left shift operation, `<<`, all binary bits are shift to the left (the high bits are discarded, and the low bits are filled with 0). for left shift operations, arithmetic shift and logical shift are the same.
+   - left shift operation, `<<`, all binary bits are shifted to the left (the high bits are discarded, and the low bits are filled with 0). for left shift operations, arithmetic shift and logical shift are the same.
    - right shift operation, `>>`, all binary bits are shift to the right (low bits are discarded). how the high bits get filled differs between arithmetic shift and logical shift:
   - when shifting right arithmetically, the high bits are filled with the highest bit.
   - when shifting right logically, the high bits are filled with `0`.
