@@ -3,7 +3,7 @@
 # author: bt3gl
 
 
-def postorder(self, root: 'Node') -> List[int]:
+def postorder(self, root: 'Node'):
         
     if root is None:
         return []
@@ -11,9 +11,12 @@ def postorder(self, root: 'Node') -> List[int]:
     stack, result = [root, ], []
 
     while stack:
+            
       node = stack.pop()
+            
       if node is not None:
           result.append(node.val)
+              
       for c in node.children:
           stack.append(c)
         
