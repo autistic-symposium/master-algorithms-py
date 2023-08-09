@@ -12,12 +12,11 @@
 
 * heap is a data structure capable of giving you the smallest (or the largest) element in constant time, while adding or removing the smallest (or the largest) element in logarithmic time.
 
-* heaps guarantees both insertion and deletion to have time complexity `O(log N)` (while maintaining get_max/get_min at `O(1)`).
-
-* a heap is a binary tree with these properties:
+* a heap is like a binary tree with these properties:
 	* it must have all of **its nodes in a specific order**, and
  	* its shape must be **complete** (all the levels of the tree must be completely filled except maybe for the last one and the last level must have the left-most nodes filled, always).
-	* a max heap's **root node must** have all its children either **greater than or equal** to its children. a min heap is the opposite. duplicate values are allowed.
+	* a max heap's **root node must** have all its children either **greater than or equal** to its children.
+ *	 a min heap is the opposite. duplicate values are allowed.
 
 * heaps can be represented with linked lists, queues (arrays), or binary trees.
 
@@ -251,7 +250,7 @@ class MinHeap:
 	* insert the element at the bottom, at the leftmost node.
  	* then compare the node to each parent, exchanging them until the tree's properties are correct.
 
-* `extreact_max`:
+* `extract_max`:
 	* remove/return the top and then replace the tree's top with its bottom rightmost element.
  	* swap up until the max element is on the top. 
 
@@ -409,7 +408,7 @@ def compare_two_tops(array) -> int:
 
 <br>
 
-* given an array of `intervals[i] = [start_i, end_i]`, return the minimum the non-overlapping intervals
+* given an array of `intervals[i] = [start_i, end_i]`, return the minimum the non-overlapping intervals:
 
 <br>
 
