@@ -7,9 +7,10 @@ def build_tree(left, right, index_map, postorder):
             
         if left > right:
                 return None
-            
-        root = Node(postorder.pop())  # this order change from preorder
-        index_here = index_map[root.val]
+
+        node = postorder.pop() # this order change from preorder
+        root = Node(node.val)  
+        index_here = index_map[node.val]
 
         root.right = build_tree(index_here + 1, right, index_map, postorder) # this order change from preorder
         root.left = build_tree(left, index_here - 1, index_map, postorder)
