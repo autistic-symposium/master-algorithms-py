@@ -14,8 +14,23 @@
     * `while left < right`, with `left = mid + 1` and `right = mid`, and `left` is returned
     * `while left + 1 < right`, with `left = mid` and `right = mid`, and `left` and `right` are returned
 
+* in python, `bisect.bisect_left()` returns the index at which the `val` should be inserted in the sorted array.
 
 <br>
+
+```python
+from bisect import bisect_left
+
+def binary_search(array, val, low=0, high=None):
+
+    high = high or len(array)
+    position = bisect_left(array, val, low, high)                 
+
+    if position != high and array[position] == value:
+        return position
+
+    return -1
+```
 
 ----
 
