@@ -114,7 +114,7 @@ class HashSet:
 * space complexity is `O(K+M)`, where `K` is the number of predefined buckets, and `M` is the number of unique values that have been inserted in the HashSet. 
 
 * lastly, to optimize search, we could maintain the buckets as sorted lists (and obtain `O(log(N))` time complexity for the lookup operation).
-*     however, `insert` and `delete` are linear time (as elements would need to be shifted).
+    * however, `insert` and `delete` are linear time (as elements would need to be shifted).
 
 <br>
 
