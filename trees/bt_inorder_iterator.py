@@ -9,7 +9,7 @@ class Node:
       self.right = right
 
 
-class BST_Iterator:
+class InorderIterator:
 
     def __init__(self, root):
         self.stack = []
