@@ -12,6 +12,8 @@
  
 * queues are often used in **breath-first search** (where you store a list of nodes to be processed) or when implementing a cache.
 
+* in python, queues can be called with `collections.deque()` (and methods `popleft()` and `insert()`).
+
 
 
 <br>
