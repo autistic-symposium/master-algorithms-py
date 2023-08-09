@@ -41,7 +41,7 @@
 <br>
 
 * when the order of each element in the string/array doesn't matter, you can use the sorted string/array as the key.
-* if you only care about the offset of each value, you can use it as as the key.
+* if you only care about the offset of each value, you can use it as the key.
 * in a tree, you might want to directly use the `Node()` class as key sometimes, but in general, the serialization of the subtree might be a better idea.
 * in a matrix, you might want to use the row index or the column index as key. sometimes you might want to aggregate the values in the same diagonal line.
 
@@ -66,7 +66,7 @@
     - 2-choices hashing: we use two hash functions rather than one, and pick the generated address with fewer collisions.
 
     
-* if we were to implement separate chaining, the primary storage underneath a hashset is a continuous memory as array, where each element in this array corresponds to a bucket that store the actual values.
+* if we were to implement separate chaining, the primary storage underneath a hashset is a continuous memory as array, where each element in this array corresponds to a bucket that stores the actual values.
     * given a value, first we generate a key for the value via the hash function (the generated key serves as the index to locate the bucket).
     * once the bucket is located, we then perform the desired operation on the bucket (such as add, remove, and contain).
     * use a prime number as the base of the module to reduce collisions.
