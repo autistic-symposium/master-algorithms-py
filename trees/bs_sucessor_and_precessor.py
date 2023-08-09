@@ -6,7 +6,7 @@
 def successor(root):
   
   root = root.right
-  while root.left:
+  while root:
       root = root.left
       
   return root
@@ -15,7 +15,7 @@ def successor(root):
 def predecessor(root):
   
   root = root.left
-  while root.right:
+  while root:
       root = root.right
   
   return root
