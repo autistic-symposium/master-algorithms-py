@@ -1,4 +1,4 @@
-## Linked Lists
+## linked list
 
 <br>
 
@@ -35,7 +35,7 @@ class Node:
 * two pointers can be used to solve several problems:
   * getting the kth from last node: have two pointers, where one is `k` nodes ahead of the other, when the node ahead reaches the end, the other node is `k` behind.
   * detecting cycles: have two pointers, where one pointer increments twice as much as the other. if the two pointers meet, there is a cycle. if there is no cycle, the faster pointer takes `N/2` to reach the end of the list (`N` being the length).
-  * getting in the middle node: have two pointers, where one pointer increments twices as much as the other. when the faster node reaches the end of the list, the slower node will be at the middle.
+  * getting in the middle node: have two pointers, where one pointer increments twice as much as the other. when the faster node reaches the end of the list, the slower node will be at the middle.
  
 
 <br>
