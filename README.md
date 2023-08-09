@@ -11,7 +11,7 @@
 
 ---
 
-### 📖 algorithms and data structures (2023)
+### 📖 algorithms and data structures: learn with my examples! (2023)
 
 <br>
 
@@ -36,7 +36,7 @@
 
 ---
 
-### [📖 my book on algorithms and data structure in python (2014, open-sourced)](MY_BOOK)
+### [📖 my book on algorithms and data structure: open-source for you! (2014)](MY_BOOK)
 
 <br>
 
