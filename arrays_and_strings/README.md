@@ -2,13 +2,13 @@
 
 <br>
 
-* arrays and strings hold values of the same type at contiguous memory location. arrays come with the advantage of storing multiple elements of the same type with one single variable name.
+* arrays and strings hold values of the same type at contiguous memory locations with the advantage of storing multiple elements of the same type with one single variable name.
   
-* we are usually concernet with two things: the index of an element, and the element itself.
+* we are usually concerned with two things: the index of an element, and the element itself.
   
 * accessing elements is fast as long as you have the index (as opposed to linked lists that need to be traversed from the head).
   
-* addition or removal of elements into/from the middle of an array is slow because the remaining elements need to be shifted to accomodate the new/missing element (unless they are inserted/removed at the end of the list).
+* addition or removal of elements into/from the middle of an array is slow because the remaining elements need to be shifted to accommodate the new/missing element (unless they are inserted/removed at the end of the list).
   
 * **subarray**: a range of contiguous values within an array (for example, in  `[2, 3, 6, 1, 5, 4]`, `[3, 6, 1]` is a subarray while `[3, 1, 5]` is not).
   
@@ -28,8 +28,9 @@
 
 * in any case, this technique is usually used when the array is sorted.
 
-* in the **sliding window** technique, the two pointers usually move in the same direction and never overtake each other. examples are: longest substring without repeating characters, minumum size subarray sum, minimum window substring.
+* in the **sliding window** technique, the two pointers usually move in the same direction and never overtake each other. examples are: longest substring without repeating characters, minimum size subarray sum, and minimum window substring.
 
+<br>
 
 ----
 
@@ -62,7 +63,7 @@ def merge_overlapping_intervals(a, b):
 
 <br>
 
-* a matrix is a 2d array. they can be used to represetn graphs where each node is a cell on the matrix which has 4 neighbors (except those cells on the edge and corners).
+* a matrix is a 2d array. they can be used to represent graphs where each node is a cell on the matrix which has 4 neighbors (except those cells on the edge and corners).
 
 * in some languages (like C++), 2d arrays are represented as 1d, so an array of `m * n` elements represents `array[i][j]` as `array[i * n + j]`.
   
@@ -194,7 +195,7 @@ def remove_duplicates(nums: list[int]) -> int:
 
 * to determine if two strings are anagrams, there are a few approaches:
     - sorting both strings should produce the same string (`O(N log(N))` time and `O(log(N))` space.
-    - if we map each character to a prime number and we mutliply each mapped number together, anagrams should have the same multiple (prime factor decomposition, `O(N)`).
+    - if we map each character to a prime number and we multiply each mapped number together, anagrams should have the same multiple (prime factor decomposition, `O(N)`).
     - frequency counting of characters can determine whether they are anagram (`O(N)`).
 
 <br>
