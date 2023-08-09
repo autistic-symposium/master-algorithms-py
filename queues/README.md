@@ -2,7 +2,7 @@
 
 <br>
 
-* queues are **first in, first out (FIFO) abstract structures** (*i.e.*, items are removed at the same order they are added) that can be implemented with two arrays or a dynamic array (linked list), as long as items are added and removed from opposite sides.
+* queues are **first in, first out (FIFO) abstract structures** (*i.e.*, items are removed in the same order they are added) that can be implemented with two arrays or a dynamic array (linked list), as long as items are added and removed from opposite sides.
 
 * queues support **enqueue** (add to one end) and **dequeue** (remove from the other end, or tail).
 
@@ -34,7 +34,7 @@
 
 * to build a ring with a fixed size array, any of the elements could be considered as the head.
 
-* to enqueue, you loop the queue with the tail index until find a `None` (even if it has to loop back):
+* to enqueue, you loop the queue with the tail index until you find a `None` (even if it has to loop back):
 
 <br>
 
@@ -137,7 +137,7 @@ class CircularQueue:
 
 <br>
 
-* another version used only one index (for `head`) and calculates the tail with the equation:
+* another version used only one index (for `head`) and calculate the tail with the equation:
 
 <br>
 
