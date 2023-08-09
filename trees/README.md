@@ -275,7 +275,7 @@ def preorder_iterative(root) -> list:
             
             if node:
                 result.append(node.val) 
-                stack.append(node.right) # not the order (stacks are fifo)
+                stack.append(node.right) # note the order (stacks are fifo)
                 stack.append(node.left)
             
         return result
@@ -607,9 +607,9 @@ def predecessor(root):
 
 <br>
 
-* **binary search tree** are binary trees where all nodes on the left are smaller than the root, which is smaller than all nodes on the right.
+* **binary search trees** are binary trees where all nodes on the left are smaller than the root, which is smaller than all nodes on the right.
   
-* if a bst is **balanced**, it guarantees `O(log(N))` for insert and search (as we keep the tree's height as `h = log(N)`).
+* if a bst is **balanced**, it guarantees `O(log(N))` for `insert` and `search` (as we keep the tree's height as `h = log(N)`).
   
 * common types of balanced trees are **red-black** and **avl**.
 
@@ -623,9 +623,9 @@ def predecessor(root):
 
 <br>
 
-* the main strategy is to find out a proper leaf position for the target and then insert the node as a leaf (therefore, insertion will begin as a search).
+* to insert a node, the main strategy is to find a proper leaf position for the target (therefore, insertion will begin as a search).
 
-* the time complexity is `O(h)` where `h` is a tree height. that results in `O(log(N))` in the average case, and `O(N)` worst case.
+* the time complexity is `O(h)` where `h` is the tree height. that results in `O(log(N))` in the average case, and `O(N)` worst case.
 
 <br>
 
@@ -692,21 +692,6 @@ def bst_insert_recursive(root, val):
 <br>
 
 ```python
-def successor(root):
-   
-    root = root.right
-    while root.left:
-         root = root.left
-    return root.val
-
-
-def predecessor(root):
-  
-    root = root.left
-    while root.right:
-         root = root.right
-    return root.val
-
 
 def delete_node(root, key):
         
@@ -742,9 +727,9 @@ def delete_node(root, key):
 
 <br>
 
-* for the recursive solution, in the worst case, the depth of the recursion is equal to the height of the tree. therefore, the time complexity would be `O(h)`. the space complexity is also `O(h)`.
+* for the recursive solution, the depth of the recursion is equal to the height of the tree in the worst case. therefore, the time complexity would be `O(h)`. the space complexity is also `O(h)`.
   
-* for an iterative solution, the time complexity is equal to the loop time which is also `O(h)`, while the space complexity is `O(1)`.
+* for the iterative solution, the time complexity is equal to the loop time which is also `O(h)`, while the space complexity is `O(1)`.
 
 <br>
 
@@ -878,10 +863,8 @@ def is_valid_bst_iterative(root):
             if node:
                 if min_val >= node.val or node.val >= max_val:
                     return False
-                if node.left:
-                    queue.append((node.left, min_val, node.val))
-                if node.right:
-                    queue.append((node.right, node.val, max_val))
+                queue.append((node.left, min_val, node.val))
+                queue.append((node.right, node.val, max_val))
         
         return True
 
