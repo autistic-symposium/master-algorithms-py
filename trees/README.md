@@ -2,11 +2,13 @@
 
 <br>
 
-* a tree is a widely used abstract data type that represents a hierarchical structure with a set of connected nodes.
+* a tree is an undirected and connected acyclic graph with no cycle or loops.
+
+* trees are widely used abstract data type that represents a hierarchical structure with a set of connected nodes.
   
-* each node in the tree can be connected to many children, but must be connect to exactly one parent (except for the root node).
+* each node in the tree can be connected to many children, but must be connected to exactly one parent (except for the root node).
   
-* a tree is an undirected and connected acyclic graph and there are no cycle or loops.
+
 
 <br>
 
@@ -16,42 +18,41 @@
 
 <br>
 
-* **binary trees** are trees that have up to 2 children.
+* **binary trees** are trees that have up to two children.
   
-* access, search, remove, insert are all `O(log(N)`. space complexity of traversing balanced trees is `O(h)` where `h` is the height of the tree (while very skewed trees will be `O(N)`.
+* `search`, `remove`, and `insert` are all `O(log(N)` runtime.
+
+* the space complexity of traversing balanced trees is `O(h)` where `h` is the height of the tree (while very skewed trees will be `O(N)`).
   
-* the **width** is the number of nodes in a level.
+* the **width** of a binary tree is the number of nodes in a level.
   
-* the **degree** is the number of children of a node.
-  
-* a **complete tree** is a tree on which every level is fully filled (except perhaps for the last).
-  
-* a **perfect tree** is both full and complete (it must have exactly `2**k - 1` nodes, where `k` is the number of levels).
+* the **degree** of a binary tree is the number of children of a node.
+
 
 <br>
 
 ---
 
-### full trees
+### full, complete, and perfect binary trees
 
 <br>
 
-* a **full binary tree** has each node with either zero or two children (and no node has only one child).
+* a **full binary tree** has each node with either zero or two children, i.e., no node has only one child.
 
+* a **complete tree** is a tree on which every level is fully filled (except perhaps for the last).
+  
+* a **perfect tree** is both full and complete (it must have exactly `2^k - 1` nodes, where `k` is the number of levels).
+  
 <br>
 
 ```python
-def is_full(node) -> bool:
+def is_full(node):
+
 	if node is None:
 		return True
+
 	return bool(node.right and node.left) and is_full(node.right) and is_full(node.left)
 ```
-
-<br>
-
----
-
-### is leaf?
 
 <br>
 
@@ -61,6 +62,7 @@ def is_full(node) -> bool:
 
 ```python
 def is_leaf(node):
+
 	return bool(not node.right and not node.left)
 ```
 
@@ -73,7 +75,9 @@ def is_leaf(node):
 
 <br>
 
-* the **depth** (or level) of node is the number of edges from the tree's root node until the node.
+* the **depth** (or level) of a node is the number of edges from the tree's root node until a certain node.
+
+* the **height of tree** is the height of its root node, or the depth of its deepest node.
 
 <br>
 
@@ -81,30 +85,7 @@ def is_leaf(node):
 def max_depth(root) -> int:
         
         if root is None:
-            return 0
-        
-        return max(max_depth(root.left) + 1, max_depth(root.right)  + 1)
-```
-
-<br>
-
----
-
-### height of a tree
-
-<br>
-
-* the **height** of a node is the number of edges on the **longest path** between that node and a leaf.
-  
-* the **height of tree** is the height of its root node, or the depth of its deepest node.
-
-<br>
-
-```python
-def height(root):
-      
-      if root is none:
-            return 0
+            return -1
             
       return 1 + max(height(root.left), height(root.right))
 ```
@@ -122,13 +103,8 @@ def height(root):
 <br>
 
 ```python
-def height(root):
-    if root is None:
-      return -1
-      
-    return 1 + max(height(root.left), height(root.right))
-
 def is_balanced(root):
+
     if root is None:
       return True
 
@@ -144,15 +120,14 @@ def is_balanced(root):
 
 <br>
 
-* give you all elements **in order** with time `O(log(N)`. used to traverse a tree by level.
+* bfs gives all elements **in order** with time `O(log(N)` and it's used to traverse a tree by level.
   
-* iterative solutions use a queue for traversal or find the shortest path from the root node to the target node:
-	- in the first round, we process the root node.
- 	- in the second round, we process the nodes next to the root node.
-  	- in the third round, we process the nodes which are two steps from the root node, etc.
+* iterative solutions use a queue for traversal or find the shortest path from the root node to a target node:
+	- in the first round, it processes the root node.
+ 	- in the second round, it processes the nodes next to the root node.
+  	- in the third round, it processes the nodes which are two steps from the root node, etc.
   	- newly-added nodes will not be traversed immediately but will be processed in the next round.
-	- if node X is added to the kth round queue, the shortest path between the root node and X is exactly k.
-	- the processing order of the nodes in the exact same order as how they were added to the queue (which is FIFO).
+	- if node `X` is added to the `kth` round queue, the shortest path between the root node and `X` is exactly `k`.
 
 <br>
 
@@ -183,15 +158,15 @@ def bfs_iterative(root):
 
 <br>
 
-- deep-first search (DFS) can also be used to find the path from the root node to the target node if you want to visit every node and/or search the deepest paths firsts.
+- dfs is used to find the path from the root node to a target node if you want to visit every node and/or search the deepest paths first.
   
-- recursion solutions are easier to implement; however, if the recursion depth is too high, stack overflow might occur. in that case, you might use BFS instead or implement DFS using an explicit stack (i.e., use a while loop and a stack structure to simulate the system call stack).
+- recursive solutions are easier to implement, however, if the recursion depth is too high, stack overflow might occur.
+	- you might want to use bfs instead or implement dfs using an explicit stack (i.e., with a while loop and a stack structure).
   
-- overall, we only trace back and try another path after we reach the deepest node. as a result, the first path you find in DFS is not always the shortest path:
-	- we first push the root node to the stack, then we try the first neighbor and push its node to the stack, etc.
-	- when we reach the deepest node, we need to trace back.
- 	- when we track back, we pop the deepest node from the stack, which is actually the last node pushed to the stack.
-	- the processing order of the nodes is exactly the opposite order of how they are added to the stack.
+- dfs only traces back and try another path after it reaches the deepest node. as a result, the first path found in dfs is not always the shortest path:
+	- push the root node to the stack.
+ 	- try the first neighbor and push its node to the stack.
+	- when it reaches the deepest node, trace back by popping the deepest node from the stack (the last node pushed). therefore, he processing order of the nodes is exactly the opposite order of how they are added to the stack.
 
 <br>
 
@@ -203,23 +178,21 @@ def bfs_iterative(root):
 
 - `left -> node -> right`
 
-- in a bst, in-order traversal will be sorted in the ascending order (therefore, it's the most frequently used method).
-
-- converting a sorted array to a bst with inorder has no unique solution (in another hand, both preorder and postorder are unique identifiers of a bst).
-
 <br>
 
 ```python
-def inorder(root):
-        if root is None:
-            return []
-	return inorder(root.left) + [root.val] + inorder(root.right)
+def inorder_recursive(root):
 
-def inorder_iterative(root) -> list:
-        
-        result = []
-        stack = []
-        node = root
+	if root is None:
+            return []
+
+	return inorder_recursive(root.left) + [root.val] + inorder_recursive(root.right)
+
+
+def inorder_iterative(root):
+
+	node = root
+        result, stack = [], []
         
         while stack or node:
 
@@ -236,12 +209,13 @@ def inorder_iterative(root) -> list:
 
 <br>
 
+
 * we can also build an interator:
 
 <br>
 
 ```python
-class BST_Iterator:
+class inorder_iterator:
 
     def __init__(self, root):
         self.stack = []
@@ -253,14 +227,21 @@ class BST_Iterator:
             root = root.left
 
     def next(self) -> int:
-        top_node = self.stack.pop()
-        if top_node.right:
-            self.left_inorder(top_node.right)
-        return top_node.val
+        node = self.stack.pop()
+        if node.right:
+            self.left_inorder(node.right)
+        return node.val
         
     def has_next(self) -> bool:
         return len(self.stack) > 0
 ```
+
+<br>
+
+
+- in a binary search tree, in-order traversal will be sorted in the ascending order.
+
+- converting a sorted array to a binary search tree with inorder has no unique solution (in another hand, both preorder and postorder are unique identifiers of a bst).
 
 <br>
 
@@ -271,15 +252,15 @@ class BST_Iterator:
 <br>
 
 - `node -> left -> right`
-  
-- top-down (parameters are passed down to children), so deserialize with a queue.
 
 <br>
 
 ```python
 def preorder_recursive(root):
+
         if root is None:
             return []
+
 	return [root.val] + preorder(root.left) + preorder(root.right)
 
 
@@ -300,6 +281,9 @@ def preorder_iterative(root) -> list:
         return result
 ```
 
+<br>
+
+* note that preorder dfs looks similar to bfs, but using a stack instead of queue, and calling `node.right` first than `node.left` (as it pops in the right not in the left).
 
 <br>
 
@@ -311,30 +295,31 @@ def preorder_iterative(root) -> list:
 
 - `left -> right -> node`
   
-- bottom-up solution.
-  
 - deletion process is always post-order: when you delete a node, you will delete its left child and its right child before you delete the node itself.
   
-- post-order can be used in mathematical expressions as it's easier to write a program to parse a post-order expression. using a stack, each time when you meet an operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
+- post-order can be used in mathematical expressions as it's easier to write a program to parse a post-order expression.
+	- using a stack, each time when you meet an operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack.
 
 <br>
 
 ```python
 def postorder(root):
+
         if root is None:
             return []
+
 	return postorder(root.left) + postorder(root.right) + [root.val]
 
 
-def postorder_iterative(root) -> list:
-    stack, result = [], []
+def postorder_iterative(root):
+
     node = root
+    stack, result = [], []
     
     while node or stack:
 
             while node:
-                if node.right:
-                    stack.append(node.right)
+                stack.append(node.right)
                 stack.append(node)
                 node = node.left
             
@@ -384,7 +369,7 @@ def is_same_trees(p, q):
 <br>
 
 ```python
-def is_symmetric(root) -> bool:
+def is_symmetric(root):
         
         stack = [(root, root)]
         
@@ -501,15 +486,16 @@ def has_path_sum(root, target_sum) -> bool:
 <br>
 
 ```python
-def build_tree(preorder, inorder) -> Optional[Node]:
+def build_tree(preorder, inorder):
         
         def helper(left, right, index_map):
             
             if left > right:
                 return None
-            
-            root = Node(preorder.pop(0)) # this order change from postorder
-            index_here = index_map[root.val]
+
+            node = preorder.pop(0) # this order change from postorder
+            root = Node(node.val) 
+            index_here = index_map[node.val]
 
             root.left = helper(left, index_here - 1, index_map) # this order change from postorder
             root.right = helper(index_here + 1, right, index_map)
@@ -528,25 +514,25 @@ def build_tree(preorder, inorder) -> Optional[Node]:
 <br>
 
 ```python
-def build_tree(left, right, index_map):
+def build_tree(left, right, index_map, postorder):
             
         if left > right:
                 return None
-            
-        root = Node(postorder.pop())  # this order change from preorder
-        index_here = index_map[root.val]
 
-        root.right = build_tree(index_here + 1, right, index_map) # this order change from preorder
-        root.left = build_tree(left, index_here - 1, index_map)
+        node = postorder.pop() # this order change from preorder
+        root = Node(node.val)  
+        index_here = index_map[node.val]
+
+        root.right = build_tree(index_here + 1, right, index_map, postorder) # this order change from preorder
+        root.left = build_tree(left, index_here - 1, index_map, postorder)
             
         return root
 
 
-def build_tree(inorder, postorder) -> Optional[Node]:
+def build_tree(inorder, postorder):
 
         index_map = {val: i for i, value in enumerate(inorder)}
-            
-        return fill_tree(0, len(inorder) - 1, index_map)
+        return fill_tree(0, len(inorder) - 1, index_map, postorder)
 ```
 
 
@@ -597,7 +583,7 @@ def count_unival(root) -> int:
 def successor(root):
   
   root = root.right
-  while root.left:
+  while root:
       root = root.left
       
   return root
@@ -606,7 +592,7 @@ def successor(root):
 def predecessor(root):
   
   root = root.left
-  while root.right:
+  while root:
       root = root.right
   
   return root
