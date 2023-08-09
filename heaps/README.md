@@ -10,7 +10,7 @@
 
 <br> 
 
-* heap is a data structure capable of giving you the smallest (or the largest) element in constant time, while adding or removing the smallest (or the largest) element on logarithmic time.
+* heap is a data structure capable of giving you the smallest (or the largest) element in constant time, while adding or removing the smallest (or the largest) element in logarithmic time.
 
 * heaps guarantees both insertion and deletion to have time complexity `O(log N)` (while maintaining get_max/get_min at `O(1)`).
 
@@ -93,13 +93,13 @@ class Heap:
 
 <br>
 
-* it's cheaper to heapify an array of data (`O(N)`) than creating an empty heap and inserting each element (`O(N log(N))`).
-	* heapify means create a binary tree and then comparing each nodes with their child (and swapping when necessary).
+* it's cheaper to heapify an array of data (`O(N)`) than create an empty heap and inserting each element (`O(N log(N))`).
+	* heapify means create a binary tree and then comparing each nodes with their children (and swapping when necessary).
  	* parents node can simply exchange with their smallest child (so the max number of exchanges is `N/2`) and leaves are left out. 
 
 * python's built-in heap differs from the standard implementation of a heap in two ways:
 	* firstly, it uses zero-based indexing, so it stores the root node at index zero instead of the size of the heap.
- 	* secondly, the built-in module does not offer a direct way to create a max heap, instead, we must modify the values of each eelement when inserting in the heap, and when removing it from the heap.
+ 	* secondly, the built-in module does not offer a direct way to create a max heap, instead, we must modify the values of each element when inserting in the heap, and when removing it from the heap.
 
 <br>
 
@@ -155,7 +155,7 @@ size_max_heap = len(max_heap)
   	- then compare this node to each parent, exchanging them until the tree's properties are correct.
   	
 * `extract_min`:
-  	- first, remove/return the top and then replace the tree's top with its latest element (the bottom most rightmost).
+  	- first, remove/return the top and then replace the tree's top with its latest element (the bottom-most rightmost).
   	- then bubble down, swapping it with one of its children until the min-heap is properly restored
   	- there is no need for order between right and left, so this operation would only take `O(log N)` runtime.
 
