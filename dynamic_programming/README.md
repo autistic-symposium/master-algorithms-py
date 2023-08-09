@@ -154,7 +154,7 @@ def climb_stairs_memoization(n: int) -> int:
 
 <br>
 
-* another good examples is calculating all possible subnodes in a tree:
+* another good example is calculating all possible subnodes in a tree:
 
 <br>
 
