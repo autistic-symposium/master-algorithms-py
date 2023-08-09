@@ -34,50 +34,9 @@
 
 * to build a ring with a fixed size array, any of the elements could be considered as the head.
 
-* to enqueue, you loop the queue with the tail index until you find a `None` (even if it has to loop back):
 
 <br>
 
-```python
-while self.queue[self.tail] is not None:
-      self.tail += 1 
-      if self.tail == self.size:
-            self.tail = 0
-self.queue[self.tail] = value
-```
-
-<br>
-
-* to dequeue, you simply pop the head value:
-
-<br>
-
-```python
-value = self.queue[self.head]
-self.queue[self.head] = None
-self.head += 1
-```
-
-<br>
-  
-* as long as we know the length of the queue, we can instantly locate its tails based on this formula:
-
-<br>
-
-```
-tail_index = (head_index + current_length - 1) % size
-```
-
-<br>
-
-* there is one occasion when `tail` index is set to zero:
-   * when the enqueue operation adds to the last position in the array and tail has to loop back (`self.tail == self.size`).
-
-* there are two occasions when `head` index is set to zero:
-   * when the queue is checked as empty
-   * when the dequeue operation popped the last element in the array and head has to loop back (`self.head == self.size`).
- 
-<br>
 
 ```python
 class CircularQueue:
@@ -137,6 +96,54 @@ class CircularQueue:
 
 <br>
 
+* to enqueue, you loop the queue with the tail index until you find a `None` (even if it has to loop back):
+
+<br>
+
+```python
+while queue[self.tail]:
+
+      self.tail += 1 
+      if self.tail == self.size:
+            self.tail = 0
+self.queue[self.tail] = value
+```
+
+<br>
+
+* to dequeue, you simply pop the head value:
+
+<br>
+
+```python
+value = self.queue[self.head]
+self.queue[self.head] = None
+self.head += 1
+```
+
+<br>
+  
+* as long as we know the length of the queue, we can instantly locate its tails based on this formula:
+
+<br>
+
+```
+tail_index = (head_index + current_length - 1) % size
+```
+
+<br>
+
+* there is one occasion when `tail` index is set to zero:
+   * when the enqueue operation adds to the last position in the array and tail has to loop back (`self.tail == self.size`).
+
+* there are two occasions when `head` index is set to zero:
+   * when the queue is checked as empty
+   * when the dequeue operation popped the last element in the array and head has to loop back (`self.head == self.size`).
+ 
+
+
+<br>
+
 * another version used only one index (for `head`) and calculate the tail with the equation:
 
 <br>
@@ -167,7 +174,7 @@ class CircularQueue:
 
 <br>
 
-* * in this example we also implement the methods `is_empty` and `is_full` using an extra counter variable `self.count` that can be compared to `self.size` or `0` and used to validate `rear` and `front`.
+* * in the example below we also implement the methods `is_empty` and `is_full` using an extra counter variable `self.count` that can be compared to `self.size` or `0` and used to validate `rear` and `front`.
 
 <br>
 
