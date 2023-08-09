@@ -26,7 +26,7 @@ class Trie:
     def __init__(self):
         self.root = {}
 
-    def insert(self, word: str) -> None:
+    def insert(self, word: str)L
         node = self.root
         for c in word:
             if c not in node:
@@ -58,6 +58,7 @@ class Trie:
 <br>
 
 * similar to a bst, when we insert a value to a trie, we need to decide which path to go depending on the target value we insert.
+
   
 * the root node needs to be initialized before you insert strings.
 
@@ -71,10 +72,13 @@ class Trie:
 <br>
 
 * all the descendants of a node have a common prefix of the string associated with that node, so it should be easy to search if there are any words in the trie that starts with the given prefix.
+
   
 * we go down the tree depending on the given prefix, once we cannot find the child node, the search fails.
+
   
 * we can also search for a specific word rather than a prefix, treating this word as a prefix and searching in the same way as above.
+
   
 * if the search succeeds, we need to check if the target word is only a prefix of words in the trie or if it's exactly a word (for example, by adding a boolean flag).
 
