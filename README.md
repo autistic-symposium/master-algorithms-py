@@ -64,4 +64,4 @@
 <br>
 
 * **[big-o complexities chart and explanations](https://www.bigocheatsheet.com/)**
-* **[bt3gl's classes on algorithms and data structures](https://www.youtube.com/@bt3gl)**
+
