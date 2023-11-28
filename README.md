@@ -49,7 +49,7 @@
 
 <br>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1130416/156927666-04e64766-8d8b-4973-a2b1-6e0c48dc6cc1.jpeg" width=50%" align="center" style="padding:1px;border:1px solid black;">
+  <img src="https://user-images.githubusercontent.com/1130416/156927666-04e64766-8d8b-4973-a2b1-6e0c48dc6cc1.jpeg" width=40%" align="center" style="padding:1px;border:1px solid black;">
 
 <br>
 <br>
@@ -63,5 +63,5 @@
 
 <br>
 
-* **[big-o complexities chart and explanations](https://www.bigocheatsheet.com/)**
+* **[big-o complexities chart and explanation](https://www.bigocheatsheet.com/)**
 
