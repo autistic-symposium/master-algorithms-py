@@ -1,4 +1,4 @@
-## 👾🐍 master algorithms with python (and my book)
+## 👾🐍 master algorithms with python (the aquarian queen's 10 years-old book)
 
 <br>
 
