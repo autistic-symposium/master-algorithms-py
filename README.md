@@ -1,4 +1,4 @@
-## 👾🐍 master algorithms with python (the aquarian queen's 10 years-old book)
+## 👾🐍 master algorithms with python (bt3gl's 10 years-old book)
 
 <br>
 
@@ -11,7 +11,7 @@
 
 ---
 
-### 📖 algorithms and data structures: learn with my examples! (2023)
+### 📖 algorithms and data structures: learn with my examples! (2014 - 2023)
 
 <br>
 
@@ -36,20 +36,22 @@
 
 ---
 
-### [📖 my book on algorithms and data structure: open-source for you! (2014)](MY_BOOK)
+### 📖 the book on algorithms and data structure (2014)
+
+##### one of the earliest publications solving classic algorithms in python...
 
 <br>
 
-- **➡️ [one of the first-ever publications solving classic algorithm and data structure problems in python, published by hanbit media](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
-- **➡️ [last time i checked, it had 4.6/5 stars and 33 reviews (not bad for a book written in school by a self-taught!)](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**.
-- **➡️ [this repo used to have 600+ stars and 300 forks before 💩 happened 😞 (here is a proof)](MY_BOOK/600_stars.png)**.
-- **➡️ [just for fun: this book as a reference for a CMU computer science class](https://www.andrew.cmu.edu/user/ramesh/teaching/course/48784.pdf)**.
-
-
+- **➡️ [published by: hanbit media](https://www.hanbit.co.kr/store/books/look.php?p_code=B8465804191)**
+- **➡️ [free pdf access here](https://github.com/autistic-symposium/master-algorithms-py/blob/master/MY_BOOK/ebook_pdf/book_second_edition.pdf)**
+- **➡️ [this repo used to have 600+ stars](MY_BOOK/600_stars.png)**
+- **➡️ [used as a resource for a class at Carnegie Mellon University](https://www.andrew.cmu.edu/user/ramesh/teaching/course/48784.pdf)**
 
 <br>
+
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1130416/156927666-04e64766-8d8b-4973-a2b1-6e0c48dc6cc1.jpeg" width=40%" align="center" style="padding:1px;border:1px solid black;">
+<img src="https://user-images.githubusercontent.com/1130416/156927666-04e64766-8d8b-4973-a2b1-6e0c48dc6cc1.jpeg" width=40%" align="center" style="padding:1px;border:1px solid black;">
+</p>
 
 <br>
 <br>
@@ -57,7 +59,7 @@
 
 ----
 
-### the zen of phython
+### the zen of python
 
 <br>
 
